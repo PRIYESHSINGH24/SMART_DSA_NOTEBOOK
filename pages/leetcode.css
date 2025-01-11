@@ -95,3 +95,39 @@ header h1 {
 .icon {
     margin-right: 5px;
 }
+
+.progress-card {
+    margin-top: 0.6rem;
+    padding: 1.5rem; 
+  }
+  
+  .progress-card h2 {
+    margin-bottom:0.6rem;
+    font-size: 1.5rem;
+  }
+  
+  .progress-card .button {
+    margin-top: 0.6rem;
+    border: none;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  #username {
+    padding: 0.5rem;
+    border: 1px solid #827d7d;
+  }
+
+  #stats {
+    margin-top: 20px;
+  }
+  #stats p {
+    font-size: 16px;
+    color: #444;
+    margin: 10px 0;
+  }
+  #stats span {
+    font-weight: bold;
+    color: #ff7e67;
+  }
+  
