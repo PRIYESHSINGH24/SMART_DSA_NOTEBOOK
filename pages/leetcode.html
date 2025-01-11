@@ -62,7 +62,17 @@
             </div>
         </div>
     </div>
-
+     <div class="progress-card">
+      <h2>Check Your Progress</h2>
+        <label for="username">Enter your LeetCode username:</label>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <button id="fetchButton" class="button button-primary">Get Progress</button>
+      <div id="stats">
+        <p>✨ Easy: <span id="easy">0</span></p>
+        <p>⚡ Medium: <span id="medium">0</span></p>
+        <p>🔥 Hard: <span id="hard">0</span></p>
+      </div>
+  </div>
     <script src="leetcode.js"></script>
 </body>
 </html>
