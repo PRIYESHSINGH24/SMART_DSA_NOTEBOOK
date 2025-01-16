@@ -642,14 +642,14 @@ footer form input {
   flex: 1;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #dee2e6;
+  border: 1px solid #ffffff00;
   border-radius: 4px;
 }
 
 footer form button {
   padding: 10px 20px;
   font-size: 14px;
-  background-color: #6c757d;
+  background-color: #ffffff00;
   color: #ffffff;
   border: none;
   border-radius: 4px;
