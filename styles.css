@@ -793,7 +793,7 @@ form::before {
    bottom: 0;
    left: 0%;  /* Adjust this value to control the starting point of the border */
    width: 92%;  /* Adjust this value to control the length of the border */
-   border-bottom: 10px solid #fafafa;  /* Your border color */
+   border-bottom: 1px solid #fafafa;  /* Your border color */
 }
 
 form input{
