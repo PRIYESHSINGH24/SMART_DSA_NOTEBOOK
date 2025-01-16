@@ -788,7 +788,8 @@ form{
    margin-bottom: 50px;  
 }
 form input{
-   width:100%;
+   width:80%;
+   padding: 10px;
    background: transparent;
    color: #CCC;
    border: 0;
