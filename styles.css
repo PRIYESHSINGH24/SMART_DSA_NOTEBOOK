@@ -778,15 +778,24 @@ footer a:hover {
   display: inline-block;
   animation: beat 1s ease infinite;
 }
-
-form{
-   padding-bottom: 15px;
+form {
+   padding-bottom: 199px;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   border-bottom: 1px solid #ccc;
-   margin-bottom: 40px;  
+   position: relative;  /* Add relative positioning to the form */
+   margin-bottom: 5px;
 }
+
+form::before {
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 0%;  /* Adjust this value to control the starting point of the border */
+   width: 60%;  /* Adjust this value to control the length of the border */
+   border-bottom: 10px solid #e44949;  /* Your border color */
+}
+
 form input{
    width:80%;
    padding: 10px;
