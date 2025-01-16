@@ -516,15 +516,6 @@ footer {
   transform: translateY(-3px); 
 }
 
-.footer-bottom {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #e9ecef;
-  font-size: 14px;
-  position: relative;
-  bottom: 0;
-}
-
 @media(max-width:1025px) {
   .footer-section p {
     margin: 12px
@@ -689,12 +680,6 @@ footer form button:hover {
 }
 
 /* Footer Bottom Section */
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 20px;
-  font-size: 14px;
-}
 
 #cursor{
   height: 20px;
@@ -880,6 +865,7 @@ footer form button:hover {
   padding-top: 0.5rem;
   border-top: 1px solid #ddd;
   font-size: 0.9rem;
+  background-color: #ffffff00;
 }
 
 .heart {
