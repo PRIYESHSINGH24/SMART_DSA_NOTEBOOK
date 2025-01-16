@@ -566,36 +566,6 @@ footer a:hover {
   font-weight: bold;
 }
 
-/* Newsletter Form */
-footer form {
-  display: flex;
-  gap: 10px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-footer form input {
-  flex: 1;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ffffff00;
-  border-radius: 4px;
-}
-
-footer form button {
-  padding: 10px 20px;
-  font-size: 14px;
-  background-color: #ffffff00;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-footer form button:hover {
-  background-color: #495057;
-}
 
 /* Social Links */
 .social-links ul {
