@@ -22,7 +22,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+
 </head>
 
 <div id="cursor"></div>
@@ -41,7 +43,7 @@
     </button>
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#platforms">Platforms</a></li>
+      <li><a href="platform.html">Platforms</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="Login1.html">Log In</a></li>
@@ -63,6 +65,8 @@
         <button class="platform-btn">HackerRank</button>
         <button class="platform-btn">Codeforces</button>
         <button class="platform-btn">GeeksforGeeks</button>
+        <button class="platform-btn">codechef</button>
+        <button class="platform-btn">Code 360 by Coding Ninjas </button>
       </div>
     </div>
     <div class="hero-image">
@@ -72,6 +76,10 @@
   
 </div>
 
+    <!--scroll button-->
+    <button id="scrollButton" title="Go to top">
+      <i class="fa-solid fa-arrow-up fa-xl"></i>
+    </button>
 
 </div>
     <section class="container">
@@ -83,7 +91,7 @@
       <div class="platform-card">
         <img src="img/codechef.png" alt="CodeChef Logo" />
         <h2>CodeChef</h2>
-        <a href="pages/codechef.html">CodeChef</a>
+        <a href="pages/codechef3.html">CodeChef</a>
       </div>
       <div class="platform-card">
         <img src="img/leetcode.png" alt="LeetCode Logo" />
@@ -96,6 +104,13 @@
         <h2>Code 360 by Coding Ninjas</h2>
         <a href="pages/code360bycn.html">Code 360 by Coding Ninjas</a>
       </div>
+
+      <div class="platform-card">
+        <img src="img/HackerRank.png" alt="Code 360 by CN Logo" />
+        <h2>HackerRank</h2>
+        <a href="pages/hackerrank.html">HackerRank</a>
+      </div>
+
     </section>
     <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
   </div>
@@ -140,6 +155,7 @@
               onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Contact Us</a></li>
         </ul>
     </div>
+    
     <div class="footer-section services" >
         <h4 style="font-size: 18px; margin-bottom: 10px; 
          transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Learn More<div class="underline"><span></span></div></h4><ul style="list-style: none; padding: 0;">
@@ -222,6 +238,8 @@
         behavior: "smooth"
       });
     };
+
+
 
   </script>
 

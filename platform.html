@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platforms - DSA Problem Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Style for the container holding platform cards */
+ .platform-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next row if necessary */
+    gap: 20px; /* Adds spacing between cards */
+    justify-content: space-between; /* Adjusts spacing between cards */
+    margin: 20px 0;
+}
+
+/* Style for individual cards */
+.platform-card {
+    flex: 1 1 calc(25% - 20px); /* Adjusts the card size to 25% of the container's width minus the gap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.platform-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.platform-card:hover {
+    transform: translateY(-5px); /* Adds a hover effect */
+}
+
+header {
+    background: #4CAF50;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Section Styles */
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+section ul {
+    list-style-type: disc;
+    margin: 15px;
+    padding-left: 20px;
+}
+
+section ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./img/logo2.png" alt="Logo">
+      </div>
+
+      <button class="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="black">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="platform.html" class="active">Platforms</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="Login1.html">Log In</a></li>
+        <li><a href="Signup2.html">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="platform-section">
+      <h2>Explore Coding Platforms</h2>
+      <p>Dive into a world of coding platforms where you can practice, sharpen your skills, and tackle real-world problems. Whether you're looking for hands-on challenges or seeking to deepen your understanding of algorithms, there's a platform for every need.</p>
+
+      <div class="platform-container">
+        <div class="platform-card">
+          <img src="img/leetcode.png" alt="LeetCode Logo">
+          <h2>LeetCode</h2>
+          <a href="https://leetcode.com" target="_blank">Explore Now</a>
+        </div>
+
+        <div class="platform-card">
+          <img src="HackerRank.png" alt="HackerRank Logo">
+          <h2>HackerRank</h2>
+          <a href="https://www.hackerrank.com/" target="_blank">Explore Now</a>
+        </div>
+
+        <div class="platform-card">
+          <img src="codeforce.png" alt="Codeforces Logo">
+          <h2>Codeforces</h2>
+          <a href="https://codeforces.com/" target="_blank">Explore Now</a>
+        </div>
+
+        <div class="platform-card">
+          <img src="img/geeksfor.png" alt="GeeksforGeeks Logo">
+          <h2>GeeksforGeeks</h2>
+          <a href="https://geeksforgeeks.org" target="_blank">Explore Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: linear-gradient(to right,  #0e2511, #19be50);; color: #ffffff; padding: 40px 20px; font-family: 'Arial', sans-serif; overflow: hidden;">
+    <!-- Footer Container -->
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
+      
+      <!-- Left Section (Logo and Description) -->
+      <div class="footer-left" style="flex: 2; min-width: 300px;">
+        <!-- Logo -->
+        <div class="footer-logo" style="margin-bottom: 20px; animation: fadeInLeft 1s;">
+          <div style="background-color: #8cc152; padding: 20px; border-radius: 8px; display: inline-block;">
+            <h1 style="margin: 0; font-size: 36px; font-weight: bold;">DSA</h1>
+          </div>
+        </div>
+        <!-- Description -->
+        <p style="font-size: 16px; line-height: 1.6; animation: fadeInLeft 1.5s;">
+          DSA problem solutions involve step-by-step methods to solve data structure and algorithm challenges efficiently. 
+          They include understanding the problem, selecting the right approach, implementing optimized code, and analyzing 
+          time and space complexity for performance.
+        </p>
+      </div>
+  
+      <!-- Quick Links Section -->
+      <div class="footer-section services" >
+          <h2 style="font-size: 18px;
+           margin-bottom: 10px; 
+           transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Quick Links</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="about.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Who We Are</a></li>
+  
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black';; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Blog</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Work With Us</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Investor Relations</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Contact Us</a></li>
+          </ul>
+      </div>
+        <div class="footer-section services" >
+          <h2 style="font-size: 18px;
+           margin-bottom: 10px; 
+           transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">DSA Problem Solutions</h2>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="about.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Who We Are</a></li>
+            <li><a href="Blog.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Blog</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Work With Us</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Investor Relations</a></li>
+            <li><a href="contact.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Contact Us</a></li>
+          </ul>
+        </div>
+  
+      <!-- Learn More Section -->
+       <div class="footer-section services" >
+          <h2 style="font-size: 18px;
+           margin-bottom: 10px; 
+           transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Learn More</h2>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="privacy.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Privacy Policy</a></li>
+            <li><a href="security.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Security</a></li>
+            <li><a href="terms.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Terms of Service</a></li>
+            <li><a href="contributors.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Our Contributors</a></li>
+          </ul>
+      </div>
+    </div>
+  
+    <!-- Stay Updated Section -->
+    <div class="footer-section.newsletter" style="background: rgba(255, 255, 255, 0.2); border-radius: 20px;  backdrop-filter: blur(10px); padding: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  transition: transform 0.3s ease, box-shadow 0.3s ease; height:10rem">
+      <h3 style="font-size: 18px; margin-bottom: 20px; text-align: center; color: #ffffff;">Stay Updated</h3>
+      <p style="text-align: center; font-size: 14px; line-height: 1.8; margin-bottom: 20px;">
+        Subscribe to our newsletter for the latest updates and tips on mastering data structures and algorithms.
+      </p>
+      <form action="#" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; gap: 10px;">
+        <input type="email" placeholder="Your Email Address" required style="flex: 1; padding: 10px; font-size: 14px; border: 1px solid #dee2e6; border-radius: 4px;">
+        <button type="submit" style="padding: 10px 20px; font-size: 14px; background-color: #222; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='rgba(255, 255, 255,0.8)'; this.style.color= 'black'"
+        onmouseout="this.style.backgroundColor='#222'; this.style.color= 'white'">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  
+    <!-- Social Links -->
+    <div class="social-links" style="text-align: center; margin-top: 40px; animation: fadeInUp 2.5s;">
+      <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px;">
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#13d8ff';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#222';" onmouseout="this.style.color='#ffffff';"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#13d8ff';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#" style="color: #fff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#e84a3cee';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+    </div>
+  
+    <!-- Footer Bottom -->
+    <div class="footer-bottom" style="text-align: center; margin-top: 20px; padding-top: 20px; background: none; color: #ffffff; animation: fadeInUp 3s;">
+      <p style="margin: 0; font-size: 14px;">
+    &copy; <span id="currentYear"></span> DSA Problem Solutions. All rights reserved.
+  </p>
+    </div>
+  </footer>
+  
+  <script>
+    // Set the current year dynamically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
+    <script src="scrollscript.js"></script>
+    <script src="audio.js"></script>
+    <script>
+      document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+  });
+      // Get the button element
+      const scrollBtn = document.getElementById('scrollBtn');
+  
+      // Show the button when the user scrolls down 100px from the top
+      window.onscroll = function () {
+        if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      };
+  
+      // Scroll to the top of the page when the button is clicked
+      scrollBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      };
+  
+    </script>
+</body>
+
+</html>

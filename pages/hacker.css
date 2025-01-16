@@ -12,6 +12,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
+
 .logo {
     display: flex;
     align-items: center;
@@ -41,7 +43,7 @@ header {
 }
 
 header h1 {
-    margin-left: 30rem;
+    margin-left: 22rem;
     font-size: 2.5rem;
     font-weight: 600;
 }
@@ -49,7 +51,7 @@ header h1 {
 .container {
     display: flex;
     flex: 1;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 60px); /* Adjust based on your header height */
 }
 
 .problems-list {
@@ -299,7 +301,7 @@ header h1{
     .ques-form input,
     .ques-form select,
     .ques-form textarea {
-        background-color: white;
+        background-color: #7e7e7e;
         border-color: #4a5568;
         color: #e2e8f0;
     }
@@ -316,6 +318,7 @@ header h1{
     }
   }  
 
+
   #cursor{
     height: 20px;
       width:20px;
@@ -329,33 +332,3 @@ header h1{
       justify-content: center;
       z-index: 10;
   }
-
-/* question display */
-.card-content p:first-of-type {
-  font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
-  background: linear-gradient(145deg, #f0f4f7, #d8e0e5);
-  color: #333;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-.card-content p:first-of-type:hover {
-  background: linear-gradient(145deg, #e1ecf4, #c0d3e2);
-  border-color: #a0b9cc;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Adding a subtle transition to smooth the effect */
-.card-content p:first-of-type {
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}

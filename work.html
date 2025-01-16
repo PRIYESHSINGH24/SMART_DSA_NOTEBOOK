@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Work With Us - DSA Problem Solutions" />
+  <meta property="og:image" content="/img/logo2.png" />
+  <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="/img/logo2.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Work With Us - DSA Problem Solutions</title>
+  <style>
+
+ /* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.navbar {
+  background-color: #11cb2a;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 120px;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.navbar .nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #11cb2a, #19be50);
+  color: white;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+}
+
+/* Content Section */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Work With Us Content */
+.work-with-us-content {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.work-with-us-content h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Job Openings */
+.job-openings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.job-card {
+  background-color: white;
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.job-card h3 {
+  color: #11cb2a;
+  margin-bottom: 14px;
+}
+
+.job-card p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Apply Now Button */
+.apply-btn {
+  background-color: #11cb2a;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.apply-btn:hover {
+  background-color: #19be50;
+}
+
+/* Contact Section */
+.get-in-touch {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.get-in-touch h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background-color: #11cb2a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.contact-form button:hover {
+  background-color: #19be50;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to right, #11cb2a, #19be50);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer .footer-logo {
+  margin-bottom: 20px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#successMessage {
+  display: none;
+  background-color: #dff0d8;
+  color: #3c763d;
+  padding: 10px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./img/logo2.png" alt="Logo" />
+      </div>
+      <button class="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="black">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#platforms">Platforms</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#login">Log In</a></li>
+        <li><a href="#Signup">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <header class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Join Our Team</h1>
+        <p class="hero-subtitle">We’re looking for passionate individuals to help us make an impact on data structure and algorithm learning.</p>
+      </div>
+    </header>
+
+    <section class="container">
+      <div class="work-with-us-content">
+        <h2>Why Work With Us?</h2>
+        <p>
+          At DSA Problem Solutions, we believe in fostering an environment where creativity, collaboration, and continuous learning thrive. Our team is made up of talented individuals from diverse backgrounds who are dedicated to creating a platform that helps learners master data structures and algorithms.
+        </p>
+        <p>
+          Join us to work on exciting projects, contribute to open-source initiatives, and make a real difference in the tech community.
+        </p>
+      </div>
+
+      <div class="job-openings">
+        <h2>Current Job Openings</h2>
+        <div class="job-card">
+          <h3>Frontend Developer</h3>
+          <p>Location: Remote | Full-time</p>
+          <p>We are looking for a passionate Frontend Developer with experience in modern web technologies like HTML5, CSS3, JavaScript, and frameworks such as React or Vue.js. You’ll be building user interfaces that are engaging and scalable.</p>
+          <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+        <div class="job-card">
+          <h3>Backend Developer</h3>
+          <p>Location: Remote | Full-time</p>
+          <p>Looking for a Backend Developer with expertise in building robust APIs using Node.js, Python, or Ruby. You’ll work on our server-side architecture to ensure smooth data processing and integration.</p>
+          <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+        <div class="job-card">
+          <h3>Content Writer</h3>
+          <p>Location: Remote | Part-time</p>
+          <p>We need a Content Writer who can create high-quality technical content related to DSA, tutorials, blogs, and articles that help our community stay updated and engaged.</p>
+          <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+      </div>
+
+      <div class="get-in-touch">
+        <h2>Interested? Get in Touch!</h2>
+        <p>If you're excited about the opportunity to work with us and make an impact, feel free to reach out. You can connect with us through the form below or directly email us at <a href="mailto:careers@dsa-solutions.com">careers@dsa-solutions.com</a>.</p>
+        <form action="#" method="POST" class="contact-form">
+          <input type="text" placeholder="Your Full Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <footer style="background: linear-gradient(to right, #11cb2a, #19be50);; color: #ffffff; padding: 40px 20px; font-family: 'Arial', sans-serif; overflow: hidden;">
+    <!-- Footer Container -->
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
+      
+      <!-- Left Section (Logo and Description) -->
+      <div class="footer-left" style="flex: 2; min-width: 300px;">
+        <!-- Logo -->
+        <div class="footer-logo" style="margin-bottom: 20px; animation: fadeInLeft 1s;">
+          <div style="background-color: #8cc152; padding: 20px; border-radius: 8px; display: inline-block;">
+            <h1 style="margin: 0; font-size: 36px; font-weight: bold;">DSA</h1>
+          </div>
+        </div>
+        <!-- Description -->
+        <p style="font-size: 16px; line-height: 1.6; animation: fadeInLeft 1.5s;">
+          DSA problem solutions involve step-by-step methods to solve data structure and algorithm challenges efficiently. 
+          They include understanding the problem, selecting the right approach, implementing optimized code, and analyzing 
+          time and space complexity for performance.
+        </p>
+      </div>
+  
+      <!-- Quick Links Section -->
+      <div class="footer-section services" >
+          <h2 style="font-size: 18px;
+           margin-bottom: 10px; 
+           transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Quick Links</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="about.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Who We Are</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Blog</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Work With Us</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Investor Relations</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Contact Us</a></li>
+          </ul>
+      </div>
+        <div class="footer-section services" >
+          <h2 style="font-size: 18px;
+           margin-bottom: 10px; 
+           transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">DSA Problem Solutions</h2>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="about.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Who We Are</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Blog</a></li>
+            <li><a href="work.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Work With Us</a></li>
+            <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Investor Relations</a></li>
+            <li><a href="contact.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Contact Us</a></li>
+          </ul>
+        </div>
+  
+      <!-- Learn More Section -->
+       <div class="footer-section services" >
+          <h2 style="font-size: 18px;
+           margin-bottom: 10px; 
+           transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Learn More</h2>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="privacy.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Privacy Policy</a></li>
+            <li><a href="security.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Security</a></li>
+            <li><a href="terms.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Terms of Service</a></li>
+            <li><a href="contributors.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
+                onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Our Contributors</a></li>
+          </ul>
+      </div>
+    </div>
+  
+    <!-- Stay Updated Section -->
+    <div class="footer-section.newsletter" style="background: rgba(255, 255, 255, 0.2); border-radius: 20px;  backdrop-filter: blur(10px); padding: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  transition: transform 0.3s ease, box-shadow 0.3s ease;">
+      <h3 style="font-size: 18px; margin-bottom: 20px; text-align: center; color: #ffffff;">Stay Updated</h3>
+      <p style="text-align: center; font-size: 14px; line-height: 1.8; margin-bottom: 20px;">
+        Subscribe to our newsletter for the latest updates and tips on mastering data structures and algorithms.
+      </p>
+      <form action="#" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; gap: 10px;">
+        <input type="email" placeholder="Your Email Address" required style="flex: 1; padding: 10px; font-size: 14px; border: 1px solid #dee2e6; border-radius: 4px;">
+        <button type="submit" style="padding: 10px 20px; font-size: 14px; background-color: #6c757d; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  
+    <!-- Social Links -->
+    <div class="social-links" style="text-align: center; margin-top: 40px; animation: fadeInUp 2.5s;">
+      <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px;">
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+    </div>
+  
+    <!-- Footer Bottom -->
+    <div class="footer-bottom" style="text-align: center; margin-top: 20px; padding-top: 20px; background: none; color: #ffffff; animation: fadeInUp 3s;">
+      <p style="margin: 0; font-size: 14px;">&copy; 2025 DSA Problem Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
+    <script src="scrollscript.js"></script>
+    <script src="audio.js"></script>
+    <script>
+      document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+  });
+      // Get the button element
+      const scrollBtn = document.getElementById('scrollBtn');
+  
+      // Show the button when the user scrolls down 100px from the top
+      window.onscroll = function () {
+        if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      };
+  
+      // Scroll to the top of the page when the button is clicked
+      scrollBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      };
+
+
+      document.getElementById('jobApplicationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // You can add form validation here if needed
+
+  // Show success message
+  document.getElementById('successMessage').classList.remove('hidden');
+  
+  // Optional: Clear the form fields after submission
+  document.getElementById('jobApplicationForm').reset();
+});
+
+  
+    </script>
+  
+  </body>
+  
+  </html>

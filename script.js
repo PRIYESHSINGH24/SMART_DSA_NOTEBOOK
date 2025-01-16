@@ -36,5 +36,22 @@ body.addEventListener("mousemove", function (e) {
       x: e.x, y: e.y
    })
 })
- 
 
+const scrollButton = document.getElementById('scrollButton');
+
+        // Show the button when scrolled down 200px
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollButton.classList.add('show');
+            } else {
+                scrollButton.classList.remove('show');
+            }
+        });
+
+        // Scroll to top functionality
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });

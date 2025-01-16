@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -95,6 +100,27 @@
         font-size: 1.6em;
       }
     }
+    #scrollBtn {
+    position: fixed;
+    bottom: 120px; /* Place closer to the bottom */
+    right: 35px;  /* Place closer to the right */
+    display: none; /* Initially hidden */
+    background-color: #158746;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure visibility above other elements */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollBtn:hover {
+    background-color: #000; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge */
+}
   </style>
 </head>
 
@@ -152,6 +178,11 @@
     <p>If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:support@DSAsolutionpaltform.com">support@DSAsolutionpaltform.com</a>.</p>
      
 </div>
+
+<!-- Top scroll button -->
+<button id="scrollBtn" title="Go to top">
+  <i class="fa-solid fa-arrow-up fa-lg"></i>
+</button>
 
   <footer>
     <div class="footer-content"
@@ -261,6 +292,28 @@
 <script src="audio.js"></script>
 <script>
 
+
+</script>
+<script>
+  // Get the button element
+  const scrollBtn = document.getElementById('scrollBtn');
+
+  // Show the button when the user scrolls down 100px from the top
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+  };
+
+  // Scroll to the top of the page when the button is clicked
+  scrollBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+  };
 
 </script>
 
