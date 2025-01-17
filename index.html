@@ -28,11 +28,13 @@
   />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
   <style>
      #scrollBtn {
     position: fixed;
     bottom: 120px; /* Place closer to the bottom */
-    right: 35px;  /* Place closer to the right */
+    right: 33px;  /* Place closer to the right */
     display: none; /* Initially hidden */
     background-color: #158746;
     color: white;
@@ -51,12 +53,12 @@
     transform: scale(1.2); /* Slightly enlarge */
 }
   </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+
 </head>
 
+<body>
 <div id="cursor"></div>
-<header>
+ </header>
   <nav class="navbar">
     <div class="logo">
       <img src="./img/logo2.png" alt="Logo" />
@@ -89,12 +91,12 @@
       <h1 class="hero-title">Smart DSA Hub </h1>
       <p class="hero-subtitle">Your ultimate coding Notebook! Pick your favorite platform and sharpen your skills.</p>
       <div class="hero-buttons">
-        <a href="pages/leetcode.html"><button class="platform-btn">LeetCode</button></a>        
-        <a href="pages/hackerrank.html"><button class="platform-btn">HackerRank</button></a> 
-        <a href="#"><button class="platform-btn">Codeforces</button></a> 
-        <a href="pages/geeksforgeeks.html"><button class="platform-btn">GeeksforGeeks</button></a>
-        <a href="pages/codechef3.html"><button class="platform-btn">codechef</button></a>
-        <a href="pages/code360bycn.html"><button class="platform-btn">Code 360 by Coding Ninjas</button></a>
+        <a href="leetcode.html"><button class="platform-btn">LeetCode</button></a>        
+        <a href="hackerrank.html"><button class="platform-btn">HackerRank</button></a> 
+        <a href="codeforce.html"><button class="platform-btn">Codeforces</button></a> 
+        <a href="geeksforgeeks.html"><button class="platform-btn">GeeksforGeeks</button></a>
+        <a href="codechef3.html"><button class="platform-btn">codechef</button></a>
+        <a href="code360bycn.html"><button class="platform-btn">Code 360 by Coding Ninjas</button></a>
       </div>
     </div>
     <div class="hero-image">
@@ -104,39 +106,47 @@
   
 </div>
 
-    <!--scroll button-->
-    <button id="scrollButton" title="Go to top">
+    <!-- scroll button -->
+    <!-- <button id="scrollButton" title="Go to top">
       <i class="fa-solid fa-arrow-up fa-xl"></i>
-    </button>
+    </button> -->
 
 </div>
     <section class="container">
+
+      <!-- card 1 -->
       <div class="platform-card">
-        <img src="img/geeksfor.png" alt="GeeksforGeeks Logo" />
-        <h2>GeeksforGeeks</h2>
-        <a href="pages/geeksforgeeks.html">GeeksforGeeks</a>
+        <img src="img/HackerRank.png" alt="Code 360 by CN Logo" />
+        <h2>HackerRank</h2>
+        <a href="pages/hackerrank.html">HackerRank</a>
       </div>
+
+      <!-- card 2 -->
       <div class="platform-card">
         <img src="img/codechef.png" alt="CodeChef Logo" />
         <h2>CodeChef</h2>
         <a href="pages/codechef3.html">CodeChef</a>
       </div>
+   
+      <!-- card 3 -->
       <div class="platform-card">
         <img src="img/leetcode.png" alt="LeetCode Logo" />
         <h2>LeetCode</h2>
         <a href="pages/leetcode.html">Leetcode</a>
       </div>
-      
+ 
+      <!-- card 4 -->
       <div class="platform-card">
         <img src="img/new-cn-logo.png" alt="Code 360 by CN Logo" />
         <h2>Code 360 by Coding Ninjas</h2>
         <a href="pages/code360bycn.html">Code 360 by Coding Ninjas</a>
       </div>
 
+      <!-- card 5 -->
       <div class="platform-card">
-        <img src="img/HackerRank.png" alt="Code 360 by CN Logo" />
-        <h2>HackerRank</h2>
-        <a href="pages/hackerrank.html">HackerRank</a>
+        <img src="img/geeksfor.png" alt="GeeksforGeeks Logo" />
+        <h2>GeeksforGeeks</h2>
+        <a href="pages/geeksforgeeks.html">GeeksforGeeks</a>
       </div>
 
     </section>
@@ -181,7 +191,7 @@
               onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
               onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Blog</a></li>
           <li><a href="work.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
+              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"></a></li>
 
 
           <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
