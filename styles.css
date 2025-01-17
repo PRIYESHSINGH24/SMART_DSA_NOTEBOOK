@@ -111,7 +111,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 2.5rem;
-  /* margin: -20px; */
+  margin-top: 5.3rem;
   background: linear-gradient(to right, #11cb2a, #19be50);
   color: white;
   font-family: 'Roboto', sans-serif;
@@ -825,4 +825,21 @@ footer form button span {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     background-color: #eaf3ff;
+}
+
+@media (max-width:770px){
+  .help-boxes{
+    grid-template-columns: 1fr;
+  }
+
+  .help-box h4{
+    font-size: 1.1rem;
+  }
+
+  .help-box p{
+    font-size: 0.9em;
+  }
+
+
+
 }
