@@ -10,6 +10,28 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="navbar.css">
   <style>
+    #scrollBtn {
+    position: fixed;
+    bottom: 120px; /* Place closer to the bottom */
+    right: 33px;  /* Place closer to the right */
+    display: none; /* Initially hidden */
+    background-color: #158746;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure visibility above other elements */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollBtn:hover {
+    background-color: #000; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge */
+}
+
     /* General Styles */
 body {
     margin: 0;
@@ -149,8 +171,8 @@ footer p {
         <li><a href="platform.html" class="active">Platforms</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="Login1.html">Log In</a></li>
-        <li><a href="Signup2.html">Sign Up</a></li>
+        <li><a href="pages/Login.html">Log In</a></li>
+        <li><a href="pages/SignUp.html">Sign Up</a></li>
       </ul>
     </nav>
   </header>
@@ -187,6 +209,11 @@ footer p {
       </div>
     </section>
   </main>
+
+  <!-- Top scroll button -->
+<button id="scrollBtn" title="Go to top">
+  <i class="fa-solid fa-arrow-up fa-lg"></i>
+</button>
 
   <footer style="background: linear-gradient(to right,  #0e2511, #19be50);; color: #ffffff; padding: 40px 20px; font-family: 'Arial', sans-serif; overflow: hidden;">
     <!-- Footer Container -->
@@ -323,29 +350,25 @@ footer p {
     <script src="scrollscript.js"></script>
     <script src="audio.js"></script>
     <script>
-      document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.toggle('active');
-  });
-      // Get the button element
-      const scrollBtn = document.getElementById('scrollBtn');
+      // Get the button
+      const scrollBtn = document.getElementById("scrollBtn");
   
-      // Show the button when the user scrolls down 100px from the top
+      // Show/hide the button based on scroll position
       window.onscroll = function () {
-        if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
           scrollBtn.style.display = "block";
         } else {
           scrollBtn.style.display = "none";
         }
       };
   
-      // Scroll to the top of the page when the button is clicked
-      scrollBtn.onclick = function () {
+      // Scroll to the top when the button is clicked
+      scrollBtn.addEventListener("click", function () {
         window.scrollTo({
           top: 0,
-          behavior: "smooth"
+          behavior: "smooth", // Smooth scrolling
         });
-      };
-  
+      });
     </script>
 </body>
 
