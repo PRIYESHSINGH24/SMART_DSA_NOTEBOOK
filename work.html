@@ -30,36 +30,181 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+/* Navbar Styles */
 .navbar {
-  background-color: #11cb2a;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+      background: rgb(250, 249, 249);
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-radius: 5px;
+      border: 5px rgb(173, 186, 74) solid;
+    }
 
-.navbar .logo img {
-  width: 120px;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
+    .logo img {
+      height: 40px;
+      width: 5rem;
+      transition: transform 0.3s ease;
+    }
 
-.navbar .nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  padding: 8px 12px;
-  border-radius: 4px;
-}
+    .logo img:hover {
+      transform: scale(1.05);
+    }
 
-.navbar .nav-links li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
+    .logo {
+      padding-top: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links li a {
+      /* color: #000; */
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: background-color 0.3s ease-in-out;
+      font-size: 18px;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #007bff;
+    }
+
+    /* Underline animation for nav links */
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #007bff;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Active link style */
+    .nav-links a.active {
+      color: #007bff;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Mobile menu button - Hidden by default */
+    .mobile-menu-btn {
+      color: #000;
+      display: none;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        /* Hide by default on mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Show menu when active */
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 0.75rem 0;
+      }
+
+      .nav-links a::after {
+        display: none;
+        /* Remove hover animation on mobile */
+      }
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+
+      .nav-links a {
+        color: #f9fafd;
+      }
+
+      .nav-links a:hover {
+        color: #60a5fa;
+      }
+
+      .nav-links a::after {
+        background-color: #60a5fa;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          background: rgba(174, 237, 158, 0.98);
+        }
+      }
+    }
+
+
 
 /* Hero Section */
 .hero-section {
@@ -242,8 +387,8 @@ footer a:hover {
         <li><a href="#platforms">Platforms</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="#login">Log In</a></li>
-        <li><a href="#Signup">Sign Up</a></li>
+        <li><a href="pages/Login.html">Log In</a></li>
+        <li><a href="pages/SignUp.html">Sign Up</a></li>
       </ul>
     </nav>
   </header>

@@ -1,63 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background: linear-gradient(to right, #e3ffe7, #d9e7ff);
-      color: #333;
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    /* Navbar Styles */
-    .navbar {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 1rem 2rem;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-      border-radius: 5px;
-      border: 5px rgb(173, 186, 74) solid;
-    }
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #e3ffe7, #d9e7ff);
+    color: #333;
+  }
 
-    .logo {
-      display: flex;
-      align-items: center;
-    }
+  /* Navbar Styles */
+  .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    border: 5px rgb(173, 186, 74) solid;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
 
     .logo img {
       height: 50px;
@@ -65,493 +53,507 @@
       transition: transform 0.3s ease;
     }
 
-    .logo img:hover {
-      transform: scale(1.05);
+  .logo img:hover {
+    transform: scale(1.05);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    position: relative;
+  }
+
+  .nav-links a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #007bff;
+  }
+
+  /* Underline animation for nav links */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  /* Active link style */
+  .nav-links a.active {
+    color: #007bff;
+  }
+
+  .nav-links a.active::after {
+    width: 100%;
+  }
+
+  /* Mobile menu button - Hidden by default */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+    }
+
+    .mobile-menu-btn {
+      display: block;
     }
 
     .nav-links {
+      display: none;
+      /* Hide by default on mobile */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show menu when active */
+    .nav-links.active {
       display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
     }
 
     .nav-links li {
-      position: relative;
+      width: 100%;
+      text-align: center;
     }
 
     .nav-links a {
-      color: #000;
+      display: block;
+      padding: 0.75rem 0;
+    }
+
+    .nav-links a::after {
+      display: none;
+      /* Remove hover animation on mobile */
+    }
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+
+
+    .nav-links a {
+      color: #0e0f0f;
       font-weight: bold;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease;
     }
 
     .nav-links a:hover {
-      color: #007bff;
+      color: #60a5fa;
     }
 
-    /* Underline animation for nav links */
     .nav-links a::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #007bff;
-      transition: width 0.3s ease;
+      background-color: #60a5fa;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* Active link style */
-    .nav-links a.active {
-      color: #007bff;
-    }
-
-    .nav-links a.active::after {
-      width: 100%;
-    }
-
-    /* Mobile menu button - Hidden by default */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      padding: 0.5rem;
-      cursor: pointer;
-
-    }
-
-    /* Responsive Design */
     @media (max-width: 768px) {
-      .navbar {
-        padding: 1rem;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
       .nav-links {
-        display: none; /* Hide by default on mobile */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
+        background: rgba(174, 237, 158, 0.98);
 
-      /* Show menu when active */
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links li {
-        width: 100%;
-        text-align: center;
-      }
-
-      .nav-links a {
-        display: block;
-        padding: 0.75rem 0;
-      }
-
-      .nav-links a::after {
-        display: none; /* Remove hover animation on mobile */
       }
     }
+  }
 
-    /* Dark mode support */
-    @media (prefers-color-scheme: dark) {
+  /* Add smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
 
+  /* Optional: Adjust for fixed header when scrolling to anchor links */
+  :target {
+    scroll-margin-top: 80px;
+  }
 
-      .nav-links a {
-        color: #0e0f0f;
-        font-weight: bold;
-      }
+  .content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
 
-      .nav-links a:hover {
-        color: #60a5fa;
-      }
+  .contact-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
 
-      .nav-links a::after {
-        background-color: #60a5fa;
-      }
+  .header-content {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
 
-      @media (max-width: 768px) {
-        .nav-links {
-          background: rgba(174, 237, 158, 0.98);
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #239d21 0%, #04ff00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
 
-        }
-      }
+  .header-content p {
+    color: #64748b;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-info {
+    background: #f8faff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .contact-info:hover {
+    transform: translateY(-5px);
+  }
+
+  .contact-info i {
+    font-size: 1.5rem;
+    color: #239d21;
+    margin-bottom: 1rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+  }
+
+  .contact-info p {
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+
+  #contact-form {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    position: relative;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8faff;
+    font-size: 1rem;
+    color: #1e293b;
+    transition: all 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #239d21;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  }
+
+  textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  button {
+    background: linear-gradient(135deg, #239d21 0%, #07ff02 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(37, 99, 235, 0.25);
+  }
+
+  #popup-message {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #239d21;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(150%);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  #popup-message.show {
+    transform: translateY(0);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Loading animation */
+  .loading {
+    position: relative;
+    pointer-events: none;
+  }
+
+  .loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
     }
+  }
 
-    /* Add smooth scroll behavior */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Optional: Adjust for fixed header when scrolling to anchor links */
-    :target {
-      scroll-margin-top: 80px;
-    }
-
+  /* Responsive Design */
+  @media (max-width: 768px) {
     .content-wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-        }
+      padding: 2rem 1rem;
+    }
 
-        .contact-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 24px;
-            padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
+    .contact-section {
+      padding: 2rem;
+      border-radius: 16px;
+    }
 
-        .header-content {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #239d21 0%, #04ff00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-        }
+    h1 {
+      font-size: 2rem;
+    }
 
-        .header-content p {
-            color: #64748b;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+    .header-content p {
+      font-size: 1rem;
+    }
+  }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
+  footer {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #e0e0e0;
+  }
 
-        .contact-info {
-            background: #f8faff;
-            padding: 1.5rem;
-            border-radius: 16px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: white;
+    color: black;
 
-        .contact-info:hover {
-            transform: translateY(-5px);
-        }
+  }
 
-        .contact-info i {
-            font-size: 1.5rem;
-            color: #239d21;
-            margin-bottom: 1rem;
-        }
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
 
-        .contact-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #1e293b;
-        }
+  .footer-section img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
 
-        .contact-info p {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
 
-        #contact-form {
-            display: grid;
-            gap: 1.5rem;
-        }
+  .footer-section ul li {
+    margin: 5px 0;
+  }
 
-        .form-group {
-            position: relative;
-        }
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+  }
 
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #1e293b;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
+  .footer-section ul li a:hover {
+    color: #239d21;
+  }
 
-        input, textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            background: #f8faff;
-            font-size: 1rem;
-            color: #1e293b;
-            transition: all 0.3s ease;
-        }
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #555;
+  }
 
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #239d21;
-            background: #fff;
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-        }
+  #about {
+    margin: 40px;
+    text-align: justify"
 
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
+  }
 
-        button {
-            background: linear-gradient(135deg, #239d21 0%, #07ff02 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
-        }
+  .about {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
 
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 12px rgba(37, 99, 235, 0.25);
-        }
+  }
 
-        #popup-message {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #239d21;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(150%);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+  .DSA-footer-logo {
+    width: 100px;
+    margin-top: 40px
+  }
 
-        #popup-message.show {
-            transform: translateY(0);
-        }
+  .social-icons {
+    margin-left: 15%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px
+  }
 
-        .hidden {
-            display: none;
-        }
+  @media (max-width: 770px) {
+    .content-wrapper {
+      max-width: 575px;
+    }
 
-        /* Loading animation */
-        .loading {
-            position: relative;
-            pointer-events: none;
-        }
+    .social-icons {
+      margin-left: 25%;
+    }
+  }
 
-        .loading::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            top: 50%;
-            left: 50%;
-            margin: -10px 0 0 -10px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
-        }
+  @media (max-width: 430px) {
+    .content-wrapper {
+      max-width: 360px;
+    }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+  }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content-wrapper {
-                padding: 2rem 1rem;
-            }
+  @media (max-width: 380px) {
+    .content-wrapper {
+      max-width: 310px;
+    }
+  }
 
-            .contact-section {
-                padding: 2rem;
-                border-radius: 16px;
-            }
+  @media (max-width: 321px) {
+    .content-wrapper {
+      max-width: 285px;
+    }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+    #about {
+      margin-left: 10px;
+      margin-right: 0;
+      text-align: left;
+    }
 
-            h1 {
-                font-size: 2rem;
-            }
-
-            .header-content p {
-                font-size: 1rem;
-            }
-        }
-
-    footer {
-      background: #fff;
-      padding: 20px;
-      text-align: center;
-      border-top: 2px solid #e0e0e0;
+    .about {
+      min-width: 220px
     }
 
     .footer-content {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-          justify-content: space-between;
-          align-items: flex-start;
-          padding: 20px;
-          background-color: white;
-          color: black;
-
-    }
-
-    .footer-section {
-      flex: 1;
-      min-width: 200px;
-    }
-
-    .footer-section img {
-      width: 100px;
-      margin-bottom: 10px;
-    }
-
-    .footer-section ul {
-      list-style: none;
       padding: 0;
     }
 
-    .footer-section ul li {
-      margin: 5px 0;
+    footer {
+      padding: 0 5px;
     }
 
-    .footer-section ul li a {
-      text-decoration: none;
-      color: #333;
-      transition: color 0.3s;
+    .footer-section img {
+      width: 50px
     }
 
-    .footer-section ul li a:hover {
-      color: #239d21;
+    .social-icons {
+      margin-left: 21%;
     }
+  }
 
-    .footer-bottom {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    #about{
-      margin: 40px; text-align: justify"
-    }
-
-    .about{
-      flex: 2;
-      min-width: 300px;
-      display: flex;
-      align-items: flex-start;
-      margin: 10px;
-      transition: transform 0.3s ease-in-out;
-
-    }
-
-    .DSA-footer-logo{
-       width: 100px; margin-top: 40px
-    }
-
-    .social-icons{
-      margin-left: 15%;
-       list-style: none; padding: 0; display: flex; gap: 10px
-    }
-    @media (max-width: 770px) {
-      .content-wrapper {
-        max-width: 575px;
-      }
-      .social-icons{
-        margin-left: 25%;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .content-wrapper {
-        max-width: 360px;
-      }
-
-    }
-
-    @media (max-width: 380px) {
-      .content-wrapper {
-        max-width: 310px;
-      }
-    }
-
-    @media (max-width: 321px) {
-      .content-wrapper {
-        max-width: 285px;
-      }
-
-      #about{
-        margin-left: 10px;
-        margin-right: 0;
-        text-align: left;
-      }
-
-      .about{
-        min-width: 220px
-      }
-
-      .footer-content{
-        padding: 0;
-      }
-
-      footer{
-        padding: 0 5px;
-      }
-
-      .footer-section img{
-        width: 50px
-      }
-
-      .social-icons{
-        margin-left: 21%;
-      }
-    }
-
-    #cursor{
-      height: 20px;
-        width:20px;
-        background-color: rgb(125, 239, 11,0.5);
-        border-radius: 50%;
-        position: fixed;
-        font-size: 7px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-    }
-  </style>
+  #cursor {
+    height: 20px;
+    width: 20px;
+    background-color: rgb(125, 239, 11, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    font-size: 7px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+</style>
 
   <body>
     <div id="cursor"></div>
@@ -606,39 +608,41 @@
         <div class="help-box">
             <h4>Code Explanation and Debugging</h4>
             <p>Struggling with a specific error? Paste your code here and get a detailed explanation or fix.</p>
-        </div>
-        <div class="help-box">
+          </div>
+          <div class="help-box">
             <h4>Algorithm Design and Optimization</h4>
             <p>Need help optimizing your algorithm? We can help you improve efficiency and reduce complexity.</p>
-        </div>
-        <div class="help-box">
+          </div>
+          <div class="help-box">
             <h4>Code Review and Best Practices</h4>
-            <p>Looking for feedback on your code? Get a thorough review to ensure it’s clean, efficient, and maintainable.</p>
-        </div>
-        <div class="help-box">
+            <p>Looking for feedback on your code? Get a thorough review to ensure it’s clean, efficient, and
+              maintainable.</p>
+          </div>
+          <div class="help-box">
             <h4>Learning Resources and Guidance</h4>
-            <p>Want to learn something new? We can recommend resources and structured learning paths for your coding journey.</p>
+            <p>Want to learn something new? We can recommend resources and structured learning paths for your coding
+              journey.</p>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-        <div class="contact-grid">
-          <div class="contact-info">
-            <i>📍</i>
-            <h3>Our Location</h3>
-            <p>123 Business Avenue<br />New York, NY 10001</p>
-          </div>
-          <div class="contact-info">
-            <i>📧</i>
-            <h3>Email Us</h3>
-            <p>contact@example.com<br />support@example.com</p>
-          </div>
-          <div class="contact-info">
-            <i>📱</i>
-            <h3>Call Us</h3>
-            <p>+1 (555) 123-4567<br />Mon - Fri, 9am - 6pm</p>
-          </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <i>📍</i>
+          <h3>Our Location</h3>
+          <p>123 Business Avenue<br />New York, NY 10001</p>
         </div>
+        <div class="contact-info">
+          <i>📧</i>
+          <h3>Email Us</h3>
+          <p>contact@example.com<br />support@example.com</p>
+        </div>
+        <div class="contact-info">
+          <i>📱</i>
+          <h3>Call Us</h3>
+          <p>+1 (555) 123-4567<br />Mon - Fri, 9am - 6pm</p>
+        </div>
+      </div>
 
         <form id="contact-form" onsubmit="handleSubmit(event)">
           <div class="form-group">
@@ -678,33 +682,37 @@
   </main>
 
 
-  <footer style="background: linear-gradient(to right, #11cb2a, #19be50);; color: #ffffff; padding: 40px 20px; font-family: 'Arial', sans-serif; overflow: hidden;">
-  <!-- Footer Container -->
-  <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
-    
-    <!-- Left Section (Logo and Description) -->
-    <div class="footer-left" style="flex: 2; min-width: 300px; display:flex; gap: 30px">
-      <!-- Logo -->
-      <div class="footer-logo" style="margin-bottom: 20px; animation: fadeInLeft 1s;">
-        <div style="background-color: #8cc152; padding: 20px; border-radius: 8px; display: inline-block;">
-          <h1 style="margin: 0; font-size: 36px; font-weight: bold;">DSA</h1>
+  <footer
+    style="background: linear-gradient(to right, #11cb2a, #19be50);; color: #ffffff; padding: 40px 20px; font-family: 'Arial', sans-serif; overflow: hidden;">
+    <!-- Footer Container -->
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
 
+      <!-- Left Section (Logo and Description) -->
+      <div class="footer-left" style="flex: 2; min-width: 300px; display:flex; gap: 30px">
+        <!-- Logo -->
+        <div class="footer-logo" style="margin-bottom: 20px; animation: fadeInLeft 1s;">
+          <div style="background-color: #8cc152; padding: 20px; border-radius: 8px; display: inline-block;">
+            <h1 style="margin: 0; font-size: 36px; font-weight: bold;">DSA</h1>
+
+          </div>
         </div>
+        <!-- Description -->
+        <p style="font-size: 16px; line-height: 1.6; animation: fadeInLeft 1.5s; text-align: -webkit-left;">
+          DSA problem solutions involve step-by-step methods to solve data structure and algorithm challenges
+          efficiently.
+          They include understanding the problem, selecting the right approach, implementing optimized code, and
+          analyzing
+          time and space complexity for performance.
+        </p>
       </div>
-      <!-- Description -->
-      <p style="font-size: 16px; line-height: 1.6; animation: fadeInLeft 1.5s; text-align: -webkit-left;">
-        DSA problem solutions involve step-by-step methods to solve data structure and algorithm challenges efficiently. 
-        They include understanding the problem, selecting the right approach, implementing optimized code, and analyzing 
-        time and space complexity for performance.
-      </p>
-    </div>
 
-    <!-- Quick Links Section -->
-    <div class="footer-section services" >
+      <!-- Quick Links Section -->
+      <div class="footer-section services">
         <h2 style="font-size: 18px;
          margin-bottom: 10px; 
-         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Quick Links</h2>
-      <ul style="list-style: none; padding: 0;">
+         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">
+          Quick Links</h2>
+        <ul style="list-style: none; padding: 0;">
           <li><a href="about.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
               onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
               onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Who We Are</a></li>
@@ -721,11 +729,12 @@
               onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
               onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Contact Us</a></li>
         </ul>
-    </div>
-      <div class="footer-section services" >
+      </div>
+      <div class="footer-section services">
         <h2 style="font-size: 18px;
          margin-bottom: 10px; 
-         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">DSA Problem Solutions</h2>
+         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">
+          DSA Problem Solutions</h2>
         <ul style="list-style: none; padding: 0;">
           <li><a href="about.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
               onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
@@ -745,11 +754,12 @@
         </ul>
       </div>
 
-    <!-- Learn More Section -->
-     <div class="footer-section services" >
+      <!-- Learn More Section -->
+      <div class="footer-section services">
         <h2 style="font-size: 18px;
          margin-bottom: 10px; 
-         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Learn More</h2>
+         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">
+          Learn More</h2>
         <ul style="list-style: none; padding: 0;">
           <li><a href="privacy.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
               onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
@@ -764,104 +774,114 @@
               onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
               onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Our Contributors</a></li>
         </ul>
+      </div>
     </div>
-  </div>
 
-  <!-- Stay Updated Section -->
-  <div class="footer-section.newsletter" style="background: rgba(255, 255, 255, 0.2); border-radius: 20px;  backdrop-filter: blur(10px); padding: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  transition: transform 0.3s ease, box-shadow 0.3s ease;">
-    <h3 style="font-size: 18px; margin-bottom: 20px; text-align: center; color: #ffffff;">Stay Updated</h3>
-    <p style="text-align: center; font-size: 14px; line-height: 1.8; margin-bottom: 20px;">
-      Subscribe to our newsletter for the latest updates and tips on mastering data structures and algorithms.
-    </p>
-    <form action="#" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; gap: 10px;">
-      <input type="email" placeholder="Your Email Address" required style="flex: 1; padding: 10px; font-size: 14px; border: 1px solid #dee2e6; border-radius: 4px;">
-      <button type="submit" style="padding: 10px 20px; font-size: 14px; background-color: #6c757d; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
-        Subscribe
-      </button>
-    </form>
-  </div>
+    <!-- Stay Updated Section -->
+    <div class="footer-section.newsletter"
+      style="background: rgba(255, 255, 255, 0.2); border-radius: 20px;  backdrop-filter: blur(10px); padding: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  transition: transform 0.3s ease, box-shadow 0.3s ease;">
+      <h3 style="font-size: 18px; margin-bottom: 20px; text-align: center; color: #ffffff;">Stay Updated</h3>
+      <p style="text-align: center; font-size: 14px; line-height: 1.8; margin-bottom: 20px;">
+        Subscribe to our newsletter for the latest updates and tips on mastering data structures and algorithms.
+      </p>
+      <form action="#" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; gap: 10px;">
+        <input type="email" placeholder="Your Email Address" required
+          style="flex: 1; padding: 10px; font-size: 14px; border: 1px solid #dee2e6; border-radius: 4px;">
+        <button type="submit"
+          style="padding: 10px 20px; font-size: 14px; background-color: #6c757d; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+          Subscribe
+        </button>
+      </form>
+    </div>
 
-  <!-- Social Links -->
-  <div class="social-links" style="text-align: center; margin-top: 40px; animation: fadeInUp 2.5s;">
-    <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px;">
-      <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i class="fa-brands fa-x-twitter"></i></a></li>
-      <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i class="fab fa-youtube"></i></a></li>
-    </ul>
-  </div>
+    <!-- Social Links -->
+    <div class="social-links" style="text-align: center; margin-top: 40px; animation: fadeInUp 2.5s;">
+      <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px;">
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;"
+            onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i
+              class="fab fa-facebook"></i></a></li>
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;"
+            onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i
+              class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;"
+            onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i
+              class="fab fa-linkedin"></i></a></li>
+        <li><a href="#" style="color: #ffffff; font-size: 20px; transition: color 0.3s;"
+            onmouseover="this.style.color='#8cc152';" onmouseout="this.style.color='#ffffff';"><i
+              class="fab fa-youtube"></i></a></li>
+      </ul>
+    </div>
 
-  <!-- Footer Bottom -->
-  <div class="footer-bottom" style="text-align: center; margin-top: 20px; padding-top: 20px; background: none; color: #ffffff; animation: fadeInUp 3s;">
-    <p style="margin: 0; font-size: 14px;">
-  &copy; <span id="currentYear"></span> DSA Problem Solutions. All rights reserved.
-</p>
-  </div>
-</footer>
-    <script>
-  // Get the current year and update the span element
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-    <script>
-      document
-        .querySelector(".mobile-menu-btn")
-        .addEventListener("click", function () {
-          document.querySelector(".nav-links").classList.toggle("active");
-        });
-      const form = document.getElementById("contact-form");
-      const popupMessage = document.getElementById("popup-message");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // Show the popup message
-        popupMessage.classList.remove("hidden");
-        popupMessage.classList.add("show");
-
-        // Hide the popup after 3 seconds
-        setTimeout(() => {
-          popupMessage.classList.remove("show");
-          popupMessage.classList.add("hidden");
-        }, 3000);
-
-        // Reset the form
-        form.reset();
+    <!-- Footer Bottom -->
+    <div class="footer-bottom"
+      style="text-align: center; margin-top: 20px; padding-top: 20px; background: none; color: #ffffff; animation: fadeInUp 3s;">
+      <p style="margin: 0; font-size: 14px;">
+        &copy; <span id="currentYear"></span> DSA Problem Solutions. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  <script>
+    // Get the current year and update the span element
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    document
+      .querySelector(".mobile-menu-btn")
+      .addEventListener("click", function () {
+        document.querySelector(".nav-links").classList.toggle("active");
       });
-      function handleSubmit(event) {
-        event.preventDefault();
-        const button = event.target.querySelector("button");
-        const popup = document.getElementById("popup-message");
+    const form = document.getElementById("contact-form");
+    const popupMessage = document.getElementById("popup-message");
 
-        // Add loading state
-        button.classList.add("loading");
-        button.textContent = "Sending...";
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-        // Simulate form submission
+      // Show the popup message
+      popupMessage.classList.remove("hidden");
+      popupMessage.classList.add("show");
+
+      // Hide the popup after 3 seconds
+      setTimeout(() => {
+        popupMessage.classList.remove("show");
+        popupMessage.classList.add("hidden");
+      }, 3000);
+
+      // Reset the form
+      form.reset();
+    });
+    function handleSubmit(event) {
+      event.preventDefault();
+      const button = event.target.querySelector("button");
+      const popup = document.getElementById("popup-message");
+
+      // Add loading state
+      button.classList.add("loading");
+      button.textContent = "Sending...";
+
+      // Simulate form submission
+      setTimeout(() => {
+        button.classList.remove("loading");
+        button.textContent = "Send Message";
+
+        // Show success message
+        popup.classList.remove("hidden");
+        popup.classList.add("show");
+
+        // Reset form
+        event.target.reset();
+
+        // Hide success message after 3 seconds
         setTimeout(() => {
-          button.classList.remove("loading");
-          button.textContent = "Send Message";
+          popup.classList.remove("show");
+          setTimeout(() => popup.classList.add("hidden"), 500);
+        }, 3000);
+      }, 1500);
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
+</body>
 
-          // Show success message
-          popup.classList.remove("hidden");
-          popup.classList.add("show");
-
-          // Reset form
-          event.target.reset();
-
-          // Hide success message after 3 seconds
-          setTimeout(() => {
-            popup.classList.remove("show");
-            setTimeout(() => popup.classList.add("hidden"), 500);
-          }, 3000);
-        }, 1500);
-      }
-    </script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="script.js"></script>
-  </body>
 </html>
