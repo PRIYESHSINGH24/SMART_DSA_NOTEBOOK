@@ -1,7 +1,6 @@
 class Solution:
-	def arraySum(self, arr):
-   		# code here
-   		value = 0
-   		for i in arr:
-   		    value += i
-   		return value
+    def arraySum(self, arr):
+        value = 0
+   	for i in arr:
+   	    value += i
+   return value
