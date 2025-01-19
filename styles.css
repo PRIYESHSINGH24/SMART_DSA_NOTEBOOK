@@ -703,7 +703,7 @@ footer {
 .social-links a[aria-label="Twitter"]:hover {
   color: #1da1f2;
   text-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-=======
+}
 footer form input {
   flex: 1;
   padding: 10px;
@@ -962,7 +962,6 @@ h4 {
   opacity: 1;
   visibility: visible;
 }
-=======
 .help-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
