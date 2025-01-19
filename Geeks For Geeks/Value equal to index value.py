@@ -1,5 +1,4 @@
 class Solution:
-    # Function to find values in array equal to their indices
     def valueEqualToIndex(self, arr):
         l=[]
         for i in range(len(arr)):
