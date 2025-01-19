@@ -25,6 +25,12 @@
         <img src="../img/logo2.png" alt="Logo" />
       </a>
       <h1>HackerRank Problems</h1>
+      <button
+      id="progressButton"
+      style="margin-left: auto; padding: 8px 12px; border-radius: 5px; background:linear-gradient(to right, #f3c623, #d5aa33); color: black; border: none; cursor: pointer;"
+    >
+      Check Progress
+    </button>
     </header>
 
     <div class="container">
@@ -85,28 +91,29 @@
           <p>Select a problem to view its solution.</p>
         </div>
       </div>
-
-      <!-- progress card -->
-      <div class="progress-card">
-        <h2>Check Your Progress</h2>
-        <label for="username">Enter your hackerrank username:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="Username"
-          required
-        />
-        <button id="fetchButton" class="button button-primary">
-          Get Progress
-        </button>
-        <div id="stats">
-          <p>✨ Easy: <span id="easy">0</span></p>
-          <p>⚡ Medium: <span id="medium">0</span></p>
-          <p>🔥 Hard: <span id="hard">0</span></p>
-        </div>
-      </div>
     </div>
+
+   <!-- Pop-up Card for Progress -->
+   <div class="popup-overlay" id="popupOverlay"></div>
+   <div class="popup-card" id="progressPopup">
+     <button class="close-popup" id="closePopup">X</button>
+     <h2>Check Your Progress</h2>
+     <label for="username">Enter your HackerRank username:</label>
+     <input
+       type="text"
+       id="username"
+       name="username"
+       placeholder="Username"
+       required
+     />
+     <button id="fetchButton" class="button button-primary">Get Progress</button>
+     <div id="stats">
+       <p>Rank: <span id="rank">0</span></p>
+       <p>✨ Easy: <span id="easy">0</span></p>
+       <p>⚡ Medium: <span id="medium">0</span></p>
+       <p>🔥 Hard: <span id="hard">0</span></p>
+     </div>
+   </div>
 
         <!-- Adding question -->
         <div class="container">
