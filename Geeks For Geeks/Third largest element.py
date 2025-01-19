@@ -1,6 +1,5 @@
 class Solution:
     def thirdLargest(self,arr):
-        # code here
         arr.sort()
         if len(arr) == 2:
             return arr[-1]
