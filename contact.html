@@ -15,6 +15,10 @@
 </head>
 
 <style>
+  *{
+
+     box-sizing: border-box;
+  }
   body {
     font-family: "Poppins", sans-serif;
     margin: 0;
@@ -38,14 +42,14 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     backdrop-filter: blur(10px);
-    border-radius: 5px;
+    /* border-radius: 5px; */
     border: 5px rgb(173, 186, 74) solid;
   }
 
-  .logo {
+  /* .logo {
     display: flex;
     align-items: center;
-  }
+  } */
 
   .logo img {
     height: 40px;
@@ -119,7 +123,7 @@
   }
 
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     .navbar {
       padding: 1rem;
     }
@@ -271,7 +275,8 @@
   }
 
   #contact-form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
   }
 
@@ -381,6 +386,7 @@
   @media (max-width: 768px) {
     .content-wrapper {
       padding: 2rem 1rem;
+      /* margin-right: -3rem; */
     }
 
     .contact-section {
@@ -780,7 +786,11 @@ h4 {
     width: 100px;
     margin-top: 40px
   }
-
+   
+  .social-links{
+    display: flex;
+    justify-content: center;
+  }
   .social-icons {
     margin-left: 15%;
     list-style: none;
@@ -860,7 +870,7 @@ h4 {
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="#platforms">Platforms</a></li>
+        <li><a href="platform.html">Platforms</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
         <li><a href="pages/Login.html">Log In</a></li>
@@ -873,15 +883,9 @@ h4 {
     <section class="contact-section">
       <div class="header-content">
         <h1>Get in Touch</h1>
-        <p>
-          We'd love to hear from you! Send us a message and we'll respond as
-          soon as possible.
-        </p>
+        <p> We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
       </div>
-      <div class="header-content">
-        <h1>Get in Touch</h1>
-        <p>We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
-      </div>
+
       <!-- Help Options Section -->
       <section class="help-options">
         <h3>Ask how we can help you:</h3>
