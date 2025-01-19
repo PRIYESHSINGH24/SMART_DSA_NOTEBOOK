@@ -1,5 +1,4 @@
 def PalinArray(arr):
-    # Code here
     for i in arr:
         s = str(i)
         rev = s[::-1]
