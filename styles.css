@@ -180,7 +180,7 @@ width: max-content;
 
 .footer-logo{
   width: 100px;
-        margin-top: 40px;
+        margin-top: 20px;
 }
 
 .follow-us{
@@ -864,6 +864,15 @@ form button .fas{
   padding: 10px 20px;
   color: #fafafa;
 }
+/* Help Options Section - Boxes */
+.help-options {
+    padding: 1px 40px 44px;
+    background-color: #ffffff;
+    margin: 20px auto 50px;
+    width: 88%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
 
 .main-footer .footer-content {
   display: flex;

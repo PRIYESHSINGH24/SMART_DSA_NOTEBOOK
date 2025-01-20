@@ -122,7 +122,15 @@
     .navbar {
       padding: 1rem;
     }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
+    .logo img {
+      height: 50px;
+      width: auto;
+      transition: transform 0.3s ease;
     .mobile-menu-btn {
       display: block;
     }
@@ -832,7 +840,88 @@ h4 {
       min-width: 220px
     }
 
+    .footer-content {
+      padding: 0;
+    }
+
+    footer {
+      padding: 0 5px;
+    }
     
+    #cursor{
+      height: 20px;
+        width:20px;
+        background-color: rgb(125, 239, 11,0.5);
+        border-radius: 50%;
+        position: fixed;
+        font-size: 7px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+  </style>
+
+  <body>
+    <div id="cursor"></div>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="./img/logo2.png" alt="Logo" />
+        </div>
+        <button class="mobile-menu-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#platforms">Platforms</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="Login1.html">Log In</a></li>
+          <li><a href="Signup2.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content-wrapper">
+      <section class="contact-section">
+        <div class="header-content">
+          <h1>Get in Touch</h1>
+          <p>
+            We'd love to hear from you! Send us a message and we'll respond as
+            soon as possible.
+          </p>
+        </div>
+         
+         <!-- Help Options Section -->
+<section class="help-options">
+    <h3>Ask how we can help you:</h3>
+    <div class="help-boxes">
+        <!-- New Help Boxes -->
+        <div class="help-box">
+    .footer-section img {
+      width: 50px
+    }
+
+    .social-icons {
+      margin-left: 21%;
+    }
+  }
   #cursor {
     height: 20px;
     width: 20px;
@@ -905,6 +994,36 @@ h4 {
               journey.</p>
           </div>
         </div>
+
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Enter your message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
       </section>
 
       <div class="contact-grid">
@@ -947,7 +1066,23 @@ h4 {
   </main>
 
   </main>
+  <footer style="background: linear-gradient(to right, #11cb2a, #19be50);; color: #ffffff; padding: 40px 20px; font-family: 'Arial', sans-serif; overflow: hidden;">
+  <!-- Footer Container -->
+  <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
+    
+    <!-- Left Section (Logo and Description) -->
+    <div class="footer-left" style="flex: 2; min-width: 300px; display:flex; gap: 30px">
+      <!-- Logo -->
+      <div class="footer-logo" style="margin-bottom: 20px; animation: fadeInLeft 1s;">
+        <div style="background-color: #8cc152; padding: 20px; border-radius: 8px; display: inline-block;">
+          <h1 style="margin: 0; font-size: 36px; font-weight: bold;">DSA</h1>
+  <footer
+    style="background: linear-gradient(to right, #11cb2a, #19be50);; color: #ffffff; padding: 40px 20px; font-family: 'Arial', sans-serif; overflow: hidden;">
+    <!-- Footer Container -->
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
 
+      <!-- Left Section (Logo and Description) -->
+      <div class="footer-left" style="flex: 2; min-width: 300px;">
 
   <footer class="main-footer" style="background: linear-gradient(to right,  #0e2511, #19be50);; color: #ffffff; padding: 20px 20px;">
     <div class="footer-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
@@ -967,7 +1102,13 @@ h4 {
           <a href="#" target="_blank" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
-  
+      <!-- Description -->
+      <p style="font-size: 16px; line-height: 1.6; animation: fadeInLeft 1.5s; text-align: -webkit-left;">
+        DSA problem solutions involve step-by-step methods to solve data structure and algorithm challenges efficiently. 
+        They include understanding the problem, selecting the right approach, implementing optimized code, and analyzing 
+        time and space complexity for performance.
+      </p>
+    </div>
       <!-- Quick Links Section -->
       <div class="footer-section services" >
           <h4 style="font-size: 18px; margin-bottom: 10px; 
