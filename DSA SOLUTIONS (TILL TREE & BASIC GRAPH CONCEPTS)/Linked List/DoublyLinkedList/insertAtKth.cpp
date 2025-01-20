@@ -5,17 +5,24 @@ class Node {
 public:
     int val;
     Node* next;
+    Node* prev;
 
     Node(int data) {
         val = data;
         next = nullptr;
+        prev = nullptr;
     }
 };
 
 void insertAtHead(Node*& head, int val) {
     Node* new_node = new Node(val);
-    new_node->next = head;
-    head = new_node;
+    if (head == nullptr) {
+        head = new_node;
+    } else {
+        new_node->next = head;
+        head->prev = new_node;
+        head = new_node;
+    }
 }
 
 void insertAtTail(Node*& head, int val) {
@@ -31,6 +38,7 @@ void insertAtTail(Node*& head, int val) {
         temp = temp->next;
     }
     temp->next = new_node;
+    new_node->prev = temp;
 }
 
 void insertAtK(Node*& head, int val, int pos) {
@@ -55,14 +63,34 @@ void insertAtK(Node*& head, int val, int pos) {
     }
 
     new_node->next = temp->next;
+    new_node->prev = temp;
+
+    if (temp->next != nullptr) {
+        temp->next->prev = new_node;
+    }
     temp->next = new_node;
 }
 
 void display(Node* head) {
     Node* temp = head;
     while (temp != nullptr) {
-        cout << temp->val << "->";
+        cout << temp->val << " <-> ";
         temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
+
+void reverseDisplay(Node* head) {
+    if (head == nullptr) return;
+
+    Node* temp = head;
+    while (temp->next != nullptr) {
+        temp = temp->next;
+    }
+
+    while (temp != nullptr) {
+        cout << temp->val << " <-> ";
+        temp = temp->prev;
     }
     cout << "NULL" << endl;
 }
@@ -84,6 +112,10 @@ int main() {
     insertAtK(head, 323, 2);
     display(head);
 
+    cout << "Reversed List: ";
+    reverseDisplay(head);
+
+    // Free the allocated memory
     Node* temp;
     while (head != nullptr) {
         temp = head;
