@@ -1,6 +1,5 @@
 class Solution:
     def URLify(self, s): 
-        # code here
         S = ""
         for i in s:
             if i == " ":
