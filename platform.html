@@ -493,6 +493,44 @@ footer p {
         <p style="margin: 0; font-size: 14px; color: white;">&copy; 2025 DSA Problem Solutions. All rights reserved.</p>
       </div>
     </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+      <script src="script.js"></script>
+      <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
+      <script src="scrollscript.js"></script>
+      <script src="audio.js"></script>
+      <script>
+      // Get the button element
+      const scrollBtn = document.getElementById('scrollBtn');
+    
+      // Show the button when the user scrolls down 100px from the top
+      window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+      };
+    
+      // Scroll to the top of the page when the button is clicked
+      scrollBtn.onclick = function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+      };
+    
+   </script>
+    
+  </script>
     
 
 
