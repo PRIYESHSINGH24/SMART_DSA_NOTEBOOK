@@ -4,14 +4,13 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta property="og:title" content="DSA Problem Solutions">
-    <meta property="og:image" content="img/lightlogo.png">
-    <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/">
-    <meta property="og:type" content="website">
+  <meta property="og:image" content="img/lightlogo.png">
+  <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/">
+  <meta property="og:type" content="website">
 
-    <link rel="icon" href="img/lightlogo.png" type="image/png">
-    <link rel="icon" href="img/lightlogo.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="img/lightlogo.png" type="image/png">
+  <link rel="icon" href="img/lightlogo.png" sizes="16x16" type="image/png">
 
     
 
@@ -19,18 +18,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
- 
-
 </head>
 
 <body>
-
- 
+  <!-- Scroll -->
+    <div id="scrollButton" class="hidden">
+        <div class="outer-circle">
+            <div class="inner-circle">
+                <div class="arrow">↑</div>
+            </div>
+        </div>
+    </div>
   <div id="cursor" style="translate: none; rotate: none; scale: none; transform: translate(305px, 644px);"></div><nav class="navbar">
     <div class="logo" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
       <img src="img/lightlogo.png" alt="Logo">
@@ -204,6 +206,34 @@
   <script src="script.js"></script>
   <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
   <script src="audio.js"></script>
+  <!-- Scroll to Top Button -->
+<script>
+   const scrollButton = document.getElementById('scrollButton');
+const outerCircle = document.querySelector('.outer-circle');
+const arrow = document.querySelector('.arrow');
+
+// Function to handle scroll behavior
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = (scrollTop / scrollHeight) * 360;
+
+    // Show button after scrolling 7-8 lines (~100px)
+    if (scrollTop > 100) {
+        scrollButton.classList.add('visible');
+    } else {
+        scrollButton.classList.remove('visible');
+    }
+
+    // Update the circular progress
+    outerCircle.style.setProperty('--scroll-progress', `${scrollProgress}deg`);
+});
+
+// Scroll-to-top functionality
+scrollButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
       
 </body>
 </html>
