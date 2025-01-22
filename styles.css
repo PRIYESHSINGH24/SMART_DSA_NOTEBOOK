@@ -261,14 +261,7 @@ flex: 1;
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
-
-:target {
-  scroll-margin-top: 80px;
-}
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .nav-links {
@@ -376,29 +369,6 @@ header p {
 .platform-card a:hover {
   background-color: #07670a;
 }
-
-
-/* Scroll to Top Button */
-#scrollToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 85px;
-  right: 40px;
-  height: 50px;
-  width: 50px;
-  background-color: rgb(80, 183, 218);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-#scrollToTopBtn:hover {
-  background-color: rgb(80, 183, 218);
-}
-
 
 @media(max-width:1025px) {
   .footer-section p {
@@ -727,44 +697,4 @@ h4 {
   100% {
     left: 100%; /* Move the span across to the right */
   }
-}
-
-#scrollButton {
-  position: fixed;
-  bottom: 120px;
-  right: 32px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  z-index: 1000;
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
-}
-
-#scrollButton:hover {
-  background-color: #218838;
-  transform: scale(1.1);
-}
-
-#scrollButton i {
-  font-size: 20px;
-}
-
-#scrollButton.show {
-  opacity: 1;
-  visibility: visible;
-}
-.help-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    background-color: #eaf3ff;
 }
