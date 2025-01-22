@@ -705,6 +705,10 @@ footer {
   text-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
+
+
+
+
 .social-links a[aria-label="Instagram"]:hover {
   color: #e4405f;
   text-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
@@ -738,52 +742,40 @@ footer {
 
 .footer-bottom {
   text-align: center;
-  padding-top: 0.5rem;
-  border-top: 1px solid #ddd;
-  font-size: 0.9rem;
-  background-color: #ffffff00;
+  margin-top: 20px;
+  padding-top: 20px;
+  font-size: 14px;
 }
 
-.heart {
-  display: inline-block;
-  animation: beat 1s ease infinite;
+#cursor{
+  height: 20px;
+    width:20px;
+    background-color: rgb(125, 239, 11,0.5);
+    border-radius: 50%;
+    position: fixed;
+    font-size: 7px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
 }
-form {
-   padding-bottom: 199px;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   position: relative;  /* Add relative positioning to the form */
-   margin-bottom: 1px;
+/* Help Options Section - Boxes */
+.help-options {
+    padding: 1px 40px 44px;
+    background-color: #ffffff;
+    margin: 20px auto 50px;
+    width: 88%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
 }
 
-form::before {
-   content: "";
-   position: absolute;
-   bottom: 0;
-   left: 0%;  /* Adjust this value to control the starting point of the border */
-   width: 92%;  /* Adjust this value to control the length of the border */
-   border-bottom: 1px solid #fafafa;  /* Your border color */
-}
-
-form input{
-   width:80%;
-   padding: 10px;
-   background: transparent;
-   color: #CCC;
-   border: 0;
-   outline: none;
-}
-form button{
-   background: transparent;
-   border: 0;
-   outline: none;
-   cursor: pointer;
-}
-form button .fas{
-  font-size: 16px;
-  padding: 10px 20px;
-  color: #fafafa;
+.help-options h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8em;
 }
 /* Help Options Section - Boxes */
 .help-options {

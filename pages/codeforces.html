@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:image" content="../img/lightlogo.png" />
+    <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="../img/lightlogo.png" type="image/png" />
+    <link rel="icon" href="../img/lightlogo.png" sizes="16x16" type="image/png" />
+
+
     <title>Codeforces Problems - DSA Problem Solutions</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
@@ -17,13 +26,33 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="codechef.css" />
+    <link rel="stylesheet" href="../navbar.css">
   </head>
   <body>
     <div id="cursor"></div>
-    <header>
-      <a href="../index.html" class="logo">
+    <nav class="navbar">
+      <div class="logo">
         <img src="../img/logo2.png" alt="Logo" />
-      </a>
+      </div>
+  
+      <button class="mobile-menu-btn" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="black">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../" >Home</a></li>
+        <li><a href="../platform.html">Platforms</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../Login1.html">Log In</a></li>
+        <li><a href="../Signup2.html">Sign Up</a></li>
+      </ul>
+    </nav>
+    <header>
+      
       <h1>Codeforces Problems</h1>
       <button
       id="progressButton"

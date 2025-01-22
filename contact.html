@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta property="og:image" content="img/lightlogo.png" />
+    <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="img/lightlogo.png" type="image/png" />
+    <link rel="icon" href="img/lightlogo.png" sizes="16x16" type="image/png" />
+
+    
   <title>Contact Us</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -12,7 +22,11 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="navbar.css">
 </head>
+
+   
+  
 
 <style>
   *{
@@ -45,13 +59,21 @@
     /* border-radius: 5px; */
     border: 5px rgb(173, 186, 74) solid;
   }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
 
+    .logo img {
+      height: 50px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
   .logo img {
     height: 40px;
     width: auto;
     transition: transform 0.3s ease;
   }
-
   .logo img:hover {
     transform: scale(1.05);
   }
@@ -182,18 +204,10 @@
     .nav-links a:hover {
       color: #60a5fa;
     }
+}
 
-    .nav-links a::after {
-      background-color: #60a5fa;
-    }
+   
 
-    @media (max-width: 768px) {
-      .nav-links {
-        background: rgba(174, 237, 158, 0.98);
-
-      }
-    }
-  }
 
   /* Add smooth scroll behavior */
   html {
@@ -936,7 +950,57 @@ h4 {
     z-index: 10;
   }
 </style>
+  <body>
+    <div id="cursor"></div>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="./img/logo2.png" alt="Logo" />
+        </div>
+        <button class="mobile-menu-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#platforms">Platforms</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="Login1.html">Log In</a></li>
+          <li><a href="Signup2.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
 
+    <main class="content-wrapper">
+      <section class="contact-section">
+        <div class="header-content">
+          <h1>Get in Touch</h1>
+          <p>
+            We'd love to hear from you! Send us a message and we'll respond as
+            soon as possible.
+          </p>
+        </div>
+         
+         <!-- Help Options Section -->
+<section class="help-options">
+    <h3>Ask how we can help you:</h3>
+    <div class="help-boxes">
+        <!-- New Help Boxes -->
+        <div class="help-box">
 <body>
   <div id="cursor"></div>
   <header>
@@ -962,6 +1026,41 @@ h4 {
       </ul>
     </nav>
   </header>
+  <body>
+    <div id="cursor"></div>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="../img/logo2.png" alt="Logo" />
+        </div>
+        <button class="mobile-menu-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="#platforms">Platforms</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="login">Log In</a></li>
+          <li><a href="Signup">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
 
   <main class="content-wrapper">
     <section class="contact-section">
@@ -1044,27 +1143,41 @@ h4 {
         </div>
       </div>
 
-      <form id="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
-        </div>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-    <div id="popup-message" class="hidden">
-      Your message has been sent successfully! 🎉
-    </div>
-  </main>
-
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Enter your message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+      <div id="popup-message" class="hidden">
+        Your message has been sent successfully! 🎉
+      </div>
+    </main>
+      
   </main>
   <footer style="background: linear-gradient(to right, #11cb2a, #19be50);; color: #ffffff; padding: 40px 20px; font-family: 'Arial', sans-serif; overflow: hidden;">
   <!-- Footer Container -->
@@ -1082,8 +1195,12 @@ h4 {
     <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px;">
 
       <!-- Left Section (Logo and Description) -->
+      <div class="footer-left" style="flex: 2; min-width: 300px; display:flex; gap: 30px">
+        <!-- Logo -->
+        <div class="footer-logo" style="margin-bottom: 20px; animation: fadeInLeft 1s;">
+          <div style="background-color: #8cc152; padding: 20px; border-radius: 8px; display: inline-block;">
+            <h1 style="margin: 0; font-size: 36px; font-weight: bold;">DSA</h1>
       <div class="footer-left" style="flex: 2; min-width: 300px;">
-
   <footer class="main-footer" style="background: linear-gradient(to right,  #0e2511, #19be50);; color: #ffffff; padding: 20px 20px;">
     <div class="footer-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
       <div class="footer-section" style="flex: 1; min-width: 250px; max-width: 300px;">
@@ -1093,6 +1210,14 @@ h4 {
             <img src="img/lightlogo.png" alt="Logo" style="height: 60px; width: auto;" />
           </div>
         </div>
+        <!-- Description -->
+        <p style="font-size: 16px; line-height: 1.6; animation: fadeInLeft 1.5s; text-align: -webkit-left;">
+          DSA problem solutions involve step-by-step methods to solve data structure and algorithm challenges
+          efficiently.
+          They include understanding the problem, selecting the right approach, implementing optimized code, and
+          analyzing
+          time and space complexity for performance.
+        </p>
         <p style="text-align: justify; margin-bottom: 20px; line-height: 1.6; color: white;">DSA problem solutions involve understanding the problem, choosing the right approach, implementing optimized code, and analyzing time and space complexity for efficiency.</p>
         <div class="social-links" style="text-align: center;">
           <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
