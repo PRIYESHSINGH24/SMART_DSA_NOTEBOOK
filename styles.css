@@ -367,9 +367,176 @@ header p {
 }
 
 .platform-card a:hover {
-  background-color: #07670a;
+  background-color: #555;
 }
 
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 85px;
+  right: 40px;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(80, 183, 218);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#scrollToTopBtn:hover {
+  background-color: rgb(80, 183, 218);
+}
+footer {
+  background-color: #ffffff;
+  padding: 40px 0;
+  color: #ffffff;
+  box-shadow: 12px 6px 14px rgba(0, 0, 0, 0.15);
+  font-family: "Outfit", serif;
+  font-weight:300;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.footer-section {
+  flex: 1; min-width: 150px; margin: 10px;
+}
+.about{
+  flex: 2; min-width: 300px; display: flex; align-items:flex-start; margin: 10px; transition: transform 0.3s ease-in-out;
+}
+
+.footer-section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  color: #000;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons li {
+  list-style: none;
+}
+
+.social-icons li a {
+  font-size: 20px;
+  color: #6c757d;
+}
+
+.footer-section.newsletter {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  border-radius: 20px; /* Makes all corners rounded */
+  backdrop-filter: blur(10px); /* Creates the glass effect with a blur */
+  padding: 20px; /* Adds spacing inside the section */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds hover animations */
+}
+
+.footer-section.newsletter:hover {
+  transform: translateY(-5px); /* Moves the section slightly up on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhances the shadow on hover */
+}
+
+
+.footer-section.newsletter h2 {
+  font-size: 22px;
+  color: #ea0202;
+  margin-bottom: 15px;
+}
+
+.footer-section.newsletter p {
+  font-size: 14px;
+  color: #130111;
+  margin-bottom: 20px;
+}
+
+.footer-section.newsletter .newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-section.newsletter .newsletter-form input {
+  padding: 10px;
+  font-size: 14px;
+  width: 250px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.footer-section.newsletter .newsletter-form input:focus {
+  border-color: #ff5722;
+  outline: none;
+}
+
+.footer-section.newsletter .subscribe-btn {
+  background: linear-gradient(90deg, #ff5722, #ff0000); 
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section.newsletter .subscribe-btn:hover {
+  background: linear-gradient(90deg, #ff0000, #ff5722); 
+  transform: translateY(-3px); 
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(to left, #35f184, #082314);
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  background-color: #07670a;
+
+}
+
+.newsletter-form{
+  display: flex;
+  gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+}
 @media(max-width:1025px) {
   .footer-section p {
     margin: 12px
@@ -493,7 +660,7 @@ header p {
 .footer-section h4 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #000;
+  color: #00ff19;
 }
 
 .footer-section p {
@@ -544,6 +711,31 @@ header p {
 .social-links a[aria-label="Twitter"]:hover {
   color: #1da1f2;
   text-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+footer form input {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background-color: #ffffff;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+}
+
+footer form input:hover {
+  border-color: #6c757d;
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+
+footer form input:focus {
+  border-color: #495057;
+  background-color: #ffffff;
+  box-shadow: 0 6px 15px rgba(73, 80, 87, 0.3);
+  transform: translateY(-3px) scale(1.03);
 }
 .social-links a[aria-label="Instagram"]:hover {
   color: #e4405f;
@@ -751,10 +943,21 @@ h4 {
     justify-content: center;
     box-shadow: 0 4px 6px rgb(0 0 0);
 }
+.help-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #eaf3ff;
 
 .arrow {
     font-size: 20px;
     color: #075728;
     font-weight: bold;
     transform: rotate(90deg); /* Fixed direction to the right */
+}
+
+.services>ul>form>i>input {
+  padding-inline: 11px;
+  height: 1.6rem;
+  border-radius: 10px;
+  border: none;
 }
