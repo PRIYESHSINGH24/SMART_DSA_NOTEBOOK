@@ -220,15 +220,41 @@
             </div>
 
             <div class="input-group">
-              <label class="input-label" for="signInPassword">Password</label>
-              <input
-                type="password"
-                id="signInPassword"
-                class="input-field"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
+  <label class="input-label" for="signInPassword">Password</label>
+  <div style="position: relative;">
+    <input
+      type="password"
+      id="signInPassword"
+      class="input-field"
+      placeholder="Enter your password"
+      required
+    />
+    <button
+      type="button"
+      id="togglePassword"
+      style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;"
+    >
+      <i class="fa-solid fa-eye"></i>
+    </button>
+  </div>
+</div>
+<script>
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordField = document.getElementById("signInPassword");
+
+  togglePassword.addEventListener("click", () => {
+    // Toggle the type attribute
+    const type = passwordField.type === "password" ? "text" : "password";
+    passwordField.type = type;
+
+    // Toggle the icon
+    togglePassword.innerHTML =
+      type === "password"
+        ? '<i class="fa-solid fa-eye"></i>'
+        : '<i class="fa-solid fa-eye-slash"></i>';
+  });
+</script>
+
 
             <div class="auth-options">
               <label class="remember-me">
