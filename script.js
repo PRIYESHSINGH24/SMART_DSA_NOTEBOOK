@@ -36,5 +36,27 @@ body.addEventListener("mousemove", function (e) {
       x: e.x, y: e.y
    })
 })
- 
 
+
+let darkmode = localStorage.getItem("darkmode");
+const themeSwitch = document.getElementById("theme-switch");
+
+const enableDarkMode = () => {
+  document.body.classList.add("darkmode");
+  localStorage.setItem("darkmode", "active");
+}
+
+const disableDarkMode = () => {
+  document.body.classList.remove("darkmode");
+  localStorage.setItem("darkmode", null);
+}
+
+// Set the initial state based on localStorage
+if (darkmode === "active") {
+  enableDarkMode();
+}
+
+themeSwitch.addEventListener("click", () => {
+  darkmode = localStorage.getItem("darkmode"); // Update the variable
+  darkmode !== "active" ? enableDarkMode() : disableDarkMode();
+});

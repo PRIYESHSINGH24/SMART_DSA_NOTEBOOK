@@ -1,14 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root{
+  --base-color:#f4f4f4;
+  --base-variant:rgb(250, 249, 249);
+  --base-nav-links:#000;
+  --base-nav-links-hover:#007bff;
+  --base-platform-btn:#6a11cb;
+  --base-platform-card:#2acb1e;
+}
+.darkmode{
+  --base-color:#070b1d;
+  --base-variant:#030b31;
+  --base-nav-links:#f0efef;
+  --base-nav-links-hover:#077fff;
+  --base-platform-btn:#6a11cb;
+  --base-platform-card:#2acb1e;
+}
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
+  background-color: var(--base-color);
 }
 /* Navbar Styles */
 .navbar {
-  background: rgb(250, 249, 249);
+  background: var(--base-variant);
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
@@ -55,7 +73,7 @@ body {
 }
 
 .nav-links li a {
-  color: #000;
+  color: var(--base-nav-links);
   font-weight: bold;
   text-decoration: none;
   padding: 8px 12px;
@@ -66,7 +84,7 @@ body {
 
 
 .nav-links a:hover {
-  color: #007bff;
+  color:var(--base-nav-links-hover);
 }
 
 /* Underline animation for nav links */
@@ -77,7 +95,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #007bff;
+  background-color: var(--base-nav-links-hover);
   transition: width 0.3s ease;
 }
 
@@ -87,7 +105,7 @@ body {
 
 /* Active link style */
 .nav-links a.active {
-  color: #007bff;
+  color: var(--base-nav-links-hover)
 }
 
 .nav-links a.active::after {
@@ -96,7 +114,7 @@ body {
 
 /* Mobile menu button - Hidden by default */
 .mobile-menu-btn {
-  color:#000;
+  color:var(--base-nav-links);
   display: none;
   background: none;
   border: none;
@@ -111,7 +129,7 @@ body {
   justify-content: space-between;
   padding: 50px 20px;
   background: linear-gradient(to right, #11cb2a, #19be50);
-  color: white;
+  color:var(--base-color);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -142,8 +160,8 @@ body {
 
 
 .platform-btn {
-  background-color: #fff;
-  color: #2575fc;
+  background-color:var(--base-color);
+  color: var(--base-nav-links-hover);
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: 600;
@@ -155,8 +173,8 @@ body {
 
 .platform-btn:hover {
   transform: scale(1.1);
-  background-color: #6a11cb;
-  color: #fff;
+  background-color: var(--base-platform-btn);
+  color: var(--base-color);
 }
 
 .hero-image img {
@@ -201,7 +219,7 @@ flex: 1;
       top: 100%;
       left: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.98);
+      background: var(--base-variant);
       flex-direction: column;
       padding: 1rem;
       gap: 1rem;
@@ -232,7 +250,7 @@ flex: 1;
 @media (prefers-color-scheme: dark) {
   
   .nav-links a {
-      color: #e5e7eb;
+      color: var(--base-color);
   }
 
   .nav-links a:hover {
@@ -435,7 +453,7 @@ footer {
 }
 
 .footer-section ul li a:hover {
-  color: #000;
+  color: var(--base-nav-links);
 }
 
 .social-icons {
@@ -502,7 +520,7 @@ footer {
 
 .footer-section.newsletter .subscribe-btn {
   background: linear-gradient(90deg, #ff5722, #ff0000); 
-  color: #fff;
+  color: var(--base-color);
   padding: 10px 20px;
   font-size: 14px;
   border: none;
@@ -519,7 +537,7 @@ footer {
 .footer-bottom {
   text-align: center;
   padding: 20px 0;
-  background-color: #e9ecef;
+  background-color: var(--base-color);
   font-size: 14px;
   position: relative;
   bottom: 0;
@@ -561,7 +579,7 @@ footer {
   }
 
   .nav-links li a {
-    color: white;
+    color: var(--base-color);
   }
 }
 
@@ -601,8 +619,8 @@ footer {
 
 /* General Footer Styling */
 footer {
-  background: #28a745;
-  color: #ffffff;
+  background: var(--base-platform-card);
+  color: var(--base-color);
   padding: 40px 20px;
   font-family: 'Arial', sans-serif;
   overflow: hidden;
@@ -614,7 +632,7 @@ footer {
 footer h3 {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #f8f9fa;
+  color:var(--base-color);
 }
 
 footer p, footer ul li {
@@ -624,7 +642,7 @@ footer p, footer ul li {
 
 footer a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--base-color);
   transition: color 0.3s;
 }
 
@@ -659,7 +677,7 @@ footer form button {
   padding: 10px 20px;
   font-size: 14px;
   background-color: #6c757d;
-  color: #ffffff;
+  color: var(--base-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -712,7 +730,7 @@ footer form button:hover {
 /* Help Options Section - Boxes */
 .help-options {
     padding: 20px;
-    background-color: #ffffff;
+    background-color: var(--base-color);
     margin: 20px auto;
     width: 80%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -735,7 +753,7 @@ footer form button:hover {
 
 /* Individual Help Box */
 .help-box {
-    background-color: #f1f1f1;
+    background-color: var(--base-color);
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -758,5 +776,35 @@ footer form button:hover {
 .help-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    background-color: #eaf3ff;
+    background-color: var(--base-color);
+}
+#theme-switch{
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-nav-links-hover);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 26px;
+  right: 0px;
+  
+}
+#theme-switch:hover{
+  background-color: var(--base-color);
+  color: var(--base-color);
+}
+#theme-switch svg{
+  fill: var(--base-color);
+}
+#theme-switch svg:last-child{
+  display: none;
+}
+.darkmode #theme-switch svg:first-child{
+  display: none;
+}
+.darkmode #theme-switch svg:last-child{
+  display: block;
 }
