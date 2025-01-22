@@ -249,12 +249,13 @@
   <title>Platforms - DSA Problem Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="navbar.css">
   <style>
     #scrollBtn {
     position: fixed;
-    bottom: 120px; /* Place closer to the bottom */
+    bottom: 125px; /* Place closer to the bottom */
     right: 33px;  /* Place closer to the right */
     display: none; /* Initially hidden */
     background-color: #158746;
@@ -1224,6 +1225,24 @@ footer p {
       // Show the button when the user scrolls down 100px from the top
       window.onscroll = function () {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+
+
+          scrollBtn.style.display = "block";
+      } else {
+          scrollBtn.style.display = "none";
+      }
+    };
+  
+  // Scroll to the top of the page when the button is clicked
+    scrollBtn.onclick = function () {
+      window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+      });
+    };
+      }};
+  </script>
+
             scrollBtn.style.display = "block";
         } else {
             scrollBtn.style.display = "none";
@@ -1240,4 +1259,3 @@ footer p {
     </script>
   </body>
 </html>
-  
