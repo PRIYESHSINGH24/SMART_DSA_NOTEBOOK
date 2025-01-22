@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In / Sign Up</title>
+    <title>Sign In / Sign Up</title>inp
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -216,15 +216,38 @@
             </div>
 
             <div class="input-group">
-              <label class="input-label" for="signInPassword">Password</label>
-              <input
-                type="password"
-                id="signInPassword"
-                class="input-field"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
+  <label class="input-label" for="signInPassword">Password</label>
+  <div style="position: relative;">
+    <input
+      type="password"
+      id="signInPassword"
+      class="input-field"
+      placeholder="Enter your password"
+      required
+    />
+    <button
+      type="button"
+      id="togglePassword"
+      style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;"
+    >
+      <i class="fa-solid fa-eye" id="toggleIcon"></i>
+    </button>
+  </div>
+</div>
+
+<script>
+  const passwordField = document.getElementById("signInPassword");
+  const togglePasswordButton = document.getElementById("togglePassword");
+  const toggleIcon = document.getElementById("toggleIcon");
+
+  togglePasswordButton.addEventListener("click", () => {
+    const isPasswordHidden = passwordField.type === "password";
+    passwordField.type = isPasswordHidden ? "text" : "password";
+    toggleIcon.classList.toggle("fa-eye-slash", isPasswordHidden);
+    toggleIcon.classList.toggle("fa-eye", !isPasswordHidden);
+  });
+</script>
+
 
             <div class="auth-options">
               <label class="remember-me">
