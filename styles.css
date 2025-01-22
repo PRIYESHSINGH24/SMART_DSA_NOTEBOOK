@@ -528,12 +528,18 @@ footer {
 .footer-bottom {
   text-align: center;
   padding: 20px 0;
-  background-color: #e9ecef;
+  background: linear-gradient(to left, #35f184, #082314);
   font-size: 14px;
   position: relative;
   bottom: 0;
 }
 
+.newsletter-form{
+  display: flex;
+  gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+}
 @media(max-width:1025px) {
   .footer-section p {
     margin: 12px
@@ -652,7 +658,7 @@ footer {
 .footer-section h4 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #000;
+  color: #00ff19;
 }
 
 .footer-section p {
@@ -703,7 +709,7 @@ footer {
 .social-links a[aria-label="Twitter"]:hover {
   color: #1da1f2;
   text-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-=======
+}
 footer form input {
   flex: 1;
   padding: 10px;
@@ -950,9 +956,15 @@ h4 {
   opacity: 1;
   visibility: visible;
 }
-=======
 .help-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     background-color: #eaf3ff;
+}
+
+.services>ul>form>i>input {
+  padding-inline: 11px;
+  height: 1.6rem;
+  border-radius: 10px;
+  border: none;
 }
