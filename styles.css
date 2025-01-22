@@ -699,10 +699,12 @@ h4 {
   }
 }
 
+
+/* Scroll to Top Button */
 #scrollButton {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 120px;
+    right: 25px;
     width: 60px;
     height: 60px;
     display: flex;
@@ -716,7 +718,6 @@ h4 {
 }
 
 
-/* Scroll to Top Button */
 #scrollButton.visible {
     opacity: 1; /* Fully visible */
     pointer-events: auto; /* Enable interaction */
@@ -728,9 +729,9 @@ h4 {
     height: 100%;
     border-radius: 50%;
     background: conic-gradient(
-        #FFCA47 0deg,
-        orange var(--scroll-progress, 0deg),
-        #d91e1e00 var(--scroll-progress, 0deg),
+        #1ad140 0deg,
+        #03730c var(--scroll-progress, 0deg),
+        #1e65d900 var(--scroll-progress, 0deg),
         #d5e7ec00 360deg
     );
     transform: rotate(-90deg); /* Start animation from top */
@@ -743,17 +744,17 @@ h4 {
 .inner-circle {
     width: 45px;
     height: 45px;
-    background: #0a101f;
+    background: #becdbb;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgb(0 0 0);
 }
 
 .arrow {
-    font-size: 18px;
-    color: #ffbc15;
+    font-size: 20px;
+    color: #075728;
     font-weight: bold;
     transform: rotate(90deg); /* Fixed direction to the right */
 }
