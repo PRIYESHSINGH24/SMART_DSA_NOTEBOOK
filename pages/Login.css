@@ -13,6 +13,7 @@ body {
 }
 
 
+
 /* Navbar Styles */
 .navbar {
   background: rgb(250, 249, 249);
@@ -186,6 +187,7 @@ body {
     }
   }
 }
+
 
 /* Modal */
 .modal {
