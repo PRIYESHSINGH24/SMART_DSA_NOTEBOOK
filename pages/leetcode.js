@@ -1,23 +1,22 @@
-document.getElementById('fetchButton').addEventListener('click', async () => {
-    const username = document.getElementById('username').value.trim();
-    if (!username) {
-        alert('Please enter a LeetCode username!');
-        return;
-    }
-    try {
-        const response = await fetch(`https://leetcode-stats-api.herokuapp.com/${username}`);
-        const data = await response.json();
-        // console.log(data);
-        
-        const { easySolved, mediumSolved, hardSolved,ranking } = data;
-        document.getElementById('rank').textContent = ranking;
-        document.getElementById('easy').textContent = easySolved;
-        document.getElementById('medium').textContent = mediumSolved;
-        document.getElementById('hard').textContent = hardSolved;
-    } catch (error) {
-        console.error('Error fetching user stats', error);
-        alert('Failed to fetch data. Please try again later');
-    }
+// Toggle progress popup
+const progressButton = document.getElementById("progressButton");
+const progressPopup = document.getElementById("progressPopup");
+const popupOverlay = document.getElementById("popupOverlay");
+const closePopup = document.getElementById("closePopup");
+
+progressButton.addEventListener("click", () => {
+  progressPopup.classList.add("active");
+  popupOverlay.classList.add("active");
+});
+
+closePopup.addEventListener("click", () => {
+  progressPopup.classList.remove("active");
+  popupOverlay.classList.remove("active");
+});
+
+popupOverlay.addEventListener("click", () => {
+  progressPopup.classList.remove("active");
+  popupOverlay.classList.remove("active");
 });
 
 function handleViewSolution(problemTitle) {
