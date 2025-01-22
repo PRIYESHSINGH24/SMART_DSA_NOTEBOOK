@@ -3,7 +3,9 @@
 //  (the power set).
 
 // The solution set must not contain duplicate subsets. Return the solution in any order.
-
+#include<vector>
+#include<algorithm>
+using namespace  std;
 class Solution {
 public:
 void getAllSubsets(vector<int> & nums , vector<int>& ans , int i,vector<vector<int>> & allsubsets){

@@ -234,6 +234,8 @@
         .nav-links a {
           color: #f9fafd;
         }
+    }
+    </style>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -390,7 +392,7 @@ footer p {
         font-size: 1.2rem;
     }
 }
-
+      
   </style>
 </head>
 
@@ -417,7 +419,7 @@ footer p {
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="Login.html">Log In</a></li>
-        <li><a href="SignUp.html">Sign Up</a></li>
+        <li><a href="pages/SignUp.html">Sign Up</a></li>
       </ul>
     </nav>
   </header>
@@ -1169,93 +1171,40 @@ footer p {
         <p style="margin: 0; font-size: 14px; color: white;">&copy; 2025 DSA Problem Solutions. All rights reserved.</p>
       </div>
     </footer>
-
-    <script>
-      // Set the current year dynamically
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
-    </script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="script.js"></script>
-    <script
-      src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js"
-      async
-    ></script>
-    <script src="scrollscript.js"></script>
-    <script src="audio.js"></script>
-    <script>
-      // Get the button
-      const scrollBtn = document.getElementById("scrollBtn");
-
-      // Show/hide the button based on scroll position
-      window.onscroll = function () {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          scrollBtn.style.display = "block";
-        } else {
-          scrollBtn.style.display = "none";
-        }
-      };
-
-      // Scroll to the top when the button is clicked
-      scrollBtn.addEventListener("click", function () {
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+        </script>
     
-      <script src="script.js"></script>
-      <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
-      <script src="scrollscript.js"></script>
-      <script src="audio.js"></script>
-      <script>
-      // Get the button element
-      const scrollBtn = document.getElementById('scrollBtn');
+        <!-- External scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+            integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <script src="script.js"></script>
+        <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
+        <script src="scrollscript.js"></script>
+        <script src="audio.js"></script>
     
-      // Show the button when the user scrolls down 100px from the top
-      window.onscroll = function () {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-
-
-          scrollBtn.style.display = "block";
-      } else {
-          scrollBtn.style.display = "none";
-      }
-    };
-  
-  // Scroll to the top of the page when the button is clicked
-    scrollBtn.onclick = function () {
-      window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-      });
-    };
-      }};
-  </script>
-
-            scrollBtn.style.display = "block";
-        } else {
-            scrollBtn.style.display = "none";
-        }
-      };
+        <!-- Scroll to top functionality -->
+        <script>
+            const scrollBtn = document.getElementById("scrollBtn");
     
-      // Scroll to the top of the page when the button is clicked
-      scrollBtn.onclick = function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-      });
-    </script>
-  </body>
-</html>
+            window.onscroll = function () {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    scrollBtn.style.display = "block";
+                } else {
+                    scrollBtn.style.display = "none";
+                }
+            };
+    
+            scrollBtn.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        </script>
+    
+    </body>
+    </html>
+    

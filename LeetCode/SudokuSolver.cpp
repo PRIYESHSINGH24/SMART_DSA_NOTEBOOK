@@ -9,7 +9,9 @@
 
 //  SOLUTION
 
-
+#include<vector>
+#include<algorithm>
+using namespace  std;
 class Solution {
 public:
 bool isSafe(vector<vector<char>>& board, int row, int col, char dig){
