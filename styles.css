@@ -443,9 +443,7 @@ footer {
   font-size: 14px;
 }
 
-.footer-section ul li a:hover {
-  color: #000;
-}
+
 
 .social-icons {
   display: flex;
@@ -677,7 +675,7 @@ footer {
 }
 
 .footer-section ul li a:hover {
-  color: #E5A186;
+  color: #ca6c46;
 }
 
 .social-links {
