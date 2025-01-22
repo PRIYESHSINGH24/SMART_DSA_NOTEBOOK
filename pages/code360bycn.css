@@ -14,26 +14,17 @@ body {
 }
 
 
-.logo {
-    display: flex;
-    align-items: center;
-  }
+ 
+
   
-  .logo img {
-    height: 40px;
-    width: 5rem;
-    transition: transform 0.3s ease;
-  }
   
-  .logo img:hover {
-    transform: scale(1.05);
-  }
+
+
+
   
-  .logo{
-    padding-top: 8px;
-  }
 
 header {
+    margin-top: 90px;
     background-color: #24292e;
     color: #fff;
     padding: 20px;
@@ -122,43 +113,48 @@ header h1 {
     margin-right: 5px;
 }
 
-.progress-card {
-  margin-top: 0.6rem;
-  padding: 1.5rem; 
+/* Additional styles for the pop-up card */
+.popup-card {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 700px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1000;
 }
-
-.progress-card h2 {
-  margin-bottom:0.6rem;
-  font-size: 1.5rem;
+.popup-card.active {
+  display: block;
 }
-
-.progress-card .button {
-  margin-top: 0.6rem;
+.popup-card h2 {
+  margin-bottom: 15px;
+}
+.popup-card button.close-popup {
+  background: #f44336;
+  color: white;
   border: none;
-  padding: 8px 16px;
-  transition: background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
 }
-
-#username {
-  padding: 0.5rem;
-  border: 1px solid #827d7d;
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
-
-#stats {
-  margin-top: 20px;
-}
-#stats p {
-  font-size: 16px;
-  color: #444;
-  margin: 10px 0;
-}
-#stats span {
-  font-weight: bold;
-  color: #ff7e67;
-}
-
-header h1{
-  margin-left: 28rem;
+.popup-overlay.active {
+  display: block;
 }
 
 
@@ -332,3 +328,33 @@ header h1{
       justify-content: center;
       z-index: 10;
   }
+
+/* question display */
+.card-content p:first-of-type {
+  font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+  background: linear-gradient(145deg, #f0f4f7, #d8e0e5);
+  color: #333;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.card-content p:first-of-type:hover {
+  background: linear-gradient(145deg, #e1ecf4, #c0d3e2);
+  border-color: #a0b9cc;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Adding a subtle transition to smooth the effect */
+.card-content p:first-of-type {
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}

@@ -1,4 +1,3 @@
-
 const tl2 = gsap.timeline();
 tl2.from(".logo", {
    y: -30,
@@ -27,6 +26,12 @@ tl.from(".content-wrapper p", {
    delay: 0.5,
    duration: 1
 })
+tl.from(".hero-buttons a", {
+   y: 30,
+   duration: 1,
+   opacity: 0,
+   stagger: 0.25
+})
 
 const cursor = document.querySelector("#cursor");
 const body = document.querySelector("body")
@@ -36,6 +41,7 @@ body.addEventListener("mousemove", function (e) {
       x: e.x, y: e.y
    })
 })
+<<<<<<< HEAD
 
 
 let darkmode = localStorage.getItem("darkmode");
@@ -60,3 +66,5 @@ themeSwitch.addEventListener("click", () => {
   darkmode = localStorage.getItem("darkmode"); // Update the variable
   darkmode !== "active" ? enableDarkMode() : disableDarkMode();
 });
+=======
+>>>>>>> f485023fab7913db8c62b843068325675d898b39
