@@ -169,7 +169,65 @@
       .value-card:hover i {
         transform: scale(1.2);
       }
+      
+      /* Scroll to Top Button */
+#scrollButton {
+    position: fixed;
+    bottom: 120px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
 
+
+#scrollButton.visible {
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Enable interaction */
+}
+
+.outer-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #1ad140 0deg,
+        #03730c var(--scroll-progress, 0deg),
+        #1e65d900 var(--scroll-progress, 0deg),
+        #d5e7ec00 360deg
+    );
+    transform: rotate(-90deg); /* Start animation from top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.inner-circle {
+    width: 45px;
+    height: 45px;
+    background: #becdbb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgb(0 0 0);
+}
+
+.arrow {
+    font-size: 20px;
+    color: #075728;
+    font-weight: bold;
+    transform: rotate(90deg); /* Fixed direction to the right */
+}
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -269,6 +327,15 @@
   </head>
 
   <body>
+
+    <div id="scrollButton" class="hidden">
+      <div class="outer-circle">
+        <div class="inner-circle">
+          <div class="arrow">↑</div>
+        </div>
+      </div>
+    </div>
+
     <div id="cursor"></div>
     <nav class="navbar" style="z-index: 1">
       <div class="logo">
@@ -455,31 +522,34 @@
   <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
   <script src="scrollscript.js"></script>
   <script src="audio.js"></script>
+  <!-- Scroll to Top Button -->
   <script>
-  // Get the button element
-  const scrollBtn = document.getElementById('scrollBtn');
+    const scrollButton = document.getElementById('scrollButton');
+    const outerCircle = document.querySelector('.outer-circle');
+    const arrow = document.querySelector('.arrow');
 
-  // Show the button when the user scrolls down 100px from the top
-  window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollBtn.style.display = "block";
-    } else {
-        scrollBtn.style.display = "none";
-    }
-  };
+    // Function to handle scroll behavior
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = (scrollTop / scrollHeight) * 360;
 
-  // Scroll to the top of the page when the button is clicked
-  scrollBtn.onclick = function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+      // Show button after scrolling 7-8 lines (~100px)
+      if (scrollTop > 100) {
+        scrollButton.classList.add('visible');
+      } else {
+        scrollButton.classList.remove('visible');
+      }
+
+      // Update the circular progress
+      outerCircle.style.setProperty('--scroll-progress', `${scrollProgress}deg`);
     });
-  };
 
-</script>
-
+    // Scroll-to-top functionality
+    scrollButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
-
 </body>
 
 </html>
