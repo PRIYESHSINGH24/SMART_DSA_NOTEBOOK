@@ -169,8 +169,7 @@ width: max-content;
 }
 
 .hero-image img {
-  bottom:70px;
-  max-width: 500px;
+  max-width: 400px;
   height: auto;
   border-radius: 20px;
 }
