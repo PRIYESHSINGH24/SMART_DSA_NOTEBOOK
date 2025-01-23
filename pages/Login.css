@@ -5,11 +5,8 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: flex-start; 
-    min-height: 100vh; 
+    
+    
 }
 
 /* Navbar Styles */
@@ -188,6 +185,7 @@ body {
 
 /* Modal */
 .modal {
+  justify-self: center;
     /* width: 80%;  */
     max-width: 500px; 
     padding: 30px;

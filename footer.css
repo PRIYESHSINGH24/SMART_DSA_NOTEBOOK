@@ -1,0 +1,163 @@
+footer{
+        
+    background: linear-gradient(to right, #11cb2a, #19be50);
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+  }
+
+  .footer-container{
+    max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+  }
+
+  .footer-left{
+    flex: 2;
+    min-width: 300px;
+  }
+
+  .footer-logo{
+    margin-bottom: 20px;
+    animation: fadeInLeft 1s;
+  }
+  .footer-div{
+    background-color: #8cc152;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .footer-div p{
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .footer-left p{
+    font-size: 16px;
+    line-height: 1.6;
+    animation: fadeInLeft 1.5s;
+  }
+  .footer-section-services h2{
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+
+  }
+
+  .footer-section-services h2:hover{
+    color:#e67e22;
+  }
+
+  .footer-section-services ul{
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section-services a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+  }
+
+  .footer-section-services a:hover{
+    color:black;
+    padding-left:10px;
+  }
+
+  .footer-section-newsletter{
+    width: auto;
+    justify-self: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 10rem;
+  }
+
+  .footer-section-newsletter h3{
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .footer-section-newsletter p{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .footer-section-newsletter form{
+    display: flex;
+    gap: 10px;
+  }
+
+  .footer-section-newsletter input{
+    flex: 1;
+
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+  }
+
+  .footer-section-newsletter button{
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #6c757d;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .social-links{
+    justify-self: center;
+    margin-top: 40px;
+    animation: fadeInUp 2.5s;
+  }
+
+  .social-links ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .social-links a{
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+
+  .social-links a:hover{
+    color:#8cc152;
+  }
+
+  .footer-bottom{
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    background: none;
+    color: #ffffff;
+    animation: fadeInUp 3s;
+  }
+
+  .footer-bottom p{
+    font-size: 14px;
+    margin: 0;
+  }
