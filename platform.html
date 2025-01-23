@@ -234,32 +234,13 @@
         .nav-links a {
           color: #f9fafd;
         }
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta property="og:image" content="img/lightlogo.png" />
-    <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
-    <meta property="og:type" content="website" />
-
-    <link rel="icon" href="img/lightlogo.png" type="image/png" />
-    <link rel="icon" href="img/lightlogo.png" sizes="16x16" type="image/png" />
-
-    
-  <title>Platforms - DSA Problem Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="navbar.css">
-  <style>
-    /* #scrollBtn{
+      }
+        /* #scrollBtn{
     position: fixed;
-    bottom: 125px; /* Place closer to the bottom */
-    /* right: 33px;  /* Place closer to the right */
-    /* display: none; Initially hidden */ 
-    /* background-color: #158746;
+    bottom: 125px; 
+     right: 33px;  
+     display: none; 
+     background-color: #158746;
     color: white;
     border: none;
     border-radius: 50%;
@@ -267,9 +248,9 @@
     font-size: 18px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure visibility above other elements */
-    /* transition: background-color 0.3s ease, transform 0.3s ease; */
-} */
+    z-index: 1000;   
+     transition: background-color 0.3s ease, transform 0.3s ease; 
+}  */
 
 #scrollBtn:hover {
     background-color: #000; /* Change color on hover */
@@ -290,7 +271,7 @@ body {
     display: flex;
     flex-wrap: wrap; /* Allows wrapping to the next row if necessary */
     gap: 20px; /* Adds spacing between cards */
-    justify-content: space-between; /* Adjusts spacing between cards */
+    justify-content: space-around; /* Adjusts spacing between cards */
     margin: 20px 0;
 }
 
@@ -397,6 +378,28 @@ footer p {
 }
       
   </style>
+     
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:image" content="img/lightlogo.png" />
+    <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="img/lightlogo.png" type="image/png" />
+    <link rel="icon" href="img/lightlogo.png" sizes="16x16" type="image/png" />
+
+    
+  <title>Platforms - DSA Problem Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navbar.css">
+  
+   
 </head>
 
 <body>
@@ -428,17 +431,8 @@ footer p {
   </header>
 
   <main>
-    <section class="platform-section">
-      <h2>Explore Coding Platforms</h2>
-      <p>Dive into a world of coding platforms where you can practice, sharpen your skills, and tackle real-world problems. Whether you're looking for hands-on challenges or seeking to deepen your understanding of algorithms, there's a platform for every need.</p>
-
-      <div class="platform-container">
-        <div class="platform-card">
-          <img src="img/leetcode.png" alt="LeetCode Logo">
-          <h2>LeetCode</h2>
-          <a href="https://leetcode.com" target="_blank">Explore Now</a>
-        </div>
-
+   
+  <style>
         .nav-links a:hover {
           color: #60a5fa;
         }
@@ -452,7 +446,7 @@ footer p {
             background: rgba(174, 237, 158, 0.98);
           }
         }
-      }
+      
 
       header {
         background: #4caf50;
@@ -634,6 +628,19 @@ footer p {
             <h2>GeeksforGeeks</h2>
             <a href="https://geeksforgeeks.org" target="_blank">Explore Now</a>
           </div>
+
+          <div class="platform-card">
+            <img src="img/new-cn-logo.png" alt="Code 360 by CN Logo" />
+            <h2>Code 360 by Coding Ninjas</h2>
+            <a href="pages/code360bycn.html">Code 360 by Coding Ninjas</a>
+          </div>
+
+          <div class="platform-card">
+            <img src="img/codechef.png" alt="CodeChef Logo" />
+            <h2>CodeChef</h2>
+            <a href="pages/codechef3.html">CodeChef</a>
+          </div>
+    
         </div>
       </section>
     </main>
@@ -1212,20 +1219,25 @@ footer p {
     };
       });
   </script>
+  <script>
 
-            scrollBtn.style.display = "block";
-        } else {
-            scrollBtn.style.display = "none";
-        }
-      };
-    
-      // Scroll to the top of the page when the button is clicked
-      scrollBtn.onclick = function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-      });
+
+    window.addEventListener('scroll', function() {
+    // Existing scroll detection logic
+    if (window.scrollY > someThreshold) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+});
+
+// Scroll to the top of the page when the button is clicked
+scrollBtn.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
     </script>
   </body>
 </html>
