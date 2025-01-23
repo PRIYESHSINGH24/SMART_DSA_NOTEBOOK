@@ -102,3 +102,6 @@ Follow these steps to set up the project locally:
 4. **Access the platform**
    Open your browser and navigate to http://localhost:3000 on your Browser
    
+
+## Project Contributers: <h3>
+<img src="https://contributors-img.web.app/image?repo=PRIYESHSINGH24/DSA_SOLUTION_PLATFORM"/>
