@@ -3,17 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In / Sign Up</title>inp
+    <title>Sign In / Sign Up</title>
+    inp
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="navbar.css" />
     <style>
-
-      
-
       /* Modal Basic Styling */
       .modal {
         margin-top: 90px;
@@ -166,14 +164,23 @@
   </head>
 
   <body>
-
     <nav class="navbar">
       <div class="logo">
         <img src="./img/logo2.png" alt="Logo" />
       </div>
-  
-      <button class="mobile-menu-btn" >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="black">
+
+      <button class="mobile-menu-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke="black"
+        >
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -185,10 +192,9 @@
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="Login1.html">Log In</a></li>
-        <li><a href="Signup2.html">Sign Up</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
       </ul>
     </nav>
-
 
     <!-- Modal for Sign In / Sign Up -->
     <div id="authModal" class="modal">
@@ -216,38 +222,46 @@
             </div>
 
             <div class="input-group">
-  <label class="input-label" for="signInPassword">Password</label>
-  <div style="position: relative;">
-    <input
-      type="password"
-      id="signInPassword"
-      class="input-field"
-      placeholder="Enter your password"
-      required
-    />
-    <button
-      type="button"
-      id="togglePassword"
-      style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;"
-    >
-      <i class="fa-solid fa-eye" id="toggleIcon"></i>
-    </button>
-  </div>
-</div>
+              <label class="input-label" for="signInPassword">Password</label>
+              <div style="position: relative">
+                <input
+                  type="password"
+                  id="signInPassword"
+                  class="input-field"
+                  placeholder="Enter your password"
+                  required
+                />
+                <button
+                  type="button"
+                  id="togglePassword"
+                  style="
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                  "
+                >
+                  <i class="fa-solid fa-eye" id="toggleIcon"></i>
+                </button>
+              </div>
+            </div>
 
-<script>
-  const passwordField = document.getElementById("signInPassword");
-  const togglePasswordButton = document.getElementById("togglePassword");
-  const toggleIcon = document.getElementById("toggleIcon");
+            <script>
+              const passwordField = document.getElementById("signInPassword");
+              const togglePasswordButton =
+                document.getElementById("togglePassword");
+              const toggleIcon = document.getElementById("toggleIcon");
 
-  togglePasswordButton.addEventListener("click", () => {
-    const isPasswordHidden = passwordField.type === "password";
-    passwordField.type = isPasswordHidden ? "text" : "password";
-    toggleIcon.classList.toggle("fa-eye-slash", isPasswordHidden);
-    toggleIcon.classList.toggle("fa-eye", !isPasswordHidden);
-  });
-</script>
-
+              togglePasswordButton.addEventListener("click", () => {
+                const isPasswordHidden = passwordField.type === "password";
+                passwordField.type = isPasswordHidden ? "text" : "password";
+                toggleIcon.classList.toggle("fa-eye-slash", isPasswordHidden);
+                toggleIcon.classList.toggle("fa-eye", !isPasswordHidden);
+              });
+            </script>
 
             <div class="auth-options">
               <label class="remember-me">
@@ -274,7 +288,7 @@
 
             <div class="auth-footer">
               Don't have an account?
-              <a href="Signup2.html" id="switchToSignUp">Create an account</a>
+              <a href="signup.html" id="switchTosignup">Create an account</a>
             </div>
           </form>
         </div>
