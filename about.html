@@ -169,7 +169,65 @@
       .value-card:hover i {
         transform: scale(1.2);
       }
+      
+      /* Scroll to Top Button */
+#scrollButton {
+    position: fixed;
+    bottom: 120px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
 
+
+#scrollButton.visible {
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Enable interaction */
+}
+
+.outer-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #1ad140 0deg,
+        #03730c var(--scroll-progress, 0deg),
+        #1e65d900 var(--scroll-progress, 0deg),
+        #d5e7ec00 360deg
+    );
+    transform: rotate(-90deg); /* Start animation from top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.inner-circle {
+    width: 45px;
+    height: 45px;
+    background: #becdbb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgb(0 0 0);
+}
+
+.arrow {
+    font-size: 20px;
+    color: #075728;
+    font-weight: bold;
+    transform: rotate(90deg); /* Fixed direction to the right */
+}
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -269,6 +327,15 @@
   </head>
 
   <body>
+
+    <div id="scrollButton" class="hidden">
+      <div class="outer-circle">
+        <div class="inner-circle">
+          <div class="arrow">↑</div>
+        </div>
+      </div>
+    </div>
+
     <div id="cursor"></div>
     <nav class="navbar" style="z-index: 1">
       <div class="logo">
@@ -293,12 +360,12 @@
       </button>
       <ul class="nav-links">
 
-        <li><a href="../">Home</a></li>
-        <li><a href="index.html#platforms">Platforms</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="platform.html">Platforms</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="login.html">Log In</a></li>
-        <li><a href="pages/SignUp.html">Sign Up</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
       </ul>
     </nav>
 
@@ -374,612 +441,73 @@
         </div>
       </div>
     </section>
-    <footer
-      style="
-        background: linear-gradient(to right, #0e2511, #19be50);
-        color: #ffffff;
-        padding: 40px 20px;
-        font-family: 'Arial', sans-serif;
-        overflow: hidden;
-        position: relative;
-        z-index: 0;
-      "
-    >
-      <!-- Footer Container -->
-      <div
-        class="footer-container"
-        style="
-          max-width: 1200px;
-          margin: 0 auto;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 40px;
-        "
-      >
-        <!-- Left Section (Logo and Description) -->
-        <div
-          class="footer-left"
-          style="
-            flex: 2;
-            min-width: 300px;
-            min-width: 300px;
-            display: flex;
-            gap: 30px;
-          "
-        >
+    <footer class="main-footer" style="background: linear-gradient(to right,  #0e2511, #19be50);; color: #ffffff; padding: 20px 20px;">
+      <div class="footer-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+        <div class="footer-section" style="flex: 1; min-width: 250px; max-width: 300px;">
           <!-- Logo -->
-          <div
-            class="footer-logo"
-            style="margin-bottom: 20px; animation: fadeInLeft 1s"
-          >
-            <div
-              style="
-                background-color: #8cc152;
-                padding: 20px;
-                border-radius: 8px;
-                display: inline-block;
-                cursor: pointer;
-              "
-              onclick="window.location.href = 'index.html'"
-            >
-              <h1 style="margin: 0; font-size: 36px; font-weight: bold">DSA</h1>
+          <div class="footer-logo" style="margin-bottom: 10px; animation: fadeInLeft 1s; text-align: center;">
+            <div style="padding: 10px; border-radius: 8px; display: inline-block;">
+              <img src="img/lightlogo.png" alt="Logo" style="height: 60px; width: auto;">
             </div>
           </div>
-          <!-- Description -->
-          <p
-            style="
-              font-size: 16px;
-              line-height: 1.6;
-              animation: fadeInLeft 1.5s;
-            "
-          >
-            DSA problem solutions involve step-by-step methods to solve data
-            structure and algorithm challenges efficiently. They include
-            understanding the problem, selecting the right approach,
-            implementing optimized code, and analyzing time and space complexity
-            for performance.
-          </p>
+          <p style="text-align: justify; margin-bottom: 20px; line-height: 1.6; color: white;">DSA problem solutions involve understanding the problem, choosing the right approach, implementing optimized code, and analyzing time and space complexity for efficiency.</p>
+          <div class="social-links" style="text-align: center;">
+            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
         </div>
+    
         <!-- Quick Links Section -->
         <div class="footer-section services">
-          <h2
-            style="
-              font-size: 18px;
-              margin-bottom: 10px;
-              transition: color 0.3s ease;
-            "
-            onmouseover="this.style.color='#e67e22'"
-            onmouseout="this.style.color='white'"
-          >
-            Quick Links
-          </h2>
-          <ul style="list-style: none; padding: 0">
-            <li>
-              <a
-                href="about.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Who We Are</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Blog</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Work With Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Investor Relations</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
+            <h4 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Quick Links<div class="underline"><span></span></div></h4>
+    <br><ul style="list-style: none; padding: 5;">
+              <li><a href="about.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='black'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Who We Are</a></li>
+              <li><a href="blog.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='black'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Blog</a></li>
+              <li><a href="work.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='black'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Work With Us</a></li>
+              <li><a href="#" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color=' black'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Investor Relations</a></li>
+              <li><a href="contact.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color=' black'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Contact Us</a></li>
+            </ul>
         </div>
         <div class="footer-section services">
-          <h2
-            style="
-              font-size: 18px;
-              margin-bottom: 10px;
-              transition: color 0.3s ease;
-            "
-            onmouseover="this.style.color='#e67e22'"
-            onmouseout="this.style.color='white'"
-          >
-            DSA Problem Solutions
-          </h2>
-          <ul style="list-style: none; padding: 0">
-            <li>
-              <a
-                href="about.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Who We Are</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Blog</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Work With Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Investor Relations</a
-              >
-            </li>
-            <li>
-              <a
-                href="contact.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
-        </div>
-        <!-- Quick Links Section -->
-        <div class="footer-section services">
-          <h2
-            style="
-              font-size: 18px;
-              margin-bottom: 10px;
-              transition: color 0.3s ease;
-            "
-            onmouseover="this.style.color='#e67e22'"
-            onmouseout="this.style.color='white'"
-          >
-            Quick Links
-          </h2>
-          <ul style="list-style: none; padding: 0">
-            <li>
-              <a
-                href="about.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Who We Are</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Blog</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Work With Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Investor Relations</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-section services">
-          <h2
-            style="
-              font-size: 18px;
-              margin-bottom: 10px;
-              transition: color 0.3s ease;
-            "
-            onmouseover="this.style.color='#e67e22'"
-            onmouseout="this.style.color='white'"
-          >
-            DSA Problem Solutions
-          </h2>
-          <ul style="list-style: none; padding: 0">
-            <li>
-              <a
-                href="about.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Who We Are</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Blog</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Work With Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Investor Relations</a
-              >
-            </li>
-            <li>
-              <a
-                href="contact.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
-        </div>
-        <!-- Learn More Section -->
-        <div class="footer-section services">
-          <h2
-            style="
-              position: relative;
-              z-index: 1;
-              font-size: 18px;
-              margin-bottom: 10px;
-              transition: color 0.3s ease;
-            "
-            onmouseover="this.style.color='#e67e22'"
-            onmouseout="this.style.color='white'"
-          >
-            Learn More
-          </h2>
-          <ul style="list-style: none; padding: 0">
-            <li>
-              <a
-                href="privacy.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Privacy Policy</a
-              >
-            </li>
-            <li>
-              <a
-                href="security.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Security</a
-              >
-            </li>
-            <li>
-              <a
-                href="terms.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Terms of Service</a
-              >
-            </li>
-            <li>
-              <a
-                href="contributors.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                "
-                onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Our Contributors</a
-              >
-            </li>
-          </ul>
-    <!-- Top scroll button -->
-<button id="scrollBtn" title="Go to top">
-  <i class="fa-solid fa-arrow-up fa-lg"></i>
-</button>
-
-   <footer class="main-footer" style="background: linear-gradient(to right,  #0e2511, #19be50);; color: #ffffff; padding: 20px 20px;">
-  <div class="footer-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
-    <div class="footer-section" style="flex: 1; min-width: 250px; max-width: 300px;">
-      <!-- Logo -->
-      <div class="footer-logo" style="margin-bottom: 10px; animation: fadeInLeft 1s; text-align: center;">
-        <div style="padding: 10px; border-radius: 8px; display: inline-block;">
-          <img src="img/lightlogo.png" alt="Logo" style="height: 60px; width: auto;" />
-        </div>
-      </div>
-      <p style="text-align: justify; margin-bottom: 20px; line-height: 1.6; color: white;">DSA problem solutions involve understanding the problem, choosing the right approach, implementing optimized code, and analyzing time and space complexity for efficiency.</p>
-      <div class="social-links" style="text-align: center;">
-        <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="#" target="_blank" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-      <!-- Social Links -->
-      <div
-        class="social-links"
-        style="text-align: center; margin-top: 40px; animation: fadeInUp 2.5s"
-      >
-        <ul
-          style="
-            margin: auto;
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-          "
-        >
-          <li>
-            <a
-              href="#"
-              style="color: #ffffff; font-size: 20px; transition: color 0.3s"
-              onmouseover="this.style.color='#8cc152';"
-              onmouseout="this.style.color='#ffffff';"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="#"
-              style="color: #ffffff; font-size: 20px; transition: color 0.3s"
-              onmouseover="this.style.color='#8cc152';"
-              onmouseout="this.style.color='#ffffff';"
-              ><i class="fa-brands fa-x-twitter"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="#"
-              style="color: #ffffff; font-size: 20px; transition: color 0.3s"
-              onmouseover="this.style.color='#8cc152';"
-              onmouseout="this.style.color='#ffffff';"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="#"
-              style="color: #ffffff; font-size: 20px; transition: color 0.3s"
-              onmouseover="this.style.color='#8cc152';"
-              onmouseout="this.style.color='#ffffff';"
-              ><i class="fab fa-youtube"></i
-            ></a>
-          </li>
-    </div>
-
-    <!-- Quick Links Section -->
-    <div class="footer-section services" >
-        <h4 style="font-size: 18px; margin-bottom: 10px; 
-         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Quick Links<div class="underline"><span></span></div></h4><ul style="list-style: none; padding: 0;">
-          <li><a href="about.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Who We Are</a></li>
-
-          <li><a href="blog.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Blog</a></li>
-          <li><a href="work.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"></a></li>
-
-
-          <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Blog</a></li>
-          <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Work With Us</a></li>
-          <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Investor Relations</a></li>
-          <li><a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Contact Us</a></li>
-        </ul>
-    </div>
-    <div class="footer-section services" >
-        <h4 style="font-size: 18px; margin-bottom: 10px; 
-         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Learn More<div class="underline"><span></span></div></h4><ul style="list-style: none; padding: 0;">
+            <h4 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Learn More<div class="underline"><span></span></div></h4>
+    <br><ul style="list-style: none; padding: 0;">
+               <ul style="list-style: none; padding: 0;">
+              <li><a href="privacy.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='black'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Privacy Policy</a></li>
+    
+    
+              <li><a href="Security.html" style="color: white; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='black'; this.style.paddingLeft='10px'" this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Security</a></li>
+              <li><a href="terms.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='black'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Terms of Service</a></li>
+              <li><a href="contributors.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='black'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Our Contributors</a></li>
+            </ul>
+        </ul></div>
+    
+         <div class="footer-section services">
+            <h4 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Newsletter<div class="underline"><span></span></div></h4>
+           <br>
            <ul style="list-style: none; padding: 0;">
-          <li><a href="privacy.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Privacy Policy</a></li>
-          <li><a href="security.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Security</a></li>
-          <li><a href="terms.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Terms of Service</a></li>
-          <li><a href="contributors.html" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Our Contributors</a></li>
-        </ul>
-    </div>
-
-     <div class="footer-section services" >
-        <h4 style="font-size: 18px; margin-bottom: 10px; 
-         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Newsletter<div class="underline"><span></span></div></h4><ul style="list-style: none; padding: 0;">
-        <form>
-        <i class="fas fa-envelope"></i>
-        <input type="email" placeholder="Enter your email id" required>
-        <button type="submit"><i class="fas fa-arrow-right"></i></button>
-      </form>
-      <br>
-        <h4 style="font-size: 18px; margin-bottom: 10px; 
-         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Contact Us <div class="underline"><span></span></div></h4><ul style="list-style: none; padding: 0;">
-           <ul style="list-style: none; padding: 0;">
-          <li><a href="mailto:contact@example.com" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">contact@example.com</a></li>
-          <li><a class="fas fa-map-marker-alt" style="color: white; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='white'; this.style.paddingLeft='0'">India</a></li>
-           </ul>
+            <form>
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Enter your email id" required="" fdprocessedid="7t54w">
+            <button type="submit" fdprocessedid="xi78vf"><i class="fas fa-arrow-right"></i></button>
+          </form>
+          <br>
+          <h4 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Contact Us <div class="underline"><span></span></div></h4>
+          <br>
+          <ul style="list-style: none; padding: 0;">
+               <ul style="list-style: none; padding: 0;">
+              <li><a href="mailto:contact@example.com" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">contact@example.com</a></li>
+              <li><a class="fas fa-map-marker-alt" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">India</a></li>
+               </ul>
+          </ul></ul></div>
       </div>
-  </div>
-
-  <div class="footer-bottom" style="text-align: center; margin-top: 10px;">
-    <p style="margin: 0; font-size: 14px; color: white;">&copy; 2025 DSA Problem Solutions. All rights reserved.</p>
-  </div>
-</footer>
+    
+      <div class="footer-bottom" style="text-align: center; margin-top: 10px;">
+        <p style="margin: 0; font-size: 14px; color: white;">© 2025 DSA Problem Solutions. All rights reserved.</p>
+      </div>
+    </footer>
   
 <script>
   // Set the current year dynamically
@@ -994,31 +522,34 @@
   <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
   <script src="scrollscript.js"></script>
   <script src="audio.js"></script>
+  <!-- Scroll to Top Button -->
   <script>
-  // Get the button element
-  const scrollBtn = document.getElementById('scrollBtn');
+    const scrollButton = document.getElementById('scrollButton');
+    const outerCircle = document.querySelector('.outer-circle');
+    const arrow = document.querySelector('.arrow');
 
-  // Show the button when the user scrolls down 100px from the top
-  window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollBtn.style.display = "block";
-    } else {
-        scrollBtn.style.display = "none";
-    }
-  };
+    // Function to handle scroll behavior
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = (scrollTop / scrollHeight) * 360;
 
-  // Scroll to the top of the page when the button is clicked
-  scrollBtn.onclick = function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+      // Show button after scrolling 7-8 lines (~100px)
+      if (scrollTop > 100) {
+        scrollButton.classList.add('visible');
+      } else {
+        scrollButton.classList.remove('visible');
+      }
+
+      // Update the circular progress
+      outerCircle.style.setProperty('--scroll-progress', `${scrollProgress}deg`);
     });
-  };
 
-</script>
-
+    // Scroll-to-top functionality
+    scrollButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
-
 </body>
 
 </html>
