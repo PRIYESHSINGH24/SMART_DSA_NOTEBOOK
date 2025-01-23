@@ -1,5 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:image" content="img/lightlogo.png" />
+    <meta
+      property="og:url"
+      content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/"
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="img/lightlogo.png" type="image/png" />
+    <link rel="icon" href="img/lightlogo.png" sizes="16x16" type="image/png" />
+
+    <title>Our Contributors- DSA Problem Solutions</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="navbar.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        /* overflow-y: hidden; */
+      }
+
+      .content-wrapper {
+        height: 100%;
+        width: 100%;
+        margin-top: 100px;
+      }
+
 
 <head>
   <meta charset="UTF-8" />
@@ -268,60 +316,255 @@
       }
 
       .nav-links {
+
+      /* Scroll to Top Button */
+      #scrollToTopBtn {
+
         display: none;
-        /* Hide by default on mobile */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        bottom: 85px;
+        right: 40px;
+        height: 50px;
+        width: 50px;
+        background-color: rgb(80, 183, 218);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 15px;
       }
 
-      /* Show menu when active */
-      .nav-links.active {
+      #scrollToTopBtn:hover {
+        background-color: rgb(80, 183, 218);
+      }
+
+      footer {
+        background-color: #ffffff;
+        padding: 40px 0;
+        color: #ffffff;
+        box-shadow: 12px 6px 14px rgba(0, 0, 0, 0.15);
+        font-family: "Outfit", serif;
+        font-weight: 300;
+        margin-top: 50px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .footer-section {
+        margin: 20px;
+      }
+
+      .footer-section h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+        text-decoration: none;
+        color: #6c757d;
+        font-size: 14px;
+      }
+
+      .footer-section ul li a:hover {
+        color: #000;
+      }
+
+      .social-icons {
         display: flex;
+        gap: 10px;
       }
 
-      .nav-links li {
-        width: 100%;
+      .social-icons li {
+        list-style: none;
+      }
+
+      .social-icons li a {
+        font-size: 20px;
+        color: #6c757d;
+      }
+
+      .footer-section.newsletter h2 {
+        font-size: 22px;
+        color: #ea0202;
+        margin-bottom: 15px;
+      }
+
+      .footer-section.newsletter p {
+        font-size: 14px;
+        color: #130111;
+        margin-bottom: 20px;
+      }
+
+      .footer-section.newsletter .newsletter-form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .footer-section.newsletter .newsletter-form input {
+        padding: 10px;
+        font-size: 14px;
+        width: 250px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        transition: border-color 0.3s ease;
+      }
+
+      .footer-section.newsletter .newsletter-form input:focus {
+        border-color: #ff5722;
+        /* Focused border color */
+        outline: none;
+      }
+
+      .footer-section.newsletter .subscribe-btn {
+        background: linear-gradient(90deg, #ff5722, #ff0000);
+        /* Red gradient */
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      .footer-section.newsletter .subscribe-btn:hover {
+        background: linear-gradient(90deg, #ff0000, #ff5722);
+        /* Reverse gradient on hover */
+        transform: translateY(-3px);
+        /* Button hover animation */
+      }
+
+      .footer-bottom {
         text-align: center;
+        padding: 20px 0;
+        background-color: #e9ecef;
+        font-size: 14px;
+        position: relative;
+        bottom: 0;
       }
 
-      .nav-links a {
-        display: block;
-        padding: 0.75rem 0;
-      }
+      @keyframes pulse {
+        0% {
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(255, 255, 255, 0.6);
+        }
 
-      .nav-links a::after {
-        display: none;
-        /* Remove hover animation on mobile */
-      }
-    }
-
-    /* Dark mode support */
-    @media (prefers-color-scheme: dark) {
-
-      .nav-links a {
-        color: #f9fafd;
-      }
-
-      .nav-links a:hover {
-        color: #60a5fa;
-      }
-
-      .nav-links a::after {
-        background-color: #60a5fa;
-      }
-
-      @media (max-width: 768px) {
-        .nav-links {
-          background: rgba(174, 237, 158, 0.98);
+        100% {
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4),
+            0 0 30px rgb(251, 255, 251);
         }
       }
+
+      header:hover {
+        box-shadow: 0 10px 25px rgb(251, 255, 251);
+        transform: translateY(-5px);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .title {
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .contributors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px auto;
+        padding: 0 20px;
+        max-width: 1200px;
+      }
+
+      /* General Reset */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f4f8;
+        color: #333;
+      }
+
+      /* Footer Styling */
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      footer a {
+        color: #00bcd4;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Contributors Section Container */
+      #contributors {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 2rem;
+      }
+
+      /* Contributor Card Styling */
+      .contributor-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+        padding: 20px;
+      }
+
+      .contributor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Image Styling */
+      .contributor-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid #00bcd4;
+        margin-bottom: 15px;
+      }
+
+      /* Contributor Name Styling */
+      .contributor-card h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin: 10px 0;
+      }
+
     }
   </style>
 </head>
@@ -366,8 +609,8 @@
         <div class="footer-logo" >
           <div class="footer-div" onclick="window.location.href = 'index.html'">
             <h1>DSA</h1>
-          </div>
-        </div>
+
+
         <!-- Description -->
         <p>
           DSA problem solutions involve step-by-step methods to solve data
@@ -578,28 +821,158 @@
 
           // Append card to container
           contributorsContainer.appendChild(card);
+
         });
-      } catch (error) {
-        console.error("Error fetching contributors:", error);
+      // Get the button element
+      const scrollBtn = document.getElementById("scrollBtn");
 
-        // Show error message on the page
-        const errorMessage = document.createElement("p");
-        errorMessage.textContent = "Failed to load contributors. Please try again.";
-        contributorsContainer.appendChild(errorMessage);
+      // Show the button when the user scrolls down 100px from the top
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 30 ||
+          document.documentElement.scrollTop > 30
+        ) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      };
+
+      // Scroll to the top of the page when the button is clicked
+      scrollBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+    </script>
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+    <script
+      src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js"
+      async
+    ></script>
+    <script src="scrollscript.js"></script>
+    <script src="audio.js"></script>
+    <script>
+      // Get the button element
+      const scrollBtn = document.getElementById("scrollBtn");
+
+      // Show the button when the user scrolls down 100px from the top
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 30 ||
+          document.documentElement.scrollTop > 30
+        ) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      };
+
+      // Scroll to the top of the page when the button is clicked
+      scrollBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+    </script>
+
+    <script>
+      const REPO_OWNER = "PRIYESHSINGH24";
+      const REPO_NAME = "DSA_SOLUTION_PLATFORM";
+      const GITHUB_TOKEN = ""; // Optional: Add your GitHub personal access token to avoid rate limits
+
+      async function fetchContributors() {
+        const contributorsContainer = document.getElementById("contributors");
+
+        try {
+          // Fetch contributors from the GitHub API with a limit of 100 contributors per page
+          const response = await fetch(
+            `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contributors?per_page=100`,
+            {
+              headers: GITHUB_TOKEN
+                ? { Authorization: `token ${GITHUB_TOKEN}` }
+                : {},
+            }
+          );
+
+          if (!response.ok) throw new Error("Failed to fetch contributors");
+
+          const contributors = await response.json();
+
+          contributors.forEach((contributor) => {
+            // Create a card for each contributor
+            const card = document.createElement("div");
+            card.className = "contributor-card";
+
+            // Profile image
+            const img = document.createElement("img");
+            img.src = contributor.avatar_url;
+            img.alt = contributor.login;
+
+            // GitHub username
+            const name = document.createElement("h3");
+            name.textContent = contributor.login;
+
+            // GitHub profile link with icon
+            const githubLink = document.createElement("a");
+            githubLink.href = contributor.html_url;
+            githubLink.target = "_blank";
+
+            // Create an <i> element for the GitHub icon
+            const githubIcon = document.createElement("i");
+            githubIcon.className = "fab fa-github"; // Font Awesome GitHub icon class
+            githubIcon.ariaHidden = true; // Hide from screen readers (optional)
+
+            // Append the icon to the link
+            githubLink.appendChild(githubIcon);
+
+            // Optionally, add a screen-reader-only text for accessibility
+            const srText = document.createElement("span");
+            srText.className = "sr-only"; // Add a class for screen-reader-only styles
+            srText.textContent = "GitHub Profile";
+            githubLink.appendChild(srText);
+
+            // Append elements to card
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(githubLink);
+
+            // Append card to container
+            contributorsContainer.appendChild(card);
+          });
+        } catch (error) {
+          console.error("Error fetching contributors:", error);
+
+          // Show error message on the page
+          const errorMessage = document.createElement("p");
+          errorMessage.textContent =
+            "Failed to load contributors. Please try again.";
+          contributorsContainer.appendChild(errorMessage);
+        }
       }
-    }
 
-    // Fetch and render contributors on page load
-    fetchContributors();
+      // Fetch and render contributors on page load
+      fetchContributors();
 
-    // Mobile menu toggle
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-      document.querySelector('.nav-links').classList.toggle('active');
-    });
-
-  </script>
-
-
-</body>
-
+      // Mobile menu toggle
+      document
+        .querySelector(".mobile-menu-btn")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+  </body>
 </html>
