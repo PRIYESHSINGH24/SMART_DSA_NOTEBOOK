@@ -395,7 +395,7 @@ footer p {
         font-size: 1.2rem;
     }
 }
-
+      
   </style>
 </head>
 
@@ -1174,58 +1174,23 @@ footer p {
         <p style="margin: 0; font-size: 14px; color: white;">&copy; 2025 DSA Problem Solutions. All rights reserved.</p>
       </div>
     </footer>
-
-    <script>
-      // Set the current year dynamically
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
-    </script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="script.js"></script>
-    <script
-      src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js"
-      async
-    ></script>
-    <script src="scrollscript.js"></script>
-    <script src="audio.js"></script>
-    <script>
-      // Get the button
-      const scrollBtn = document.getElementById("scrollBtn");
-
-      // Show/hide the button based on scroll position
-      window.onscroll = function () {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          scrollBtn.style.display = "block";
-        } else {
-          scrollBtn.style.display = "none";
-        }
-      };
-
-      // Scroll to the top when the button is clicked
-      scrollBtn.addEventListener("click", function () {
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+        </script>
     
-      <script src="script.js"></script>
-      <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
-      <script src="scrollscript.js"></script>
-      <script src="audio.js"></script>
-      <script>
-      // Get the button element
-      const scrollBtn = document.getElementById('scrollBtn');
+        <!-- External scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+            integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <script src="script.js"></script>
+        <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
+        <script src="scrollscript.js"></script>
+        <script src="audio.js"></script>
+    
+        <!-- Scroll to top functionality -->
+        <script>
+            const scrollBtn = document.getElementById("scrollBtn");
     
       // Show the button when the user scrolls down 100px from the top
       window.onscroll = function () {
