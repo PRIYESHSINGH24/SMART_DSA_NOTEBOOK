@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log in</title>
+    <title>Sign Up</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
@@ -26,7 +26,6 @@
       }
 
       .container {
-        margin-top: 90px;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -142,14 +141,33 @@
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="Login1.html">Log In</a></li>
-        <li><a href="pages/SignUp.html">Sign Up</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
       </ul>
     </nav>
-
     <div class="container">
       <div class="form-container">
-        <h2>Log In</h2>
+        <h2>Create an Account</h2>
         <form action="#" method="POST">
+          <div class="input-group">
+            <label class="input-label" for="signInEmail">Username</label>
+            <input
+              type="text"
+              id="signInEmail"
+              class="input-field"
+              placeholder="username"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+
           <div class="input-group">
             <input
               type="email"
@@ -179,7 +197,7 @@
 
           <button type="submit" class="btn">Sign Up</button>
           <div class="login-link">
-            Don’t have an account? <a href="signup.html">Sign up</a>
+            Already have an account? <a href="login.html">Log in</a>
           </div>
         </form>
       </div>

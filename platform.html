@@ -234,8 +234,7 @@
         .nav-links a {
           color: #f9fafd;
         }
-    }
-    </style>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -255,12 +254,12 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="navbar.css">
   <style>
-    #scrollBtn {
+    /* #scrollBtn{
     position: fixed;
     bottom: 125px; /* Place closer to the bottom */
-    right: 33px;  /* Place closer to the right */
-    display: none; /* Initially hidden */
-    background-color: #158746;
+    /* right: 33px;  /* Place closer to the right */
+    /* display: none; Initially hidden */ 
+    /* background-color: #158746;
     color: white;
     border: none;
     border-radius: 50%;
@@ -269,8 +268,8 @@
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000; /* Ensure visibility above other elements */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+    /* transition: background-color 0.3s ease, transform 0.3s ease; */
+} */
 
 #scrollBtn:hover {
     background-color: #000; /* Change color on hover */
@@ -378,6 +377,10 @@ footer p {
     font-size: 0.9rem;
 }
 
+.footer-section{
+  width: 100vw;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
@@ -419,7 +422,7 @@ footer p {
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="Login.html">Log In</a></li>
-        <li><a href="pages/SignUp.html">Sign Up</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
       </ul>
     </nav>
   </header>
@@ -582,7 +585,7 @@ footer p {
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="pages/Login.html">Log In</a></li>
-          <li><a href="pages/SignUp.html">Sign Up</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
         </ul>
       </nav>
     </header>
@@ -1189,22 +1192,40 @@ footer p {
         <script>
             const scrollBtn = document.getElementById("scrollBtn");
     
-            window.onscroll = function () {
-                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                    scrollBtn.style.display = "block";
-                } else {
-                    scrollBtn.style.display = "none";
-                }
-            };
+      // Show the button when the user scrolls down 100px from the top
+      window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+
+
+          scrollBtn.style.display = "block";
+      } else {
+          scrollBtn.style.display = "none";
+      }
+    };
+  
+  // Scroll to the top of the page when the button is clicked
+    scrollBtn.onclick = function () {
+      window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+      });
+    };
+      });
+  </script>
+
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+      };
     
-            scrollBtn.addEventListener("click", function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
-        </script>
-    
-    </body>
-    </html>
-    
+      // Scroll to the top of the page when the button is clicked
+      scrollBtn.onclick = function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+      });
+    </script>
+  </body>
+</html>
