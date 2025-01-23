@@ -27,35 +27,127 @@
     />
     <link rel="stylesheet" href="codechef.css" />
     <link rel="stylesheet" href="navbar.css">
+    
+   
+    
   </head>
+
+
+  <style>
+    
+  </style>
+
+
+
   <body>
-    <div id="cursor"></div>
+ 
     <nav class="navbar">
-      <div class="logo">
-        <img src="../img/logo2.png" alt="Logo" />
+      <div
+        class="logo"
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      >
+        <img src="img/lightlogo.png" alt="Logo" />
       </div>
-  
-      <button class="mobile-menu-btn" >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="black">
+      <button class="mobile-menu-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke="black"
+        >
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
+
       <ul class="nav-links">
-        <li><a href="../" >Home</a></li>
-        <li><a href="../platform.html">Platforms</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-        <li><a href="../Login1.html">Log In</a></li>
-        <li><a href="pages/SignUp.html">Sign Up</a></li>
+        <li
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0px, 0px);
+          "
+        >
+          <a href="#home"  >Home</a>
+        </li>
+        <li
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0px, 0px);
+          "
+        >
+          <a href="platform.html">Platforms</a>
+        </li>
+        <li
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0px, 0px);
+          "
+        >
+          <a href="about.html">About</a>
+        </li>
+        <li
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0px, 0px);
+          "
+        >
+          <a href="contact.html">Contact</a>
+        </li>
+        <li
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0px, 0px);
+          "
+        >
+          <a href="pages/Login.html">Log In</a>
+        </li>
+        <li
+          style="
+            translate: none;
+            rotate: none;
+            scale: none;
+            opacity: 1;
+            transform: translate(0px, 0px);
+          "
+        >
+          <a href="signup.html">Sign Up</a>
+        </li>
       </ul>
     </nav>
-    <header>
-      
+  
+  
+      <header>
       </a>
-      <h1>Codechef Problems</h1>
+      <h1 >Codechef Problems</h1>
     </header>
+    
 
     <div class="container">
       <div class="problems-list">
@@ -256,6 +348,32 @@ def reverse_linked_list(head):
 
       // Initial rendering of problems
       renderProblems();
+
+
+      // JavaScript for the Navbar
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+  const navLinks = document.querySelector(".nav-links");
+
+ 
+  mobileMenuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+ 
+  const links = document.querySelectorAll(".nav-links a");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      if (navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
+      }
+    });
+  });
+});
+
   </script>
+
+
+
   </body>
 </html>
