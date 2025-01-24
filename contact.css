@@ -1072,7 +1072,7 @@ textarea {
 button {
   background: linear-gradient(135deg, #239d21 0%, #07ff02 100%);
   color: white;
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   border: none;
   border-radius: 12px;
   font-size: 1rem;
@@ -1276,8 +1276,7 @@ footer form input:active {
 }
 
 footer form button {
-  padding: 10px 20px;
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: bold;
   background-color: #6c757d;
   color: #ffffff;
@@ -1374,12 +1373,13 @@ form {
   position: relative;
   /* Add relative positioning to the form */
   margin-bottom: 1px;
+  gap: 7px;
 }
 
 form::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -24px;
   left: 0%;
   /* Adjust this value to control the starting point of the border */
   width: 92%;
@@ -1403,7 +1403,7 @@ form button {
   outline: none;
   cursor: pointer;
   color: #000;
-  margin-left: 6rem;
+  /* margin-left: 6rem; */
 }
 
 form button .fas {
@@ -1420,7 +1420,7 @@ form button .fas {
 }
 
 .main-footer .footer-section {
-  flex: 1 1 18%;
+  /* flex: 1 1 18%; */
   /* This ensures each section takes up an equal width, you can adjust percentage as needed */
   padding: 10px;
 }
@@ -1630,7 +1630,7 @@ h4 {
 }
 
 .footer-content {
-  padding: 0;
+  padding: 40px;
 }
 
 footer {
