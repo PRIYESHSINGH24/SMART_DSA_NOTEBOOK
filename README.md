@@ -105,3 +105,17 @@ Follow these steps to set up the project locally:
 
 ## Project Contributers: <h3>
 <img src="https://contributors-img.web.app/image?repo=PRIYESHSINGH24/DSA_SOLUTION_PLATFORM"/>
+
+
+
+## Stargazers 
+
+
+[![Stargazers repo roster for @PRIYESHSINGH24/DSA_SOLUTION_PLATFORM](https://reporoster.com/stars/dark/PRIYESHSINGH24/DSA_SOLUTION_PLATFORM)](https://github.com/PRIYESHSINGH24/DSA_SOLUTION_PLATFORM/stargazers)
+
+
+## Forkers 
+
+
+[![Forkers repo roster for @PRIYESHSINGH24/DSA_SOLUTION_PLATFORM](https://reporoster.com/forks/dark/PRIYESHSINGH24/DSA_SOLUTION_PLATFORM)](https://github.com/PRIYESHSINGH24/DSA_SOLUTION_PLATFORM/network/members)
+
