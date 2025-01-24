@@ -48,9 +48,16 @@ header {
 }
 
 .problems-list {
-    width: 50%;
-    padding: 20px;
-    overflow-y: auto;
+  width: 100%;
+  height:50%;
+  padding: 20px;
+  overflow-y: auto;
+  display: grid
+;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  margin-top: 2rem;
+  margin-left: -6rem;
 }
 
 .solution-display {
@@ -58,7 +65,10 @@ header {
     padding: 20px;
     background-color: #f0f0f0;
     overflow-y: auto;
+   display: none;
 }
+
+
 
 .card {
     background-color: #fff;
@@ -282,10 +292,19 @@ header {
   }
   
   /* Dark mode support */
-  @media (prefers-color-scheme: dark) {
-    .ques-form {
-        background: #d6d6d6;
-    }
+ 
+    @media (prefers-color-scheme: dark) {
+      .ques-form {
+          background: #d6d6d6;
+              width: 35rem;
+              margin-left: 25rem;
+              flex-direction: column;
+              flex-wrap: wrap;
+              align-content: flex-end;
+              justify-content: flex-end;
+              align-items: stretch;
+          }
+      
   
     .ques-form h3 {
         color: #5a5b5c;
