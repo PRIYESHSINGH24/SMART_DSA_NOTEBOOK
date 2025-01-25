@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:image" content="../img/lightlogo.png" />
+    <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="../img/lightlogo.png" type="image/png" />
+    <link rel="icon" href="../img/lightlogo.png" sizes="16x16" type="image/png" />
+
     <title>Codechef Problems - DSA Problem Solutions</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
@@ -17,8 +25,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="codechef.css" />
+    <link rel="stylesheet" href="../navbar.css">
   </head>
   <body>
+    <!-- Scroll -->
+    <div id="scrollButton" class="hidden">
+      <div class="outer-circle">
+        <div class="inner-circle">
+          <div class="arrow">↑</div>
+        </div>
+      </div>
+    </div>
     <div id="cursor"></div>
     <header>
       <nav class="navbar">
@@ -39,7 +56,7 @@
           <li><a href="../about.html">About</a></li>
           <li><a href="../contact.html">Contact</a></li>
           <li><a href="../Login1.html">Log In</a></li>
-          <li><a href="../Signup2.html">Sign Up</a></li>
+          <li><a href="./SignUp.html">Sign Up</a></li>
         </ul>
       </nav>
       <h1>Codechef Problems</h1>
@@ -251,6 +268,38 @@ def reverse_linked_list(head):
 
       // Initial rendering of problems
       renderProblems();
+  </script>
+  <!-- Scroll to Top Button -->
+  <script>
+    const scrollButton = document.getElementById("scrollButton");
+    const outerCircle = document.querySelector(".outer-circle");
+    const arrow = document.querySelector(".arrow");
+
+    // Function to handle scroll behavior
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = (scrollTop / scrollHeight) * 360;
+
+      // Show button after scrolling 7-8 lines (~100px)
+      if (scrollTop > 100) {
+        scrollButton.classList.add("visible");
+      } else {
+        scrollButton.classList.remove("visible");
+      }
+
+      // Update the circular progress
+      outerCircle.style.setProperty(
+        "--scroll-progress",
+        `${scrollProgress}deg`
+      );
+    });
+
+    // Scroll-to-top functionality
+    scrollButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
   </body>
 </html>

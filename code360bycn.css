@@ -301,7 +301,7 @@ header h1{
     .ques-form input,
     .ques-form select,
     .ques-form textarea {
-        background-color: #7e7e7e;
+        background-color: white;
         border-color: #4a5568;
         color: #e2e8f0;
     }
