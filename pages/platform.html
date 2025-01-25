@@ -23,10 +23,6 @@
         z-index: 1000; /* Ensure visibility above other elements */
         transition: background-color 0.3s ease, transform 0.3s ease;
       }
-      #scrollBtn:hover {
-        background-color: #000; /* Change color on hover */
-        transform: scale(1.2); /* Slightly enlarge */
-      }
 
       /* General Styles */
       body {
@@ -90,27 +86,6 @@
           color: #f9fafd;
         }
       }
-        /* #scrollBtn{
-    position: fixed;
-    bottom: 125px; 
-     right: 33px;  
-     display: none; 
-     background-color: #158746;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;   
-     transition: background-color 0.3s ease, transform 0.3s ease; 
-}  */
-
-#scrollBtn:hover {
-    background-color: #000; /* Change color on hover */
-    transform: scale(1.2); /* Slightly enlarge */
-}
 
     /* General Styles */
 body {
@@ -235,12 +210,22 @@ section ul li {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../pages/scroll.css">
   
   
    
 </head>
 
 <body>
+     <!-- Scroll -->
+    <div id="scrollButton" class="hidden">
+      <div class="outer-circle">
+        <div class="inner-circle">
+          <div class="arrow">↑</div>
+        </div>
+      </div>
+    </div>
+    <div
   
 
   <main>
@@ -424,19 +409,10 @@ section ul li {
 
 
     
-    <!-- Top scroll button -->
-    <button id="scrollBtn" title="Go to top" style="display: none;" fdprocessedid="hj5j7u">
-      <i class="fa-solid fa-arrow-up fa-lg"></i>
-    </button>
+   
 
    
   </main>
-
-  
-    <!-- Top scroll button -->
-    <button id="scrollBtn" title="Go to top">
-      <i class="fa-solid fa-arrow-up fa-lg"></i>
-    </button>
     
        <footer class="main-footer" style="
         background: linear-gradient(to right, #0e2511, #19be50);
@@ -617,68 +593,16 @@ section ul li {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
         <script src="script.js"></script>
-        <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async=""></script>
+         <script
+             src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js"
+             async
+             ></script>
+        <script src="../pages/scroll.js"></script>
         <script src="scrollscript.js"></script>
         <script src="audio.js"></script>
-    
-        <!-- Scroll to top functionality -->
-        <script>
-            const scrollBtn = document.getElementById("scrollBtn");
-    
-      // Show the button when the user scrolls down 100px from the top
-      window.onscroll = function () {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-
-
-          scrollBtn.style.display = "block";
-      } else {
-          scrollBtn.style.display = "none";
-      }
-    };
-  
-  // Scroll to the top of the page when the button is clicked
-    scrollBtn.onclick = function () {
-      window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-      });
-    };
-     
-      
-  </script>
-  <script>
-
-
-    window.addEventListener('scroll', function() {
-    // Existing scroll detection logic
-    if (window.scrollY > someThreshold) {
-        scrollBtn.style.display = "block";
-    } else {
-        scrollBtn.style.display = "none";
-    }
-});
-
-// Scroll to the top of the page when the button is clicked
-scrollBtn.onclick = function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-};
-    </script>
   
 
-<span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span><iframe id="tidio-chat-code" title="Tidio Chat code" style="display: none;"></iframe><div id="tidio-chat" style="position: fixed; z-index: 999999999 !important;"><iframe title="Tidio Chat" id="tidio-chat-iframe" srcdoc="
-                  <html lang=&quot;en&quot;>
-                  <head>
-                  <meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no&quot;>
-                    </head>
-                  <body  class=&quot;awesome-iframe&quot;>
-                    <div></div>
-                  </body>
-                  " style="display: block; border: none; position: fixed; inset: auto 9px 35px auto; width: 264px; height: 94px; opacity: 1; color-scheme: none; background: none transparent !important; margin: 0px; max-height: 100%; max-width: 100vw; transform: translateY(0px); transition: none !important; visibility: visible; z-index: 999999999 !important; border-radius: 47px 30px 47px 47px;">
-  
-                  </iframe>
+
 </div>
 </body>
 </html>
