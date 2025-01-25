@@ -64,32 +64,17 @@ function handleViewSolution(problemTitle) {
                 </div>
             `;
             break;
-        case "Binary Tree Level Order Traversal":
+        case "Strings Reversal":
             solutionText = `
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">${problemTitle} Solution</h3>
                     </div>
                     <div class="card-content">
-                        <p>Given the root of a binary tree, return the level order traversal of its nodes' values.</p>
-                        <div id="ace-editor-binary-tree" style="height: 200px;"></div>
+                        <p>Write a function that reverses a string input.</p>
+                        <div id="ace-editor-strings-reversal" style="height: 200px;"></div>
                         <p>Time Complexity: O(n)</p>
-                        <p>Space Complexity: O(n)</p>
-                    </div>
-                </div>
-            `;
-            break;
-        case "ascll Function":
-            solutionText = `
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">${problemTitle} Solution</h3>
-                    </div>
-                    <div class="card-content">
-                        <p>ascll Function</p>
-                        <div id="ace-editor-ascll-Function" style="height: 200px;"></div>
-                        <p>Time Complexity: O(n)</p>
-                        <p>Space Complexity: O(n)</p>
+                        <p>Space Complexity: O(1)</p>
                     </div>
                 </div>
             `;
@@ -127,136 +112,13 @@ function handleViewSolution(problemTitle) {
     }
 }`);
             break;
-        case "Reverse Linked List":
-            editor = ace.edit("ace-editor-reverse-linked-list");
+        case "Strings Reversal":
+            editor = ace.edit("ace-editor-strings-reversal");
             editor.setTheme("ace/theme/monokai");
             editor.session.setMode("ace/mode/javascript");
-            editor.setValue(`function reverseList(head) {
-    let prev = null;
-    let curr = head;
-    while (curr !== null) {
-        let nextTemp = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = nextTemp;
-    }
-    return prev;
+            editor.setValue(`function reverseString(str) {
+    return str.split('').reverse().join('');
 }`);
             break;
-        case "Binary Tree Level Order Traversal":
-            editor = ace.edit("ace-editor-binary-tree");
-            editor.setTheme("ace/theme/monokai");
-            editor.session.setMode("ace/mode/javascript");
-            editor.setValue(`function levelOrder(root) {
-    if (!root) return [];
-    let result = [];
-    let queue = [root];
-    while (queue.length > 0) {
-        let levelSize = queue.length;
-        let level = [];
-        for (let i = 0; i < levelSize; i++) {
-            let node = queue.shift();
-            level.push(node.val);
-            if (node.left) queue.push(node.left);
-            if (node.right) queue.push(node.right);
-        }
-        result.push(level);
-    }
-    return result;
-}`);
-            break;
-        case "ascll Function":
-            editor = ace.edit("ace-editor-ascll-Function");
-            editor.setTheme("ace/theme/monokai");
-            editor.session.setMode("ace/mode/c_cpp");
-            editor.setValue(`#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct node {
-    int data;
-    struct node *next;
-} node;
-
-void createnode(node **head) {
-    int data;
-    node* newnode = (node*)malloc(sizeof(node));
-
-    printf("Enter value: ");
-    scanf("%d", &data);
-    newnode->data = data;
-    newnode->next = NULL;
-
-    if (*head == NULL) {
-        *head = newnode;
-    } else {
-        newnode->next = *head;
-        *head = newnode;
     }
 }
-void ascll(node **head) {
-    if (*head == NULL) {
-        printf("Empty list\n");
-        return;
-    }
-
-    node *p = *head;
-    node *q = NULL;
-    int temp;
-
-    // Bubble sort for linked list (Improved swapping logic)
-    while (p != NULL) {
-        q = p->next;
-        while (q != NULL) {
-            if (p->data > q->data) {
-                // Swap data between p and q
-                temp = p->data;
-                p->data = q->data;
-                q->data = temp;
-            }
-            q = q->next;
-        }
-        p = p->next;
-    }
-}
-
-void printll(node *head) {
-    if (head == NULL) {
-        printf("Empty list\n");
-    } else {
-        while (head != NULL) {
-            printf("%d ", head->data);
-            head = head->next;
-        }
-        printf("\n");
-    }
-}
-
-
-int main() {
-    int num = 1;
-    node *head = NULL;
-
-    while (num) {
-        createnode(&head);
-        printf("Want to insert more? Type 1 for yes, 0 for no: ");
-        scanf("%d", &num);
-    }
-
-    ascll(&head);
-    printll(head);
-
-    return 0;
-}
-`);
-    }
-}
-
-const cursor = document.querySelector("#cursor");
-const body = document.querySelector("body");
-
-body.addEventListener("mousemove", function (e) {
-    gsap.to(cursor, {
-        x: e.x,
-        y: e.y
-    })
-})
