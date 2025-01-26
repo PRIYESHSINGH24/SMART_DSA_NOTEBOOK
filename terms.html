@@ -13,8 +13,9 @@
 
     <link rel="icon" href="img/lightlogo.png" type="image/png" />
     <link rel="icon" href="img/lightlogo.png" sizes="16x16" type="image/png" />
+  <title>Terms of Service- DSA Problem Solutions</title>
 
-    <title>Terms of Service- DSA Problem Solutions</title>
+  <link rel="stylesheet" href="pages/styles.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -34,7 +35,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="pages/navbar.css" />
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
@@ -266,6 +267,26 @@
   </head>
 
   <body>
+
+   
+    <!-- Scroll -->
+    <div id="scrollButton" class="hidden">
+      <div class="outer-circle">
+        <div class="inner-circle">
+          <div class="arrow">↑</div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="cursor"
+      style="
+        translate: none;
+        rotate: none;
+        scale: none;
+        transform: translate(305px, 644px);
+      "
+    ></div>
+
     <header>
       <nav class="navbar">
         <div class="logo">
@@ -838,34 +859,37 @@
     ></script>
     <script src="scrollscript.js"></script>
     <script src="audio.js"></script>
-    <script>
-      document
-        .querySelector(".mobile-menu-btn")
-        .addEventListener("click", function () {
-          document.querySelector(".nav-links").classList.toggle("active");
-        });
-      // Get the button element
-      const scrollBtn = document.getElementById("scrollBtn");
+     <!-- Scroll to Top Button -->
+     <script>
+      const scrollButton = document.getElementById("scrollButton");
+      const outerCircle = document.querySelector(".outer-circle");
+      const arrow = document.querySelector(".arrow");
 
-      // Show the button when the user scrolls down 100px from the top
-      window.onscroll = function () {
-        if (
-          document.body.scrollTop > 30 ||
-          document.documentElement.scrollTop > 30
-        ) {
-          scrollBtn.style.display = "block";
+      // Function to handle scroll behavior
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const scrollHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = (scrollTop / scrollHeight) * 360;
+
+        // Show button after scrolling 7-8 lines (~100px)
+        if (scrollTop > 100) {
+          scrollButton.classList.add("visible");
         } else {
-          scrollBtn.style.display = "none";
+          scrollButton.classList.remove("visible");
         }
-      };
 
-      // Scroll to the top of the page when the button is clicked
-      scrollBtn.onclick = function () {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      };
+        // Update the circular progress
+        outerCircle.style.setProperty(
+          "--scroll-progress",
+          `${scrollProgress}deg`
+        );
+      });
+
+      // Scroll-to-top functionality
+      scrollButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     </script>
   </body>
 </html>
