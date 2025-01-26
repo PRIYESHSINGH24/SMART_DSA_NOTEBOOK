@@ -1485,7 +1485,7 @@ h4 {
   }
 }
 
-#scrollButton {
+/* #scrollButton {
   position: fixed;
   bottom: 120px;
   right: 32px;
@@ -1518,9 +1518,9 @@ h4 {
 #scrollButton.show {
   opacity: 1;
   visibility: visible;
-}
+} */
 
-.help-boxes {
+/* .help-boxes {
   display: flex;
   flex-wrap: wrap;
   margin: 2vh;
@@ -1671,4 +1671,4 @@ footer {
   align-items: center;
   justify-content: center;
   z-index: 10;
-}
+} */
