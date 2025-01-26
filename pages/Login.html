@@ -3,37 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <meta property="og:image" content="../img/lightlogo.png" />
     <meta
       property="og:url"
       content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/"
     />
     <meta property="og:type" content="website" />
-
     <link rel="icon" href="../img/lightlogo.png" type="image/png" />
-    <link
-      rel="icon"
-      href="../img/lightlogo.png"
-      sizes="16x16"
-      type="image/png"
-    />
-
-    <title>Sign In / Sign Up</title>
-    <link rel="stylesheet" href="Login.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="Login.css" />
+    <title>Sign In / Sign Up</title>
   </head>
-
   <body>
     <nav class="navbar">
       <div class="logo">
         <img src="../img/lightlogo.png" alt="Logo" />
       </div>
-
       <button class="mobile-menu-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -61,41 +49,40 @@
       </ul>
     </nav>
 
-    <!-- Modal for Sign In / Sign Up -->
     <div id="authModal" class="modal">
       <div class="modal-content">
-        <!-- Sign In Form -->
         <div class="form-main">
           <div id="signInForm" class="auth-container">
             <div class="auth-header">
-              <div class="auth-logo">
-                <i class="fa-solid fa-user-secret"></i>
-              </div>
-              <h2 class="auth-title">Welcome back</h2>
+              <h2 class="auth-title">Welcome Back</h2>
               <p class="auth-subtitle">Sign in to your account</p>
             </div>
 
             <form id="signInFormSubmit">
               <div class="input-group">
-                <label class="input-label" for="signInEmail">Email</label>
-                <input
-                  type="email"
-                  id="signInEmail"
-                  class="input-field"
-                  placeholder="name@company.com"
-                  required
-                />
+                <div class="input unified-input">
+                  <img src="email.png" alt="Email Icon" class="input-icon" />
+                  <input
+                    type="email"
+                    id="signInEmail"
+                    class="input-field"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
               </div>
 
               <div class="input-group">
-                <label class="input-label" for="signInPassword">Password</label>
-                <input
-                  type="password"
-                  id="signInPassword"
-                  class="input-field"
-                  placeholder="Enter your password"
-                  required
-                />
+                <div class="input unified-input">
+                  <img src="padlock.png" alt="Password Icon" class="input-icon" />
+                  <input
+                    type="password"
+                    id="signInPassword"
+                    class="input-field"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
               </div>
 
               <div class="auth-options">
@@ -106,7 +93,7 @@
                 <a href="#" class="forgot-password">Forgot password?</a>
               </div>
 
-              <button type="submit" class="submit-btn">Sign in</button>
+              <button type="submit" class="submit-btn">Sign In</button>
 
               <div class="auth-divider">
                 <span>Or continue with</span>
@@ -123,9 +110,7 @@
 
               <div class="auth-footer">
                 Don't have an account?
-                <a href="signup.html" id="switchTosignup" class="auth-link"
-                  >Create an account</a
-                >
+                <a href="signup.html" class="auth-link">Create an account</a>
               </div>
             </form>
           </div>
