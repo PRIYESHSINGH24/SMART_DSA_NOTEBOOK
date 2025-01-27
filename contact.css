@@ -1027,6 +1027,7 @@ h1 {
   flex-direction: column;
   gap: 1.5rem;
   margin-left: -4rem;
+  padding: 0 34px 34px 34px;
 }
 
 .form-group {
@@ -1375,13 +1376,15 @@ footer form button span {
 }
 
 form {
-  padding-bottom: 199px;
+  /* padding-bottom: 199px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   /* Add relative positioning to the form */
   margin-bottom: 1px;
+  width: fit-content;
+    /* border: 1px solid black; */
 }
 
 form::before {
@@ -1411,7 +1414,7 @@ form button {
   outline: none;
   cursor: pointer;
   color: #000;
-  margin-left: 6rem;
+  margin-left: 5rem;
 }
 
 form button .fas {
@@ -1521,6 +1524,15 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   margin: 2vh;
+  justify-content: center;
+}
+.help-options{
+  text-align: center;
+  display: flex
+  ;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 }
 
 .help-box {
