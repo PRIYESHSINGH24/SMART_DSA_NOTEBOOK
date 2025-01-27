@@ -39,6 +39,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="pages/styles.css" />
+    <link rel="stylesheet" href="footer.css">
     <style>
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
@@ -449,326 +450,83 @@ footer a:hover {
 
     <br />
     <br />
-    <footer
-      class="main-footer"
-      style="
-        background: linear-gradient(to right, #0e2511, #19be50);
-        color: #ffffff;
-        padding: 20px 20px;
-      "
-    >
-      <div
-        class="footer-content"
-        style="
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          gap: 20px;
-        "
-      >
-        <div
-          class="footer-section"
-          style="flex: 1; min-width: 250px; max-width: 300px"
-        >
-          <!-- Logo -->
-          <div
-            class="footer-logo"
-            style="
-              margin-bottom: 10px;
-              animation: fadeInLeft 1s;
-              text-align: center;
-            "
-          >
-            <div
-              style="padding: 10px; border-radius: 8px; display: inline-block"
-            >
-              <img
-                src="img/lightlogo.png"
-                alt="Logo"
-                style="height: 60px; width: auto"
-              />
-            </div>
+    <footer >   <!-- Footer Container -->
+      <div  class="footer-container" ><!-- Left Section (Logo and Description) -->
+        <div class="footer-left"><!-- Logo -->
+          <div class="footer-logo" >
+            <div class="logo-design"> <h1>DSA</h1></div>
           </div>
-          <p
-            style="
-              text-align: justify;
-              margin-bottom: 20px;
-              line-height: 1.6;
-              color: white;
-            "
-          >
-            DSA problem solutions involve understanding the problem, choosing
-            the right approach, implementing optimized code, and analyzing time
-            and space complexity for efficiency.
+          <!-- Description -->
+          <p >
+            DSA problem solutions involve step-by-step methods to solve data
+            structure and algorithm challenges efficiently. They include
+            understanding the problem, selecting the right approach,
+            implementing optimized code, and analyzing time and space complexity
+            for performance.
           </p>
-          <div class="social-links" style="text-align: center">
-            <a href="#" target="_blank" aria-label="Facebook"
-              ><i class="fab fa-facebook"></i
-            ></a>
-            <a href="#" target="_blank" aria-label="Twitter"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="#" target="_blank" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" target="_blank" aria-label="YouTube"
-              ><i class="fab fa-youtube"></i
-            ></a>
-            <a href="#" target="_blank" aria-label="Linkedin"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
-          </div>
         </div>
-
+        
         <!-- Quick Links Section -->
-        <div class="footer-section services">
-          <h4
-            style="
-              font-size: 18px;
-              margin-bottom: 10px;
-              transition: color 0.3s;
-              color: white;
-            "
-            onmouseover="this.style.color='#e67e22'"
-            onmouseout="this.style.color='white'"
-          >
-            Quick Links
-            <div class="underline"><span></span></div>
-          </h4>
-          <br />
-          <ul style="list-style: none; padding: 5">
-            <li>
-              <a
-                href="about.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: 0.3s;
-                  padding-left: 0px;
-                "
-                onmouseover="this.style.color='white'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Who We Are</a
-              >
-            </li>
-            <li>
-              <a
-                href="blog.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: 0.3s;
-                  padding-left: 0px;
-                "
-                onmouseover="this.style.color='white'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Blog</a
-              >
-            </li>
-            <li>
-              <a
-                href="work.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: 0.3s;
-                  padding-left: 0px;
-                "
-                onmouseover="this.style.color='white'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Work With Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: 0.3s;
-                  padding-left: 0px;
-                "
-                onmouseover="this.style.color=' white'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Investor Relations</a
-              >
-            </li>
-            <li>
-              <a
-                href="contact.html"
-                style="
-                  color: white;
-                  text-decoration: none;
-                  transition: 0.3s;
-                  padding-left: 0px;
-                "
-                onmouseover="this.style.color=' white'; this.style.paddingLeft='10px'"
-                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-section services">
-          <h4
-            style="
-              font-size: 18px;
-              margin-bottom: 10px;
-              transition: color 0.3s;
-              color: white;
-            "
-            onmouseover="this.style.color='#e67e22'"
-            onmouseout="this.style.color='white'"
-          >
-            Learn More
-            <div class="underline"><span></span></div>
-          </h4>
-          <br />
-          <ul style="list-style: none; padding: 0">
-            <ul style="list-style: none; padding: 0">
-              <li>
-                <a
-                  href="privacy.html"
-                  style="
-                    color: white;
-                    text-decoration: none;
-                    transition: 0.3s;
-                    padding-left: 0px;
-                  "
-                  onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                  >Privacy Policy</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href="Security.html"
-                  style="
-                    color: white;
-                    text-decoration: none;
-                    transition: all 0.3s ease;
-                  "
-                  onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                  >Security</a
-                >
-              </li>
-              <li>
-                <a
-                  href="terms.html"
-                  style="
-                    color: white;
-                    text-decoration: none;
-                    transition: 0.3s;
-                    padding-left: 0px;
-                  "
-                  onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                  >Terms of Service</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contributors.html"
-                  style="
-                    color: white;
-                    text-decoration: none;
-                    transition: 0.3s;
-                    padding-left: 0px;
-                  "
-                  onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                  >Our Contributors</a
-                >
-              </li>
+          <div class="footer-section services">
+            <h2>  Quick Links </h2>
+            <ul>
+              <li><a href="about.html" >Who We Are</a></li>
+              <li><a href="#">Blog</a ></li>
+              <li><a href="#">Work With Us</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#" >Contact Us</a></li>
             </ul>
-          </ul>
-        </div>
-
-        <div class="footer-section services">
-          <h4
-            style="
-              font-size: 18px;
-              margin-bottom: 10px;
-              transition: color 0.3s;
-              color: white;
-            "
-            onmouseover="this.style.color='#e67e22'"
-            onmouseout="this.style.color='white'"
-          >
-            Newsletter
-            <div class="underline"><span></span></div>
-          </h4>
-          <br />
-          <ul style="list-style: none; padding: 0">
-            <form>
-              <i class="fas fa-envelope"></i>
-              <input
-                type="email"
-                placeholder="Enter your email id"
-                required=""
-                fdprocessedid="7t54w"
-              />
-              <button type="submit" fdprocessedid="xi78vf">
-                <i class="fas fa-arrow-right"></i>
-              </button>
-            </form>
-            <br />
-            <h4
-              style="
-                font-size: 18px;
-                margin-bottom: 10px;
-                transition: color 0.3s;
-                color: white;
-              "
-              onmouseover="this.style.color='#e67e22'"
-              onmouseout="this.style.color='white'"
-            >
-              Contact Us
-              <div class="underline"><span></span></div>
-            </h4>
-            <br />
-            <ul style="list-style: none; padding: 0">
-              <ul style="list-style: none; padding: 0">
-                <li>
-                  <a
-                    href="mailto:contact@example.com"
-                    style="
-                      color: white;
-                      text-decoration: none;
-                      transition: 0.3s;
-                      padding-left: 0px;
-                    "
-                    onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                    onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                    >contact@example.com</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="fas fa-map-marker-alt"
-                    style="
-                      color: white;
-                      text-decoration: none;
-                      transition: 0.3s;
-                      padding-left: 0px;
-                    "
-                    onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
-                    onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
-                    >India</a
-                  >
-                </li>
-              </ul>
+          </div>
+          <div class="footer-section services" >
+            <h2> DSA Problem Solutions </h2>
+            <ul>
+              <li><a href="about.html">Who We Are</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="work.html">Work With Us</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
-          </ul>
-        </div>
+          </div>
+  
+          <!-- Learn More Section -->
+          <div class="footer-section services">
+            <h2> Learn More</h2>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="security.html">Security</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="contributors.html">Our Contributors</a></li>
+            </ul>
+          </div>
       </div>
-
-      <div class="footer-bottom" style="text-align: center; margin-top: 10px">
-        <p style="margin: 0; font-size: 14px; color: white">
-          © 2025 DSA Problem Solutions. All rights reserved.
+      
+  
+      <!-- Stay Updated Section -->
+      <div class="footer-section-newsletter">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter for the latest updates and tips on
+           mastering data structures and algorithms.
         </p>
+        <form action="#" method="POST" >
+          <input type="email" placeholder="Your Email Address" required />
+          <button type="submit" >Subscribe</button>
+        </form>
+      </div>
+  
+      <!-- Social Links -->
+      <div
+        class="social-links">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </div>
+  
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 DSA Problem Solutions. All rights reserved.</p>
       </div>
     </footer>
 
