@@ -1,3 +1,24 @@
+// Toggle progress popup
+const progressButton = document.getElementById("progressButton");
+const progressPopup = document.getElementById("progressPopup");
+const popupOverlay = document.getElementById("popupOverlay");
+const closePopup = document.getElementById("closePopup");
+
+progressButton.addEventListener("click", () => {
+  progressPopup.classList.add("active");
+  popupOverlay.classList.add("active");
+});
+
+closePopup.addEventListener("click", () => {
+  progressPopup.classList.remove("active");
+  popupOverlay.classList.remove("active");
+});
+
+popupOverlay.addEventListener("click", () => {
+  progressPopup.classList.remove("active");
+  popupOverlay.classList.remove("active");
+});
+
 function handleViewSolution(problemTitle) {
     const solutionContent = document.getElementById('solution-content');
 

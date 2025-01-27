@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Work With Us - DSA Problem Solutions" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:title" content="Work With Us - DSA Problem Solutions" />
-  <meta property="og:image" content="/img/logo2.png" />
-  <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
-  <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/lightlogo.png" />
+    <meta
+      property="og:url"
+      content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/"
+    />
+    <meta property="og:type" content="website" />
 
   <link rel="icon" href="/img/logo2.png" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -362,23 +365,26 @@ body {
         </svg>
       </button>
       <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="../" class="active">Home</a></li>
         <li><a href="#platforms">Platforms</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="pages/Login.html">Log In</a></li>
+        <li><a href="login.html">Log In</a></li>
         <li><a href="pages/SignUp.html">Sign Up</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="content-wrapper">
-    <header class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">Join Our Team</h1>
-        <p class="hero-subtitle">We’re looking for passionate individuals to help us make an impact on data structure and algorithm learning.</p>
-      </div>
-    </header>
+    <div class="content-wrapper">
+      <header class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">Join Our Team</h1>
+          <p class="hero-subtitle">
+            We’re looking for passionate individuals to help us make an impact
+            on data structure and algorithm learning.
+          </p>
+        </div>
+      </header>
 
     <section class="container">
       <div class="work-with-us-content">
@@ -509,51 +515,58 @@ body {
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="script.js"></script>
-    <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
+    <script
+      src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js"
+      async
+    ></script>
     <script src="scrollscript.js"></script>
     <script src="audio.js"></script>
     <script>
-      document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-      document.querySelector('.nav-links').classList.toggle('active');
-  });
+      document
+        .querySelector(".mobile-menu-btn")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-links").classList.toggle("active");
+        });
       // Get the button element
-      const scrollBtn = document.getElementById('scrollBtn');
-  
+      const scrollBtn = document.getElementById("scrollBtn");
+
       // Show the button when the user scrolls down 100px from the top
       window.onscroll = function () {
-        if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        if (
+          document.body.scrollTop > 30 ||
+          document.documentElement.scrollTop > 30
+        ) {
           scrollBtn.style.display = "block";
         } else {
           scrollBtn.style.display = "none";
         }
       };
-  
+
       // Scroll to the top of the page when the button is clicked
       scrollBtn.onclick = function () {
         window.scrollTo({
           top: 0,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       };
 
+      document
+        .getElementById("jobApplicationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-      document.getElementById('jobApplicationForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+          // You can add form validation here if needed
 
-  // You can add form validation here if needed
+          // Show success message
+          document.getElementById("successMessage").classList.remove("hidden");
 
-  // Show success message
-  document.getElementById('successMessage').classList.remove('hidden');
-  
-  // Optional: Clear the form fields after submission
-  document.getElementById('jobApplicationForm').reset();
-});
-
-  
+          // Optional: Clear the form fields after submission
+          document.getElementById("jobApplicationForm").reset();
+        });
     </script>
-  
   </body>
-  
-  </html>
+</html>

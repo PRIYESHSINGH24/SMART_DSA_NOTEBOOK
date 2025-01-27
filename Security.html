@@ -1,450 +1,825 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="DSA Problem Solutions" />
+    <meta property="og:image" content="img/lightlogo.png" />
+    <meta
+      property="og:url"
+      content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/"
+    />
+    <meta property="og:type" content="website" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Security- DSA Problem Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    <link rel="icon" href="img/lightlogo.png" type="image/png" />
+    <link rel="icon" href="img/lightlogo.png" sizes="16x16" type="image/png" />
+
+    <title>DSA Problem Solutions</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="pages/styles.css" />
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-    header {
-      margin-top: 90px;
-      background-color: #158746;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
 
-    /* Navbar Styles */
-    .navbar {
-      background: rgb(250, 249, 249);
-      padding: 1rem 2rem;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-      border-radius: 5px;
-      border: 5px rgb(173, 186, 74) solid;
-    }
+/* Hero Section Styles */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #11cb2a, #19be50);
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-    }
+.hero-content {
+  max-width: 50%;
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    .logo img {
-      height: 40px;
-      width: 5rem;
-      transition: transform 0.3s ease;
-    }
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 
-    .logo img:hover {
-      transform: scale(1.05);
-    }
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
 
-    .logo {
-      padding-top: 8px;
-    }
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+.platform-btn {
+  background-color: #fff;
+  color: #2575fc;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-    .nav-links li {
-      position: relative;
-    }
+.platform-btn:hover {
+  transform: scale(1.1);
+  background-color: #6a11cb;
+  color: #fff;
+}
 
-    .nav-links li a {
-      /* color: #000; */
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 8px 12px;
-      transition: background-color 0.3s ease-in-out;
-      font-size: 18px;
-    }
+.hero-image img {
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
 
-    .nav-links a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease;
-    }
+/* Footer Styles */
+.footer-title {
+  margin: 40px;
+  text-align: justify;
+}
 
-    .nav-links a:hover {
-      color: #007bff;
-    }
+.footer-logo {
+  width: 100px;
+  margin-top: 40px;
+}
 
-    /* Underline animation for nav links */
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #007bff;
-      transition: width 0.3s ease;
-    }
+.follow-us {
+  font-size: 18px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+.services {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+}
 
-    /* Active link style */
-    .nav-links a.active {
-      color: #007bff;
-    }
+/* Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
 
-    .nav-links a.active::after {
-      width: 100%;
-    }
+:target {
+  scroll-margin-top: 80px;
+}
 
-    /* Mobile menu button - Hidden by default */
-    .mobile-menu-btn {
-      color: #000;
-      display: none;
-      background: none;
-      border: none;
-      padding: 0.5rem;
-      cursor: pointer;
-    }
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .navbar {
-        padding: 1rem;
-      }
+  .follow-us {
+    text-align: center;
+  }
+}
 
-      .mobile-menu-btn {
-        display: block;
-      }
+/* Container Styles */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
 
-      .nav-links {
-        display: none;
-        /* Hide by default on mobile */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
+.container h4 {
+  color: #158746;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+}
 
-      /* Show menu when active */
-      .nav-links.active {
-        display: flex;
-      }
+.container p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
 
-      .nav-links li {
-        width: 100%;
-        text-align: center;
-      }
+.container ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
 
-      .nav-links a {
-        display: block;
-        padding: 0.75rem 0;
-      }
+.container ul li {
+  margin-bottom: 10px;
+}
 
-      .nav-links a::after {
-        display: none;
-        /* Remove hover animation on mobile */
-      }
-    }
+/* Header Styles */
+header {
+  margin-top: 90px;
+  background-color: #158746;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
 
-    /* Dark mode support */
-    @media (prefers-color-scheme: dark) {
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
 
-      .nav-links a {
-        color: #f9fafd;
-      }
+/* Footer Styles */
+footer {
+  background-color: #158746;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+}
 
-      .nav-links a:hover {
-        color: #60a5fa;
-      }
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1.2em;
+}
 
-      .nav-links a::after {
-        background-color: #60a5fa;
-      }
+footer a:hover {
+  text-decoration: underline;
+}
 
-      @media (max-width: 768px) {
-        .nav-links {
-          background: rgba(174, 237, 158, 0.98);
-        }
-      }
-    }
+/* Responsive Design for Header and Container */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
+  .container {
+    padding: 20px;
+  }
 
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    }
+  .container h4 {
+    font-size: 1.6em;
+  }
+}
 
-    .container h3 {
-      color: #158746;
-      margin-bottom: 20px;
-      font-size: 1.6em;
-    }
+/* Scroll Button */
+#scrollBtn {
+  position: fixed;
+  bottom: 120px;
+  right: 35px;
+  display: none;
+  background-color: #158746;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-    .container p {
-      font-size: 1em;
-      color: #555;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
+#scrollBtn:hover {
+  background-color: #000;
+  transform: scale(1.2);
+}
 
-    .container ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
+    </style>
+  </head>
 
-    .container ul li {
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background-color: white;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      position: relative;
-    }
-
-    footer a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 1.2em;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      .container {
-        padding: 20px;
-      }
-
-      .container h3 {
-        font-size: 1.6em;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="./img/logo2.png" alt="Logo" />
+  <body>
+  <!-- Scroll -->
+  <div id="scrollButton" class="hidden">
+    <div class="outer-circle">
+      <div class="inner-circle">
+        <div class="arrow">↑</div>
       </div>
-  
-      <button class="mobile-menu-btn" >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="black">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-      <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="platform.html">Platforms</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="pages/Login.html">Log In</a></li>
-        <li><a href="pages/SignUp.html">Sign Up</a></li>
+    </div>
+  </div>
+  <div
+    id="cursor"
+    style="
+      translate: none;
+      rotate: none;
+      scale: none;
+      transform: translate(305px, 644px);
+    "
+  ></div>
+  <nav class="navbar">
+    <div
+      class="logo"
+      style="
+        translate: none;
+        rotate: none;
+        scale: none;
+        opacity: 1;
+        transform: translate(0px, 0px);
+      "
+    >
+      <img src="img/lightlogo.png" alt="Logo" />
+    </div>
+    <button class="mobile-menu-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="black"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    <ul class="nav-links">
+      <li
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      >
+        <a href="index.html" class="active">Home</a>
+      </li>
+      <li
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      >
+        <a href="pages\platform.html">Platforms</a>
+      </li>
+      <li
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      >
+        <a href="about.html">About</a>
+      </li>
+      <li
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      >
+        <a href="contact.html">Contact</a>
+      </li>
+      <li
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      >
+        <a href="pages/Login.html">Log In</a>
+      </li>
+      <li
+        style="
+          translate: none;
+          rotate: none;
+          scale: none;
+          opacity: 1;
+          transform: translate(0px, 0px);
+        "
+      >
+        <a href="./pages/SignUp.html">Sign Up</a>
+      </li>
+    </ul>
+  </nav>
+
+    <div class="container">
+      <h4>Our Commitment to Security</h4>
+      <p>
+        At <strong>DSA Problem Solutions</strong>, the security of our users is
+        of utmost importance. We continuously implement advanced measures to
+        protect your data and ensure a safe environment for coding enthusiasts.
+      </p>
+
+      <h4>1. Data Encryption</h4>
+      <p>
+        We use industry-standard encryption protocols (SSL/TLS) to protect all
+        communications and ensure your data remains secure while being
+        transmitted over the internet.
+      </p>
+
+      <h4>2. Account Protection</h4>
+      <ul>
+        <li>Secure password storage using advanced hashing algorithms.</li>
+        <li>
+          Two-factor authentication (2FA) for an added layer of security (coming
+          soon).
+        </li>
+        <li>Real-time monitoring for unauthorized access attempts.</li>
       </ul>
-    </nav>
-    <h1>Security at DSA Problem Solutions</h1>
-    <p>We prioritize your safety and privacy.</p>
-  </header>
 
-  <div class="container">
-    <h2>Our Commitment to Security</h2>
-    <p>At <strong>DSA Problem Solutions</strong>, the security of our users is of utmost importance. We continuously implement advanced measures to protect your data and ensure a safe environment for coding enthusiasts.</p>
+      <h4>3. Regular Security Audits</h4>
+      <p>
+        Our team conducts periodic security assessments and audits to identify
+        vulnerabilities and maintain the highest level of security for our
+        platform.
+      </p>
 
-    <h3>1. Data Encryption</h3>
-    <p>We use industry-standard encryption protocols (SSL/TLS) to protect all communications and ensure your data remains secure while being transmitted over the internet.</p>
+      <h4>4. User Guidelines for Security</h4>
+      <ul>
+        <li>
+          Keep your account credentials confidential and avoid sharing them with
+          others.
+        </li>
+        <li>Use a strong and unique password for your account.</li>
+        <li>
+          Be cautious of phishing emails and unauthorized links pretending to be
+          from <strong>DSA Problem Solutions</strong>.
+        </li>
+      </ul>
 
-    <h3>2. Account Protection</h3>
-    <ul>
-      <li>Secure password storage using advanced hashing algorithms.</li>
-      <li>Two-factor authentication (2FA) for an added layer of security (coming soon).</li>
-      <li>Real-time monitoring for unauthorized access attempts.</li>
-    </ul>
+      <h4>5. Reporting Security Issues</h4>
+      <p>
+        If you discover any security vulnerabilities or suspect unauthorized
+        activity, please contact us immediately at
+        <a href="mailto:security@dsasolutionplatform.com"
+          >security@dsasolutionplatform.com</a
+        >.
+      </p>
 
-    <h3>3. Regular Security Audits</h3>
-    <p>Our team conducts periodic security assessments and audits to identify vulnerabilities and maintain the highest level of security for our platform.</p>
+      <h4>6. Compliance with Standards</h4>
+      <p>
+        We comply with industry standards and data protection regulations to
+        ensure your information is handled responsibly and securely.
+      </p>
 
-    <h3>4. User Guidelines for Security</h3>
-    <ul>
-      <li>Keep your account credentials confidential and avoid sharing them with others.</li>
-      <li>Use a strong and unique password for your account.</li>
-      <li>Be cautious of phishing emails and unauthorized links pretending to be from <strong>DSA Problem Solutions</strong>.</li>
-    </ul>
-
-    <h3>5. Reporting Security Issues</h3>
-    <p>If you discover any security vulnerabilities or suspect unauthorized activity, please contact us immediately at <a href="mailto:security@dsasolutionplatform.com">security@dsasolutionplatform.com</a>.</p>
-
-    <h3>6. Compliance with Standards</h3>
-    <p>We comply with industry standards and data protection regulations to ensure your information is handled responsibly and securely.</p>
-
-    <h3>7. Continuous Improvements</h3>
-    <p>Our security measures evolve with new technologies and emerging threats to ensure our platform remains secure and reliable for all users.</p>
-  
-</div>
-
-  <footer>
-    <div class="footer-content"
-      style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 20px; background-color: white; color: black;">
-      <div class="footer-section about"
-        style="flex: 2; min-width: 300px; display: flex; align-items:flex-start; margin: 10px; transition: transform 0.3s ease-in-out;"
-        onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="img/hierarchical.png" alt="DSA Problem Solutions" style="width: 100px;
-        margin-top: 40px;">
-
-        <p style="margin: 40px; text-align: justify;">DSA problem solutions involve step-by-step methods to solve data structure and algorithm
-          challenges efficiently. They include understanding the problem, selecting the right approach, implementing
-          optimized code, and analyzing time and space complexity for performance.</p>
-      </div>
-
-      <div class="footer-section services" style="flex: 1; 
-       min-width: 150px;
-        margin: 10px;">
-        <h2 style="font-size: 18px;
-         margin-bottom: 10px; 
-         transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">
-          DSA Problem Solutions</h2>
-        <ul style="list-style: none; padding: 0;">
-          <li><a href="about.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Who We Are</a></li>
-          <li><a href="#" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Blog</a></li>
-          <li><a href="#" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Work With Us</a></li>
-          <li><a href="#" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Investor Relations</a></li>
-          <li><a href="#" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Contact Us</a></li>
-        </ul>
-      </div>
-
-
-      <div class="footer-section learn-more" style="flex: 1; min-width: 150px; margin: 10px;">
-        <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
-          onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Learn More</h2>
-        <ul style="list-style: none; padding: 0;">
-          <li><a href="privacy.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Privacy Policy</a></li>
-          <li><a href="Security.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Security</a></li>
-          <li><a href="terms.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.paddingLeft='10px'"
-              onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Terms of Service</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section social-links" style="flex: 1; min-width: 150px; margin: 10px;">
-        <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
-          onmouseover="this.style.color='green'" onmouseout="this.style.color='black'">Follow Us</h2>
-        <ul class="social-icons" style="list-style: none; padding: 0; display: flex; gap: 10px;">
-          <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.transform='scale(1.2)'; this.style.display='inline-block'"
-              onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i
-                class="fab fa-instagram"></i></a></li>
-          <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.transform='scale(1.2)'; this.style.display='inline-block'"
-              onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fab fa-facebook"></i></a>
-          </li>
-          <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.transform='scale(1.2)'; this.style.display='inline-block'"
-              onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fab fa-linkedin"></i></a>
-          </li>
-          <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.transform='scale(1.2)'; this.style.display='inline-block'"
-              onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fa-brands fa-x-twitter"></i></a>
-          </li>
-          <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-              onmouseover="this.style.color='green'; this.style.transform='scale(1.2)'; this.style.display='inline-block'"
-              onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fab fa-youtube"></i></a>
-          </li>
-        </ul>
-      </div>
+      <h4>7. Continuous Improvements</h4>
+      <p>
+        Our security measures evolve with new technologies and emerging threats
+        to ensure our platform remains secure and reliable for all users.
+      </p>
     </div>
 
-    <div class="footer-bottom" style="padding: 10px; text-align: center; background-color: white;">
-      <p id="copyright" style="margin: 0; color: black; transition: color 0.3s ease;" onmouseover="this.style.color='green'" onmouseout="this.style.color='black'">
-  <b>&copy;<span id="currentYear"></span> DSA Problem Solutions. All rights reserved.</b>
-</p>
-    </div>
-  </footer>
+    <br />
+    <br />
+    <footer
+      class="main-footer"
+      style="
+        background: linear-gradient(to right, #0e2511, #19be50);
+        color: #ffffff;
+        padding: 20px 20px;
+      "
+    >
+      <div
+        class="footer-content"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 20px;
+        "
+      >
+        <div
+          class="footer-section"
+          style="flex: 1; min-width: 250px; max-width: 300px"
+        >
+          <!-- Logo -->
+          <div
+            class="footer-logo"
+            style="
+              margin-bottom: 10px;
+              animation: fadeInLeft 1s;
+              text-align: center;
+            "
+          >
+            <div
+              style="padding: 10px; border-radius: 8px; display: inline-block"
+            >
+              <img
+                src="img/lightlogo.png"
+                alt="Logo"
+                style="height: 60px; width: auto"
+              />
+            </div>
+          </div>
+          <p
+            style="
+              text-align: justify;
+              margin-bottom: 20px;
+              line-height: 1.6;
+              color: white;
+            "
+          >
+            DSA problem solutions involve understanding the problem, choosing
+            the right approach, implementing optimized code, and analyzing time
+            and space complexity for efficiency.
+          </p>
+          <div class="social-links" style="text-align: center">
+            <a href="#" target="_blank" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" target="_blank" aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" target="_blank" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" target="_blank" aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="#" target="_blank" aria-label="Linkedin"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
 
-  <script>
-  // Set the current year dynamically
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-  integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="script.js"></script>
-<script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
-<script src="scrollscript.js"></script>
-<script src="audio.js"></script>
-<script>
+        <!-- Quick Links Section -->
+        <div class="footer-section services">
+          <h4
+            style="
+              font-size: 18px;
+              margin-bottom: 10px;
+              transition: color 0.3s;
+              color: white;
+            "
+            onmouseover="this.style.color='#e67e22'"
+            onmouseout="this.style.color='white'"
+          >
+            Quick Links
+            <div class="underline"><span></span></div>
+          </h4>
+          <br />
+          <ul style="list-style: none; padding: 5">
+            <li>
+              <a
+                href="about.html"
+                style="
+                  color: white;
+                  text-decoration: none;
+                  transition: 0.3s;
+                  padding-left: 0px;
+                "
+                onmouseover="this.style.color='white'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                >Who We Are</a
+              >
+            </li>
+            <li>
+              <a
+                href="blog.html"
+                style="
+                  color: white;
+                  text-decoration: none;
+                  transition: 0.3s;
+                  padding-left: 0px;
+                "
+                onmouseover="this.style.color='white'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="work.html"
+                style="
+                  color: white;
+                  text-decoration: none;
+                  transition: 0.3s;
+                  padding-left: 0px;
+                "
+                onmouseover="this.style.color='white'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                >Work With Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                style="
+                  color: white;
+                  text-decoration: none;
+                  transition: 0.3s;
+                  padding-left: 0px;
+                "
+                onmouseover="this.style.color=' white'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                >Investor Relations</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                style="
+                  color: white;
+                  text-decoration: none;
+                  transition: 0.3s;
+                  padding-left: 0px;
+                "
+                onmouseover="this.style.color=' white'; this.style.paddingLeft='10px'"
+                onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section services">
+          <h4
+            style="
+              font-size: 18px;
+              margin-bottom: 10px;
+              transition: color 0.3s;
+              color: white;
+            "
+            onmouseover="this.style.color='#e67e22'"
+            onmouseout="this.style.color='white'"
+          >
+            Learn More
+            <div class="underline"><span></span></div>
+          </h4>
+          <br />
+          <ul style="list-style: none; padding: 0">
+            <ul style="list-style: none; padding: 0">
+              <li>
+                <a
+                  href="privacy.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    transition: 0.3s;
+                    padding-left: 0px;
+                  "
+                  onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                  onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                  >Privacy Policy</a
+                >
+              </li>
 
+              <li>
+                <a
+                  href="Security.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                  "
+                  onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                  onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                  >Security</a
+                >
+              </li>
+              <li>
+                <a
+                  href="terms.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    transition: 0.3s;
+                    padding-left: 0px;
+                  "
+                  onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                  onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contributors.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    transition: 0.3s;
+                    padding-left: 0px;
+                  "
+                  onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                  onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                  >Our Contributors</a
+                >
+              </li>
+            </ul>
+          </ul>
+        </div>
 
-</script>
+        <div class="footer-section services">
+          <h4
+            style="
+              font-size: 18px;
+              margin-bottom: 10px;
+              transition: color 0.3s;
+              color: white;
+            "
+            onmouseover="this.style.color='#e67e22'"
+            onmouseout="this.style.color='white'"
+          >
+            Newsletter
+            <div class="underline"><span></span></div>
+          </h4>
+          <br />
+          <ul style="list-style: none; padding: 0">
+            <form>
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                placeholder="Enter your email id"
+                required=""
+                fdprocessedid="7t54w"
+              />
+              <button type="submit" fdprocessedid="xi78vf">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+            <br />
+            <h4
+              style="
+                font-size: 18px;
+                margin-bottom: 10px;
+                transition: color 0.3s;
+                color: white;
+              "
+              onmouseover="this.style.color='#e67e22'"
+              onmouseout="this.style.color='white'"
+            >
+              Contact Us
+              <div class="underline"><span></span></div>
+            </h4>
+            <br />
+            <ul style="list-style: none; padding: 0">
+              <ul style="list-style: none; padding: 0">
+                <li>
+                  <a
+                    href="mailto:contact@example.com"
+                    style="
+                      color: white;
+                      text-decoration: none;
+                      transition: 0.3s;
+                      padding-left: 0px;
+                    "
+                    onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                    onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                    >contact@example.com</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="fas fa-map-marker-alt"
+                    style="
+                      color: white;
+                      text-decoration: none;
+                      transition: 0.3s;
+                      padding-left: 0px;
+                    "
+                    onmouseover="this.style.color='black'; this.style.paddingLeft='10px'"
+                    onmouseout="this.style.color='white'; this.style.paddingLeft='0'"
+                    >India</a
+                  >
+                </li>
+              </ul>
+            </ul>
+          </ul>
+        </div>
+      </div>
 
-</body>
+      <div class="footer-bottom" style="text-align: center; margin-top: 10px">
+        <p style="margin: 0; font-size: 14px; color: white">
+          © 2025 DSA Problem Solutions. All rights reserved.
+        </p>
+      </div>
+    </footer>
 
+    <script>
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+    <script
+      src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js"
+      async
+    ></script>
+    <script src="audio.js"></script>
+    <!-- Scroll to Top Button -->
+    <script>
+      const scrollButton = document.getElementById("scrollButton");
+      const outerCircle = document.querySelector(".outer-circle");
+      const arrow = document.querySelector(".arrow");
+
+      // Function to handle scroll behavior
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const scrollHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = (scrollTop / scrollHeight) * 360;
+
+        // Show button after scrolling 7-8 lines (~100px)
+        if (scrollTop > 100) {
+          scrollButton.classList.add("visible");
+        } else {
+          scrollButton.classList.remove("visible");
+        }
+
+        // Update the circular progress
+        outerCircle.style.setProperty(
+          "--scroll-progress",
+          `${scrollProgress}deg`
+        );
+      });
+
+      // Scroll-to-top functionality
+      scrollButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
 </html>
+  

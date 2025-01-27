@@ -10,152 +10,45 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="pages/navbar.css">
+    <link rel="stylesheet" href="footer.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-    body {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      /* overflow-y: hidden; */
-    }
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        /* overflow-y: hidden; */
+      }
 
-    .content-wrapper {
-      height: 100%;
-      width: 100%;
-      margin-top: 100px;
-    }
+      .content-wrapper {
+        height: 100%;
+        width: 100%;
+        margin-top: 100px;
+      }
 
-    /* Navbar Styles */
-    .navbar {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 1rem 2rem;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-      border-radius: 5px;
-      border: 5px rgb(173, 186, 74) solid;
-    }
+      /* Scroll to Top Button */
+      #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 85px;
+        right: 40px;
+        height: 50px;
+        width: 50px;
+        background-color: rgb(80, 183, 218);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 15px;
+      }
 
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 40px;
-      width: 5rem;
-      transition: transform 0.3s ease;
-    }
-
-    .logo img:hover {
-      transform: scale(1.05);
-    }
-
-    .logo {
-      padding-top: 8px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links li {
-      position: relative;
-    }
-
-    .nav-links li a {
-      /* color: #000; */
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 8px 12px;
-      transition: background-color 0.3s ease-in-out;
-      font-size: 18px;
-    }
-
-    .nav-links a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: #007bff;
-    }
-
-    /* Underline animation for nav links */
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #007bff;
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* Active link style */
-    .nav-links a.active {
-      color: #007bff;
-    }
-
-    .nav-links a.active::after {
-      width: 100%;
-    }
-
-    /* Mobile menu button - Hidden by default */
-    .mobile-menu-btn {
-      color: #000;
-      display: none;
-      background: none;
-      border: none;
-      padding: 0.5rem;
-      cursor: pointer;
-    }
-
-
-    /* Scroll to Top Button */
-    #scrollToTopBtn {
-      display: none;
-      position: fixed;
-      bottom: 85px;
-      right: 40px;
-      height: 50px;
-      width: 50px;
-      background-color: rgb(80, 183, 218);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    #scrollToTopBtn:hover {
-      background-color: rgb(80, 183, 218);
-    }
+      #scrollToTopBtn:hover {
+        background-color: rgb(80, 183, 218);
+      }
 
     
     @keyframes pulse {
@@ -163,21 +56,22 @@
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.6);
       }
 
-      100% {
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 0 0 30px rgb(251, 255, 251);
+        100% {
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4),
+            0 0 30px rgb(251, 255, 251);
+        }
       }
-    }
 
-    header:hover {
-      box-shadow: 0 10px 25px rgb(251, 255, 251);
-      transform: translateY(-5px);
-      transition: all 0.3s ease-in-out;
-    }
+      header:hover {
+        box-shadow: 0 10px 25px rgb(251, 255, 251);
+        transform: translateY(-5px);
+        transition: all 0.3s ease-in-out;
+      }
 
-    .title {
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
+      .title {
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
 
     .contributors-grid {
       display: grid;
@@ -198,56 +92,56 @@
       color: #333;
     }
 
-    
+      
 
-    /* Contributors Section Container */
-    #contributors {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 2rem;
-    }
+      /* Contributors Section Container */
+      #contributors {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 2rem;
+      }
 
-    /* Contributor Card Styling */
-    .contributor-card {
-      background-color: #fff;
-      border-radius: 15px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-      width: 300px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      overflow: hidden;
-      position: relative;
-      padding: 20px;
-    }
+      /* Contributor Card Styling */
+      .contributor-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+        padding: 20px;
+      }
 
-    .contributor-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
+      .contributor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
 
-    /* Image Styling */
-    .contributor-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 5px solid #00bcd4;
-      margin-bottom: 15px;
-    }
+      /* Image Styling */
+      .contributor-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid #00bcd4;
+        margin-bottom: 15px;
+      }
 
-    /* Contributor Name Styling */
-    .contributor-card h3 {
-      font-size: 1.5rem;
-      color: #333;
-      margin: 10px 0;
-    }
+      /* Contributor Name Styling */
+      .contributor-card h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin: 10px 0;
+      }
 
-    /* Contributor Role Styling */
-    .contributor-card p {
-      font-size: 1rem;
-      color: #555;
-    }
+      /* Contributor Role Styling */
+      .contributor-card p {
+        font-size: 1rem;
+        color: #555;
+      }
 
     /* 3D Effect on Hover */
     .contributor-card:hover img {
@@ -326,28 +220,38 @@
   </style>
 </head>
 
-<body>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="./img/logo2.png" alt="Logo" />
-    </div>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./img/logo2.png" alt="Logo" />
+      </div>
 
-    <button class="mobile-menu-btn" >
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="black">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-    </button>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="platform.html">Platforms</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="Login1.html">Log In</a></li>
-      <li><a href="Signup2.html">Sign Up</a></li>
-    </ul>
-  </nav>
+      <button class="mobile-menu-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke="black"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../" class="active">Home</a></li>
+        <li><a href="platform.html">Platforms</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="Login1.html">Log In</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+      </ul>
+    </nav>
 
   <main>
     <div class="content-wrapper"></div>
@@ -357,24 +261,27 @@
     </div>
   </main>
 
-  <footer>
+
+
+  <footer >
     <!-- Footer Container -->
-    <div class="footer-container">
+    <div class="footer-container" >
+
       <!-- Left Section (Logo and Description) -->
-      <div class="footer-left">
+      <div class="footer-left" >
         <!-- Logo -->
         <div class="footer-logo" >
-          <div class="footer-div" onclick="window.location.href = 'index.html'">
+          <div class="logo-design">
             <h1>DSA</h1>
           </div>
         </div>
         <!-- Description -->
-        <p>
-          DSA problem solutions involve step-by-step methods to solve data
-          structure and algorithm challenges efficiently. They include
-          understanding the problem, selecting the right approach,
-          implementing optimized code, and analyzing time and space complexity
-          for performance.
+        <p >
+          DSA problem solutions involve step-by-step methods to solve data structure and algorithm challenges
+          efficiently.
+          They include understanding the problem, selecting the right approach, implementing optimized code, and
+          analyzing
+          time and space complexity for performance.
         </p>
       </div>
 
@@ -534,72 +441,71 @@
           }
         );
 
-        if (!response.ok) throw new Error("Failed to fetch contributors");
+          if (!response.ok) throw new Error("Failed to fetch contributors");
 
-        const contributors = await response.json();
+          const contributors = await response.json();
 
-        contributors.forEach((contributor) => {
-          // Create a card for each contributor
-          const card = document.createElement("div");
-          card.className = "contributor-card";
+          contributors.forEach((contributor) => {
+            // Create a card for each contributor
+            const card = document.createElement("div");
+            card.className = "contributor-card";
 
-          // Profile image
-          const img = document.createElement("img");
-          img.src = contributor.avatar_url;
-          img.alt = contributor.login;
+            // Profile image
+            const img = document.createElement("img");
+            img.src = contributor.avatar_url;
+            img.alt = contributor.login;
 
-          // GitHub username
-          const name = document.createElement("h3");
-          name.textContent = contributor.login;
+            // GitHub username
+            const name = document.createElement("h3");
+            name.textContent = contributor.login;
 
-          // GitHub profile link with icon
-          const githubLink = document.createElement("a");
-          githubLink.href = contributor.html_url;
-          githubLink.target = "_blank";
+            // GitHub profile link with icon
+            const githubLink = document.createElement("a");
+            githubLink.href = contributor.html_url;
+            githubLink.target = "_blank";
 
-          // Create an <i> element for the GitHub icon
-          const githubIcon = document.createElement("i");
-          githubIcon.className = "fab fa-github"; // Font Awesome GitHub icon class
-          githubIcon.ariaHidden = true; // Hide from screen readers (optional)
+            // Create an <i> element for the GitHub icon
+            const githubIcon = document.createElement("i");
+            githubIcon.className = "fab fa-github"; // Font Awesome GitHub icon class
+            githubIcon.ariaHidden = true; // Hide from screen readers (optional)
 
-          // Append the icon to the link
-          githubLink.appendChild(githubIcon);
+            // Append the icon to the link
+            githubLink.appendChild(githubIcon);
 
-          // Optionally, add a screen-reader-only text for accessibility
-          const srText = document.createElement("span");
-          srText.className = "sr-only"; // Add a class for screen-reader-only styles
-          srText.textContent = "GitHub Profile";
-          githubLink.appendChild(srText);
+            // Optionally, add a screen-reader-only text for accessibility
+            const srText = document.createElement("span");
+            srText.className = "sr-only"; // Add a class for screen-reader-only styles
+            srText.textContent = "GitHub Profile";
+            githubLink.appendChild(srText);
 
-          // Append elements to card
-          card.appendChild(img);
-          card.appendChild(name);
-          card.appendChild(githubLink);
+            // Append elements to card
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(githubLink);
 
-          // Append card to container
-          contributorsContainer.appendChild(card);
-        });
-      } catch (error) {
-        console.error("Error fetching contributors:", error);
+            // Append card to container
+            contributorsContainer.appendChild(card);
+          });
+        } catch (error) {
+          console.error("Error fetching contributors:", error);
 
-        // Show error message on the page
-        const errorMessage = document.createElement("p");
-        errorMessage.textContent = "Failed to load contributors. Please try again.";
-        contributorsContainer.appendChild(errorMessage);
+          // Show error message on the page
+          const errorMessage = document.createElement("p");
+          errorMessage.textContent =
+            "Failed to load contributors. Please try again.";
+          contributorsContainer.appendChild(errorMessage);
+        }
       }
-    }
 
-    // Fetch and render contributors on page load
-    fetchContributors();
+      // Fetch and render contributors on page load
+      fetchContributors();
 
-    // Mobile menu toggle
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-      document.querySelector('.nav-links').classList.toggle('active');
-    });
-
-  </script>
-
-
-</body>
-
+      // Mobile menu toggle
+      document
+        .querySelector(".mobile-menu-btn")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+  </body>
 </html>
