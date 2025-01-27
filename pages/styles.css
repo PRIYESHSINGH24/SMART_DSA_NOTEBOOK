@@ -597,7 +597,7 @@ header p {
 }
 
 form {
-   padding-bottom: 199px;
+   
    display: flex;
    align-items: center;
    justify-content: space-between;
@@ -610,12 +610,12 @@ form::before {
    position: absolute;
    bottom: 0;
    left: 0%;  /* Adjust this value to control the starting point of the border */
-   width: 92%;  /* Adjust this value to control the length of the border */
-   border-bottom: 1px solid #fafafa;  /* Your border color */
+    /* Adjust this value to control the length of the border */
+    /* Your border color */
 }
 
 form input{
-   width:80%;
+   
    padding: 10px;
    background: transparent;
    color: #CCC;
