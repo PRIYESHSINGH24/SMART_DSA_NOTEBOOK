@@ -1027,6 +1027,7 @@ h1 {
   flex-direction: column;
   gap: 1.5rem;
   margin-left: -4rem;
+  padding: 0 34px 34px 34px;
 }
 
 .form-group {
@@ -1242,6 +1243,9 @@ button:hover {
   text-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
+footer form {
+  gap: 10px;
+}
 footer form input {
   flex: 1;
   padding: 10px;
@@ -1276,7 +1280,7 @@ footer form input:active {
 }
 
 footer form button {
-  padding: 10px 20px;
+  padding: 0;
   font-size: 14px;
   font-weight: bold;
   background-color: #6c757d;
@@ -1287,6 +1291,11 @@ footer form button {
   transition: all 0.4s ease, box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
+  margin: 0;
+}
+
+.fa-envelope{
+  font-size: 1.7rem;
 }
 
 footer form button:hover {
@@ -1367,19 +1376,21 @@ footer form button span {
 }
 
 form {
-  padding-bottom: 199px;
+  /* padding-bottom: 199px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   /* Add relative positioning to the form */
   margin-bottom: 1px;
+  width: fit-content;
+    /* border: 1px solid black; */
 }
 
 form::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -7px;
   left: 0%;
   /* Adjust this value to control the starting point of the border */
   width: 92%;
@@ -1403,7 +1414,7 @@ form button {
   outline: none;
   cursor: pointer;
   color: #000;
-  margin-left: 6rem;
+  margin-left: 5rem;
 }
 
 form button .fas {
@@ -1418,13 +1429,6 @@ form button .fas {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-
-.main-footer .footer-section {
-  flex: 1 1 18%;
-  /* This ensures each section takes up an equal width, you can adjust percentage as needed */
-  padding: 10px;
-}
-
 .main-footer .footer-section h4 {
   margin-bottom: 10px;
 }
@@ -1446,19 +1450,15 @@ h4 {
 }
 
 .underline {
-  width: 45%;
-  /* Adjusted to make the red line shorter */
-  height: 3px;
-  background: #767676;
-  border-radius: 3px;
-  position: absolute;
-  bottom: -8px;
-  /* Adjusted to position the underline correctly below the text */
-  left: 10%;
-  /* Centers the underline horizontally */
-  transform: translateX(-20%);
-  /* This ensures that the underline is centered */
-  overflow: hidden;
+  width: 87%;
+    height: 3px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -8px;
+    left: 19%;
+    transform: translateX(-20%);
+    overflow: hidden;
 }
 
 .underline span {
@@ -1524,6 +1524,15 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   margin: 2vh;
+  justify-content: center;
+}
+.help-options{
+  text-align: center;
+  display: flex
+  ;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 }
 
 .help-box {
