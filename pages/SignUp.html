@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta property="og:image" content="../img/lightlogo.png" />
-    <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
+    <meta
+      property="og:url"
+      content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/"
+    />
     <meta property="og:type" content="website" />
 
     <link rel="icon" href="../img/lightlogo.png" type="image/png" />
-    <link rel="icon" href="../img/lightlogo.png" sizes="16x16" type="image/png" />
+    <link
+      rel="icon"
+      href="../img/lightlogo.png"
+      sizes="16x16"
+      type="image/png"
+    />
 
-
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login.css" />
 
     <title>SIGN UP</title>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../footer.css">
     <link rel="stylesheet" href="../navbar.css">
@@ -29,82 +35,119 @@
 </Style>
 <body>
     
+
+
     <nav class="navbar">
-        <div class="logo">
+      <div class="logo">
+        <img src="../img/logo2.png" alt="Logo" />
+      </div>
 
 
-          <img src="../img/logo2.png" alt="Logo" />
-            
-        </div>
-    
-        <button class="mobile-menu-btn" >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="black">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-        <ul class="nav-links">
-          <li><a href="../" >Home</a></li>
-          <li><a href="platform.html">Platforms</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-          <li><a href="Login.html">Log In</a></li>
-          <li><a href="./SignUp.html">Sign Up</a></li>
-        </ul>
-      </nav>
-    <!-- Sign Up Form -->
-    <div class="form-main">
-        <div id="signUpForm" class="auth-container">
-            <div class="auth-header">
-                <h2 class="auth-title">Create an account</h2>
-                <p class="auth-subtitle">Sign up to get started</p>
-            </div>
+      <button class="mobile-menu-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke="black"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../platform.html">Platforms</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="Login.html">Log In</a></li>
+        <li><a href="./SignUp.html">Sign Up</a></li>
+      </ul>
+    </nav>
 
-            <form id="signUpFormSubmit">
-                <div class="input-group">
-                    <label class="input-label" for="fullName">Full Name</label>
-                    <input type="text" id="fullName" class="input-field" placeholder="Enter your full name" required>
-                </div>
-
-                <div class="input-group">
-                    <label class="input-label" for="signUpEmail">Email</label>
-                    <input type="email" id="signUpEmail" class="input-field" placeholder="name@company.com" required>
-                </div>
-
-                <div class="input-group">
-                    <label class="input-label" for="signUpPassword">Password</label>
-                    <input type="password" id="signUpPassword" class="input-field" placeholder="Enter your password"
-                        required>
-                </div>
-
-                <div class="input-group">
-                    <label class="input-label" for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" class="input-field" placeholder="Confirm your password"
-                        required>
-                </div>
-
-                <div id="error-message" class="error-message"></div>
-
-                <button type="submit" class="submit-btn">Sign Up</button>
-
-                <div class="auth-divider">
-                    <span>Or continue with</span>
-                </div>
-
-                <div class="social-signin">
-                    <button type="button" class="social-btn"><i class="fa-brands fa-google"></i></button>
-                    <button type="button" class="social-btn"><i class="fa-brands fa-github"></i></button>
-                </div>
-
-                <div class="auth-footer">
-                    Already have an account?
-                    <a href="Login.html" id="switchToSignIn" class="auth-link">Sign In</a>
-                </div>
-            </form>
-        </div>
     </div>
-    <footer>
+   
+
+
+        <form id="signUpFormSubmit">
+          <div class="input-group">
+            <label class="input-label" for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              class="input-field"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="signUpEmail">Email</label>
+            <input
+              type="email"
+              id="signUpEmail"
+              class="input-field"
+              placeholder="name@company.com"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="signUpPassword">Password</label>
+            <input
+              type="password"
+              id="signUpPassword"
+              class="input-field"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="confirmPassword"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirmPassword"
+              class="input-field"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+
+          <div id="error-message" class="error-message"></div>
+
+          <button type="submit" class="submit-btn">Sign Up</button>
+
+          <div class="auth-divider">
+            <span>Or continue with</span>
+          </div>
+
+          <div class="social-signin">
+            <button type="button" class="social-btn">
+              <i class="fa-brands fa-google"></i>
+            </button>
+            <button type="button" class="social-btn">
+              <i class="fa-brands fa-github"></i>
+            </button>
+          </div>
+
+          <div class="auth-footer">
+            Already have an account?
+            <a href="Login.html" id="switchToSignIn" class="auth-link"
+              >Sign In</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+ <footer>
         <!-- Footer Container -->
         <div class="footer-container">
           <!-- Left Section (Logo and Description) -->
@@ -192,6 +235,5 @@
       </footer>
 
 </body>
-
+ 
 </html>
-
