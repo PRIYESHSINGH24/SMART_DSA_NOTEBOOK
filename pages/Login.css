@@ -191,6 +191,7 @@ body {
 
 /* Modal */
 .modal {
+  justify-self: center;
     /* width: 80%;  */
     max-width: 500px; 
     padding: 30px;

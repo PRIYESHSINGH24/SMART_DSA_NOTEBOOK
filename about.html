@@ -323,6 +323,8 @@
         top: -20px;
         left: -11px;
       }
+
+      
     </style>
   </head>
 
@@ -569,48 +571,42 @@
         <p style="margin: 0; font-size: 14px; color: white;">© 2025 DSA Problem Solutions. All rights reserved.</p>
       </div>
     </footer>
-  
-<script>
-  // Set the current year dynamically
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="about.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
 
-  <script src="script.js"></script>
-  <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
-  <script src="scrollscript.js"></script>
-  <script src="audio.js"></script>
-  <!-- Scroll to Top Button -->
-  <script>
-    const scrollButton = document.getElementById('scrollButton');
-    const outerCircle = document.querySelector('.outer-circle');
-    const arrow = document.querySelector('.arrow');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script>
+      // Initialize tilt effect on mission cards
+      VanillaTilt.init(document.querySelectorAll(".mission-card"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2,
+      });
 
-      // Function to handle scroll behavior
-      window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollProgress = (scrollTop / scrollHeight) * 360;
-
-      // Show button after scrolling 7-8 lines (~100px)
-      if (scrollTop > 100) {
-        scrollButton.classList.add('visible');
-      } else {
-        scrollButton.classList.remove('visible');
-      }
-
-      // Update the circular progress
-      outerCircle.style.setProperty('--scroll-progress', `${scrollProgress}deg`);
-    });
-
-      // Scroll-to-top functionality
-      scrollButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-</body>
-
+      // Mobile menu toggle
+      document
+        .querySelector(".mobile-menu-btn")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+  </body>
 </html>

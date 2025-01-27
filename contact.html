@@ -22,43 +22,515 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-   <link rel="stylesheet" href="navbar.css">
+  
+   <link rel="stylesheet" href="pages/navbar.css">
    <link rel="stylesheet" href="contact.css">
+   <link rel="stylesheet" href="footer.css">
 </head>
-    <body>
-    <div id="cursor"></div>
-    <header>
-      <nav class="navbar">
-        <div class="logo">
-          <img src="./img/logo2.png" alt="Logo" />
-        </div>
-        <button class="mobile-menu-btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="/pages/platform.html">Platforms</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-          <li><a href="/pages/Login.html">Log In</a></li>
-          <li><a href="/pages/SignUp.html">Sign Up</a></li>
-        </ul>
-      </nav>
-    </header>
+
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #e3ffe7, #d9e7ff);
+    color: #333;
+  }
+
+  /* Navbar Styles */
+  .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    border: 5px rgb(173, 186, 74) solid;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .logo img:hover {
+    transform: scale(1.05);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    position: relative;
+  }
+
+  .nav-links a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #007bff;
+  }
+
+  /* Underline animation for nav links */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  /* Active link style */
+  .nav-links a.active {
+    color: #007bff;
+  }
+
+  .nav-links a.active::after {
+    width: 100%;
+  }
+
+  /* Mobile menu button - Hidden by default */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+    }
+
+    .mobile-menu-btn {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      /* Hide by default on mobile */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show menu when active */
+    .nav-links.active {
+      display: flex;
+    }
+
+    .nav-links li {
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.75rem 0;
+    }
+
+    .nav-links a::after {
+      display: none;
+      /* Remove hover animation on mobile */
+    }
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+
+
+    .nav-links a {
+      color: #0e0f0f;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #60a5fa;
+    }
+
+    .nav-links a::after {
+      background-color: #60a5fa;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        background: rgba(174, 237, 158, 0.98);
+
+      }
+    }
+  }
+
+  /* Add smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Optional: Adjust for fixed header when scrolling to anchor links */
+  :target {
+    scroll-margin-top: 80px;
+  }
+
+  .content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .contact-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .header-content {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #239d21 0%, #04ff00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  .header-content p {
+    color: #64748b;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-info {
+    background: #f8faff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .contact-info:hover {
+    transform: translateY(-5px);
+  }
+
+  .contact-info i {
+    font-size: 1.5rem;
+    color: #239d21;
+    margin-bottom: 1rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+  }
+
+  .contact-info p {
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+
+  #contact-form {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    position: relative;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8faff;
+    font-size: 1rem;
+    color: #1e293b;
+    transition: all 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #239d21;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  }
+
+  textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  button {
+    background: linear-gradient(135deg, #239d21 0%, #07ff02 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(37, 99, 235, 0.25);
+  }
+
+  #popup-message {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #239d21;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(150%);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  #popup-message.show {
+    transform: translateY(0);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Loading animation */
+  .loading {
+    position: relative;
+    pointer-events: none;
+  }
+
+  .loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .content-wrapper {
+      padding: 2rem 1rem;
+    }
+
+    .contact-section {
+      padding: 2rem;
+      border-radius: 16px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .header-content p {
+      font-size: 1rem;
+    }
+  }
+
+  
+
+  #about {
+    margin: 40px;
+    text-align: justify"
+
+  }
+
+  .about {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+
+  }
+
+  
+
+  @media (max-width: 770px) {
+    .content-wrapper {
+      max-width: 575px;
+    }
+
+    .social-icons {
+      margin-left: 25%;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .content-wrapper {
+      max-width: 360px;
+    }
+
+  }
+
+  @media (max-width: 380px) {
+    .content-wrapper {
+      max-width: 310px;
+    }
+  }
+
+  @media (max-width: 321px) {
+    .content-wrapper {
+      max-width: 285px;
+    }
+
+    #about {
+      margin-left: 10px;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    .about {
+      min-width: 220px
+    }
+
+    .footer-content {
+      padding: 0;
+    }
+
+    footer {
+      padding: 0 5px;
+    }
+
+    .footer-section img {
+      width: 50px
+    }
+
+    .social-icons {
+      margin-left: 21%;
+    }
+  }
+
+  #cursor {
+    height: 20px;
+    width: 20px;
+    background-color: rgb(125, 239, 11, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    font-size: 7px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+</style>
+
+<body>
+  <div id="cursor"></div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./img/logo2.png" alt="Logo" />
+      </div>
+      <button class="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#platforms">Platforms</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="pages/Login.html">Log In</a></li>
+        <li><a href="pages/SignUp.html">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main class="content-wrapper">
     <section class="contact-section">
       <div class="header-content">
@@ -139,84 +611,117 @@
         </div>
       </div>
 
-    
+      <form id="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+    <div id="popup-message" class="hidden">
+      Your message has been sent successfully! 🎉
+    </div>
   </main>
-  <footer class="main-footer" style="background: linear-gradient(to right,  #0e2511, #19be50);; color: #ffffff; padding: 20px 20px;">
-    <div class="footer-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
-      <div class="footer-section" style="flex: 1; min-width: 250px; max-width: 300px;">
+
+  </main>
+
+  <footer>
+    <!-- Footer Container -->
+    <div class="footer-container">
+      <!-- Left Section (Logo and Description) -->
+      <div class="footer-left">
         <!-- Logo -->
-        <div class="footer-logo" style="margin-bottom: 10px; animation: fadeInLeft 1s; text-align: center;">
-          <div style="padding: 10px; border-radius: 8px; display: inline-block;">
-            <img src="img/lightlogo.png" alt="Logo" style="height: 60px; width: auto;">
+        <div class="footer-logo" >
+          <div class="footer-div" onclick="window.location.href = 'index.html'">
+            <h1>DSA</h1>
           </div>
         </div>
-        <p style="text-align: justify; margin-bottom: 20px; line-height: 1.6; color: white;">DSA problem solutions involve understanding the problem, choosing the right approach, implementing optimized code, and analyzing time and space complexity for efficiency.</p>
-        <div class="social-links" style="text-align: center;">
-          <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="#" target="_blank" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
+        <!-- Description -->
+        <p>
+          DSA problem solutions involve step-by-step methods to solve data
+          structure and algorithm challenges efficiently. They include
+          understanding the problem, selecting the right approach,
+          implementing optimized code, and analyzing time and space complexity
+          for performance.
+        </p>
       </div>
   
       <!-- Quick Links Section -->
-      <div class="footer-section services">
-          <h4 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Quick Links<div class="underline"><span></span></div></h4>
-  <br><ul style="list-style: none; padding: 5;">
-            <li><a href="about.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Who We Are</a></li>
-            <li><a href="blog.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Blog</a></li>
-            <li><a href="work.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Work With Us</a></li>
-            <li><a href="#" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color=' white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Investor Relations</a></li>
-            <li><a href="contact.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color=' white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Contact Us</a></li>
-          </ul>
+      <div class="footer-section-services">
+        <h2>Quick Links </h2>
+        <ul >
+          <li><a href="about.html">Who We Are</a></li>
+          <li> <a href="#">Blog</a></li>
+          <li><a href="#">Work With Us</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
       </div>
-      <div class="footer-section services">
-          <h4 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Learn More<div class="underline"><span></span></div></h4>
-  <br><ul style="list-style: none; padding: 0;">
-             <ul style="list-style: none; padding: 0;">
-            <li><a href="privacy.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Privacy Policy</a></li>
-  
-  
-            <li><a href="Security.html" style="color: white; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='black'; this.style.paddingLeft='10px'" <li=""></a><a href="security.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Security</a></li>
-            <li><a href="terms.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Terms of Service</a></li>
-            <li><a href="contributors.html" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">Our Contributors</a></li>
-          </ul>
-      </ul></div>
-  
-       <div class="footer-section services">
-          <h4 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Newsletter<div class="underline"><span></span></div></h4>
-         <br>
-         <ul style="list-style: none; padding: 0;">
-          <form>
-          <i class="fas fa-envelope"></i>
-          <input type="email" placeholder="Enter your email id" required="" fdprocessedid="7t54w">
-          <button type="submit" fdprocessedid="xi78vf"><i class="fas fa-arrow-right"></i></button>
-        </form>
-        <br>
-        <h4 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s; color: white;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='white'">Contact Us <div class="underline"><span></span></div></h4>
-        <br>
-        <ul style="list-style: none; padding: 0;">
-             <ul style="list-style: none; padding: 0;">
-            <li><a href="mailto:contact@example.com" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">contact@example.com</a></li>
-            <li><a class="fas fa-map-marker-alt" style="color: white; text-decoration: none; transition: 0.3s; padding-left: 0px;" onmouseover="this.style.color='white'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">India</a></li>
-             </ul>
-        </ul></ul></div>
+      <div class="footer-section-services">
+        <h2> DSA Problem Solutions </h2>
+        <ul >
+          <li> <a href="about.html">Who We Are</a></li>
+          <li> <a href="#">Blog</a></li>
+          <li> <a href="#">Work With Us</a></li>
+          <li> <a href="#">Investor Relations</a></li>
+          <li> <a href="contact.html">Contact Us</a> </li>
+        </ul>
+      </div>
+
+      <!-- Learn More Section -->
+      <div class="footer-section-services">
+        <h2> Learn More</h2>
+        <ul >
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a ref="terms.html">Terms of Service</a></li>
+          <li><a href="contributors.html">Our Contributors</a></li>
+        </ul>
+      </div>
     </div>
-  
-    <div class="footer-bottom" style="text-align: center; margin-top: 10px;">
-      <p style="margin: 0; font-size: 14px; color: white;">© 2025 DSA Problem Solutions. All rights reserved.</p>
+
+    <!-- Stay Updated Section -->
+    <div
+      class="footer-section-newsletter" >
+      <h3 > Stay Updated </h3>
+      <p >
+        Subscribe to our newsletter for the latest updates and tips on
+        mastering data structures and algorithms.
+      </p>
+      <form action="#" method="POST">
+        <input type="email" placeholder="Your Email Address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- Social Links -->
+    <div
+      class="social-links" >
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" ><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div
+      class="footer-bottom">
+      <p> &copy; <span id="currentYear"></span> DSA Problem Solutions. All rights reserved.</p>
     </div>
   </footer>
+
   
-   <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-          integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
-    <script src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js" async></script>
-    <script src="audio.js"></script>
-    <!-- Scroll to Top Button -->
   <script>
      const scrollButton = document.getElementById('scrollButton');
   const outerCircle = document.querySelector('.outer-circle');
