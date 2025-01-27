@@ -84,7 +84,7 @@ footer .logo-design{
   
 
   footer .footer-section-newsletter{
-    
+    height: 200px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     backdrop-filter: blur(10px);
@@ -142,6 +142,7 @@ footer .logo-design{
   }
 
   footer .social-links{
+    
     margin-top: 40px; 
     animation: fadeInUp 2.5s;
     text-align: center;
