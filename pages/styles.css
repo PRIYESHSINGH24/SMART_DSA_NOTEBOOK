@@ -8,7 +8,7 @@ body {
 }
 /* Navbar Styles */
 .navbar {
-  background: rgb(24 192 27);
+  background: #2F2441;
   padding: 1rem 1rem;
   position: fixed;
   top: 0;
@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px #37ff01;
+  box-shadow: 0 2px 10px #100C08;
   z-index: 1000;
   backdrop-filter: blur(10px);
   border-bottom-left-radius: 20px;
@@ -113,7 +113,7 @@ body {
   justify-content: space-between;
   padding: 4rem;
   /* margin: -20px; */
-  background: linear-gradient(to right, #11cb2a, #19be50);
+  background: linear-gradient(to right, #2f2441, #2f2441);
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
 }
@@ -321,9 +321,9 @@ header p {
 }
 
 .platform-card {
-  background-color: #fff;
+  background-color: #2f2441;
   border-radius: 20px; 
-  box-shadow: 0 6px 14px rgb(74 209 74); 
+  box-shadow: 0 6px 14px rgb(16 12 8); 
   margin: 10px;
   padding: 30px; 
   text-align: center;
@@ -334,7 +334,7 @@ header p {
 
 .platform-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 24px #F44336; 
+  box-shadow: 0 10px 24px rgb(16 12 8); 
 }
 
 .platform-card img {
@@ -351,14 +351,14 @@ header p {
 .platform-card h2 {
   margin: 15px 0;
   font-size: 1.6em;
-  color: #333;
+  color: #f9a828;
 }
 
 .platform-card a {
   display: inline-block;
   margin-top: 15px;
   padding: 12px 25px;
-  background-color: #2acb1e;
+  background-color: #f9a828;
   color: #fff;
   text-decoration: none;
   border-radius: 8px; 
@@ -462,7 +462,7 @@ header p {
    Footer Section
    ======================== */
 .main-footer {
-  background-color: linear-gradient(to right, #11cb2a, #19be50);;
+  background-color: linear-gradient(to right, #2f2441, #2f2441);
   padding: 4rem 5%;
   color: #333;
   font-family: 'Arial', sans-serif;
