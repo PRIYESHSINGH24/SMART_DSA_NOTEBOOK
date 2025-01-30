@@ -14,7 +14,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-  background: rgba(255, 255, 255, 0.95);
+  background: #2ecc19;
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
@@ -27,7 +27,7 @@ body {
   z-index: 1000;
   backdrop-filter: blur(10px);
   /* border-radius: 5px; */
-  border: 5px rgb(173, 186, 74) solid;
+  border: 5px rgba(26, 209, 64, 0.95) solid;
 }
 
 .logo {
@@ -403,7 +403,7 @@ body {
   Footer Section
   ======================== */
   .main-footer {
-    background-color: linear-gradient(to right, #11cb2a, #19be50);
+    background-color: linear-gradient(to right, #2f2441, #2f2441);
     ;
     padding: 4rem 5%;
     color: #333;
