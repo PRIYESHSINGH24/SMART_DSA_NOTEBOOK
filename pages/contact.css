@@ -14,7 +14,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-  background: #2ecc19;
+  background: #2F2441;
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
@@ -27,7 +27,7 @@ body {
   z-index: 1000;
   backdrop-filter: blur(10px);
   /* border-radius: 5px; */
-  border: 5px rgba(26, 209, 64, 0.95) solid;
+  border: 5px rgba(47, 36, 65, 0.95) solid;
 }
 
 .logo {
