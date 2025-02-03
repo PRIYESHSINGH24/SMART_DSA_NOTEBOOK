@@ -669,7 +669,7 @@ h4 {
 .underline {
   width: 50%; /* Adjusted to make the red line shorter */
   height: 3px;
-  background: linear-gradient(to right, #1b5d37, #29b429, #347e0e);
+  background: linear-gradient(to right, #636363, #331a5d, #240655);
   border-radius: 3px;
   position: absolute;
   bottom: -8px; /* Adjusted to position the underline correctly below the text */
