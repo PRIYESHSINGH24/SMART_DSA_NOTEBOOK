@@ -25,7 +25,7 @@
 .contributor-card:hover {
   transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
   box-shadow: 0 12px 25px rgb(255 35 35), 0 0 15px rgb(255 187 18);
-  background: linear-gradient(145deg, #9fff98, #ffdf80);
+  background: linear-gradient(145deg, #2F2441, #ffdf80);
 }
 
 /* Decorative Glowing Effects */
@@ -37,7 +37,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgb(16 255 185 / 43%), #000000);
+  background: radial-gradient(circle, #37215a, #000000);
   animation: rotateGlow 6s linear infinite;
   z-index: -1;
 }
@@ -71,7 +71,7 @@
 .contributor-card h3 {
   margin: 10px 0;
   font-size: 1.5rem;
-  color: #222;
+  color: #ffffff;
   font-weight: bold;
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -121,11 +121,11 @@
 }
 
 .stat-box {
-  background: linear-gradient(to right, #33d048, #25ff6e);
+  background: linear-gradient(to right, #2F2441, #8646ee);
   padding: 20px;
   margin: 10px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgb(8 255 16);
+  box-shadow: 0 5px 15px #370a81;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
