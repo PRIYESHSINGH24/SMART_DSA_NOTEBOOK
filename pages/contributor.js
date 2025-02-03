@@ -1,5 +1,5 @@
 const REPO_OWNER = "PRIYESHSINGH24";
-const REPO_NAME = "DSA_SOLUTION_PLATFORM";
+const REPO_NAME = "SMART_DSA_NOTEBOOK";
 const GITHUB_TOKEN = ""; // Optional: GitHub personal access token
 
 async function fetchContributors() {
