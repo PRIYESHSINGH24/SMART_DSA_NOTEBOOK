@@ -68,7 +68,7 @@ body {
 
 
 .nav-links a:hover {
-  color: #17ff00;
+  color: white !important;
 }
 
 /* Underline animation for nav links */
@@ -660,6 +660,11 @@ form button .fas{
 
 .main-footer .footer-section form input {
   margin-right: 10px;
+  color: #333 !important;
+}
+
+.footer-section form input::placeholder {
+  color: #666 !important; 
 }
 
 h4 {
@@ -756,4 +761,14 @@ h4 {
     color: #075728;
     font-weight: bold;
     transform: rotate(90deg); /* Fixed direction to the right */
+}
+
+.newsletter input {
+  color: #333 !important;  /* Text color */
+  border: 1px solid #ddd !important;  /* Add border */
+  background: rgba(255,255,255,0.9) !important;  /* White background */
+}
+
+.newsletter input::placeholder {
+  color: #666 !important;  /* Placeholder color */
 }
