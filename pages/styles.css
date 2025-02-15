@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
 }
 /* Navbar Styles */
 .navbar {
@@ -486,13 +486,13 @@ header p {
 .footer-section h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #000;
+  color: #ffffff;
 }
 
 .footer-section h4 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #000;
+  color: #e5dbdb;
 }
 
 .footer-section p {
@@ -631,7 +631,7 @@ form button{
 form button .fas{
   font-size: 16px;
   padding: 10px 20px;
-  color: #fafafa;
+  color: #ffffff;
 }
 
 
@@ -649,6 +649,7 @@ form button .fas{
 
 .main-footer .footer-section h4 {
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .main-footer .footer-section ul,
@@ -663,13 +664,14 @@ form button .fas{
 }
 
 h4 {
+  color: #ffffff;
   position: relative; /* Add relative positioning to the <h3> element */
 }
 
 .underline {
   width: 50%; /* Adjusted to make the red line shorter */
   height: 3px;
-  background: linear-gradient(to right, #1b5d37, #29b429, #347e0e);
+  background: linear-gradient(to right, #636363, #331a5d, #240655);
   border-radius: 3px;
   position: absolute;
   bottom: -8px; /* Adjusted to position the underline correctly below the text */
