@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBdrbVTZs0LRTOONiMudrBaa8xNet79WIQ",
+    apiKey: "API keys add it here",
     authDomain: "create-account-7e671.firebaseapp.com",
     projectId: "create-account-7e671",
     storageBucket: "create-account-7e671.appspot.com",
