@@ -9,7 +9,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: linear-gradient(to right, #e3ffe7, #d9e7ff);
-  color: #333;
+  color: #f9a828;
 }
 
 /* Navbar Styles */
@@ -201,7 +201,7 @@ body {
   }
 
   .contact-section {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(47, 36, 65, 0.95);
     border-radius: 24px;
     padding: 3rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -214,14 +214,14 @@ body {
     margin-bottom: 3.5rem;
   }
 
-  h1 {
+   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #239d21 0%, #04ff00 100%);
+    background: linear-gradient(135deg, #f9a828 0%, #f9a828 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
-  }
+  } 
 
   .header-content p {
     color: #64748b;
@@ -957,7 +957,7 @@ html {
 }
 
 .contact-section {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(47, 36, 65, 0.95);
   border-radius: 24px;
   padding: 3rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -970,14 +970,14 @@ html {
   margin-bottom: 3.5rem;
 }
 
-h1 {
+/* h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #239d21 0%, #04ff00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
-}
+} */
 
 .header-content p {
   color: #64748b;
@@ -1163,7 +1163,7 @@ button:hover {
   Footer Section
   ======================== */
 .main-footer {
-  background-color: linear-gradient(to right, #11cb2a, #19be50);
+  background-color: linear-gradient(to right, #2f2441, #2f2441);
   ;
   padding: 4rem 5%;
   color: #333;
@@ -1523,23 +1523,28 @@ h4 {
 .help-boxes {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin: 2vh;
+  border-radius: 20px;
 }
 
 .help-box {
-  width: 30vw;
+  width: 48%; /* Adjust width to fit two in a row */
   text-align: center;
   padding: 2vh;
+  box-sizing: border-box; /* Ensures padding doesn't increase width */
 }
 
-.help-box h4{
+.help-box h4 {
   color: #04ff00;
 }
-
 .help-box:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05); /* Slightly enlarges but keeps proportions */
   box-shadow: 0 8px 12px rgba(21, 255, 0, 0.2);
   background-color: #eafff5;
+  border-radius: 20px; /* Keeping the same border-radius */
+  width: 48%; /* Ensures it doesn't shrink/expand */
+  height: auto; /* Keeps height natural */
 }
 
 #cursor {

@@ -1,7 +1,7 @@
 /* General Body Styling */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to top right, #80ff00, #94d7a5);
+  background: linear-gradient(to right, #2f2441, #2f2441);
   color: #ffffff; /* Keeps text readable against the green */
   margin: 0;
   padding: 0;

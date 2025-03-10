@@ -63,6 +63,7 @@ header h1 {
   display: flex;
   flex: 1;
   height: calc(100vh - 60px);
+  padding-top: 5%;
 }
 
 .problems-list {
