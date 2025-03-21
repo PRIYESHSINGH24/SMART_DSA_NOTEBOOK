@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta property="og:image" content="../img/lightlogo.png" />
-    <meta
-      property="og:url"
-      content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/"
-    />
+    <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
     <meta property="og:type" content="website" />
 
     <link rel="icon" href="../img/Solution.png" type="image/png" />
@@ -18,158 +15,157 @@
     <title>Sign Up - Education Platform</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+      }
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            opacity: 0;
-            animation: fadeIn 0.8s ease-in forwards;
-        }
+      body {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+          opacity: 0;
+          animation: fadeIn 0.8s ease-in forwards;
+      }
 
-        .signup-container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-            margin: 1rem;
-        }
+      .signup-container {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          padding: 2rem;
+          border-radius: 20px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          max-width: 500px;
+          margin: 1rem;
+      }
 
-        .signup-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+      .signup-header {
+          text-align: center;
+          margin-bottom: 2rem;
+      }
 
-        .signup-header h1 {
-            color: #fff;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
+      .signup-header h1 {
+          color: #fff;
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+      }
 
-        .signup-header p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-        }
+      .signup-header p {
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 0.9rem;
+      }
 
-        .form-group {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
+      .form-group {
+          position: relative;
+          margin-bottom: 1.5rem;
+      }
 
-        .form-group input {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: #fff;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
+      .form-group input {
+          width: 100%;
+          padding: 1rem;
+          border: none;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 10px;
+          color: #fff;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+      }
 
-        .form-group input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
+      .form-group input::placeholder {
+          color: rgba(255, 255, 255, 0.6);
+      }
 
-        .form-group input:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-        }
+      .form-group input:focus {
+          outline: none;
+          background: rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+      }
 
-        .password-toggle {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
+      .password-toggle {
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          color: rgba(255, 255, 255, 0.6);
+          cursor: pointer;
+          transition: color 0.3s ease;
+      }
 
-        .password-toggle:hover {
-            color: #fff;
-        }
+      .password-toggle:hover {
+          color: #fff;
+      }
 
-        .terms-container {
-            margin: 1.5rem 0;
-            color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-        }
+      .terms-container {
+          margin: 1.5rem 0;
+          color: rgba(255, 255, 255, 0.8);
+          display: flex;
+          align-items: flex-start;
+          gap: 0.5rem;
+      }
 
-        .terms-container input[type="checkbox"] {
-            margin-top: 0.25rem;
-        }
+      .terms-container input[type="checkbox"] {
+          margin-top: 0.25rem;
+      }
 
-        .terms-container label {
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
+      .terms-container label {
+          font-size: 0.9rem;
+          line-height: 1.4;
+      }
 
-        .terms-container a {
-            color: #ff6b6b;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+      .terms-container a {
+          color: #ff6b6b;
+          text-decoration: none;
+          transition: color 0.3s ease;
+      }
 
-        .terms-container a:hover {
-            color: #ff8787;
-        }
+      .terms-container a:hover {
+          color: #ff8787;
+      }
 
-        .signup-button {
-            width: 100%;
-            padding: 1rem;
-            background: #ff6b6b;
-            border: none;
-            border-radius: 10px;
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+      .signup-button {
+          width: 100%;
+          padding: 1rem;
+          background: #ff6b6b;
+          border: none;
+          border-radius: 10px;
+          color: #fff;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+      }
 
-        .signup-button:hover {
-            background: #ff8787;
-            transform: translateY(-2px);
-        }
+      .signup-button:hover {
+          background: #ff8787;
+          transform: translateY(-2px);
+      }
 
-        .login-link {
-            text-align: center;
-            margin-top: 1.5rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
+      .login-link {
+          text-align: center;
+          margin-top: 1.5rem;
+          color: rgba(255, 255, 255, 0.8);
+      }
 
-        .login-link a {
-            color: #ff6b6b;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+      .login-link a {
+          color: #ff6b6b;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.3s ease;
+      }
 
-        .login-link a:hover {
-            color: #ff8787;
-        }
+      .login-link a:hover {
+          color: #ff8787;
+      }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
+      @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+      }
     </style>
   </head>
   <body>
@@ -218,6 +214,10 @@
         </div>
         <div class="form-group">
           <input type="email" id="email" placeholder="Email Address" required />
+        </div>
+        <!-- New UserID field -->
+        <div class="form-group">
+          <input type="text" id="userID" placeholder="Your UserID (GitHub, Twitter, etc.)" required />
         </div>
         <div class="form-group">
           <input type="password" id="password" placeholder="Password" required />
