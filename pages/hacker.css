@@ -14,7 +14,6 @@ body {
 }
 
 
-/* Underline animation for nav links */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -26,15 +25,9 @@ body {
   transition: width 0.3s ease;
 }
 
-
-
-
-
 header {
   margin-top: 90px;
-    background-color: #24292e;
     color: #fff;
-    padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
