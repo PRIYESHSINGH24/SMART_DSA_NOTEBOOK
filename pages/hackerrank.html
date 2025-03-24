@@ -11,7 +11,6 @@
     <link rel="icon" href="../img/lightlogo.png" type="image/png" />
     <link rel="icon" href="../img/lightlogo.png" sizes="16x16" type="image/png" />
 
-
     <title>HackerRank - DSA Problem Solutions</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
@@ -26,7 +25,59 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="hacker.css" />
-    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./navbar.css" />
+
+    <!-- Additional CSS for Dropdown -->
+    <style>
+      /* Dropdown Block Styling */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-left: 20px;
+      }
+      .dropbtn {
+        background: #ff9800;
+        color: white;
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+      .dropbtn:hover {
+        background: #e68900;
+      }
+      .dropdown-content {
+        position: absolute;
+        right: 0;
+        top: 110%;
+        background: white;
+        min-width: 150px;
+        border-radius: 5px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      .dropdown-content a {
+        color: #333;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+        transition: background 0.3s ease;
+      }
+      .dropdown-content a:hover {
+        background: #ff9800;
+        color: white;
+      }
+      .dropdown:hover .dropdown-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+    </style>
   </head>
   <body>
     <!-- Scroll -->
@@ -43,26 +94,29 @@
         <div class="logo">
           <img src="../img/Solution.png" alt="Logo" />
         </div>
-    
-        <button class="mobile-menu-btn" >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="black">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
+
         <ul class="nav-links">
-          <li><a href="../" >Home</a></li>
+          <li><a href="../">Home</a></li>
           <li><a href="../platform.html">Platforms</a></li>
           <li><a href="../about.html">About</a></li>
           <li><a href="../contact.html">Contact</a></li>
           <li><a href="../Login1.html">Log In</a></li>
           <li><a href="./SignUp.html">Sign Up</a></li>
         </ul>
-      </nav>
 
+        <!-- Dropdown Block on Right Side -->
+        <div class="dropdown">
+          <button class="dropbtn">More</button>
+          <div class="dropdown-content">
+            <a href="../extra1.html">Extra Page 1</a>
+            <a href="../extra2.html">Extra Page 2</a>
+            <a href="../extra3.html">Extra Page 3</a>
+            <a href="../extra4.html">Extra Page 4</a>
+          </div>
+        </div>
+      </nav>
     </header>
-   
+
     <div class="container">
       <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 20px;">Problems</h2>
       <div class="problems-list">
@@ -80,7 +134,7 @@
             </div>
           </div>
         </div>
-    
+
         <!-- Reverse Linked List Problem -->
         <div class="card">
           <div class="card-header">
@@ -95,23 +149,23 @@
             </div>
           </div>
         </div>
-    
+
         <!-- String Reversal Problem -->
         <div class="card">
           <div class="card-header">
-              <h3 class="card-title">Strings Reversal</h3>
+            <h3 class="card-title">Strings Reversal</h3>
           </div>
           <div class="card-content">
-              <p>Difficulty: Medium</p>
-              <div class="button-container">
-                  <button class="button button-primary" onclick="handleViewSolution('Strings Reversal')">
-                      <span class="icon">▶</span> View Solution
-                  </button>
-              </div>
+            <p>Difficulty: Medium</p>
+            <div class="button-container">
+              <button class="button button-primary" onclick="handleViewSolution('Strings Reversal')">
+                <span class="icon">▶</span> View Solution
+              </button>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
-    
+
       <!-- Solution Display Section -->
       <div class="solution-display" style="display: none;">
         <h2>Solution</h2>
@@ -120,165 +174,158 @@
         </div>
       </div>
     </div>
-    
-    
-       <!-- Adding question -->
-       <div class="container">
-           <div class="problems-list">
-              
-                <!-- Problem Cards  -->
-               <!-- <div id="problems-container"></div>  -->
-   
-               <!-- Form to Add New Question -->
-                <div class="ques-form">
-                    <h3 style="margin-top: 20px;">Add a New Question</h3>
-                    <form id="add-problem-form">
-                        <label for="title">Question Title:</label>
-                        <input type="text" id="title" name="title" required style="width: 100%; margin-bottom: 10px;">     
-                        <label for="difficulty">Difficulty Level:</label>
-                        <select id="difficulty" name="difficulty" required style="width: 100%; margin-bottom: 10px;">
-                            <option value="Easy">Easy</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Hard">Hard</option>
-                        </select>
-                        <label for="solution">Solution (Code):</label>
-                        <textarea id="solution" name="solution" rows="5" required style="width: 100%; margin-bottom: 10px;"></textarea>
-        
-                        <button type="submit" style="padding: 10px 15px;">Add Question</button>
-                    </form>
-                </div>
-           </div>
-   
-   
-   
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
-      <script
+
+    <!-- Adding Question Section -->
+    <div class="container">
+      <div class="problems-list">
+        <!-- Form to Add New Question -->
+        <div class="ques-form">
+          <h3 style="margin-top: 20px;">Add a New Question</h3>
+          <form id="add-problem-form">
+            <label for="title">Question Title:</label>
+            <input type="text" id="title" name="title" required style="width: 100%; margin-bottom: 10px;" />
+            <label for="difficulty">Difficulty Level:</label>
+            <select id="difficulty" name="difficulty" required style="width: 100%; margin-bottom: 10px;">
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
+            <label for="solution">Solution (Code):</label>
+            <textarea id="solution" name="solution" rows="5" required style="width: 100%; margin-bottom: 10px;"></textarea>
+
+            <button type="submit" style="padding: 10px 15px;">Add Question</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-       <script src="geekforgeek.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-       <script>
-           const problems = [
-               {
-                   title: "Two Sum",
-                   difficulty: "Easy",
-                   solution: `
+    <script src="geekforgeek.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script>
+      const problems = [
+        {
+          title: "Two Sum",
+          difficulty: "Easy",
+          solution: `
    <pre><code class="language-python">def two_sum(nums, target):
-       seen = {}
-       for i, num in enumerate(nums):
-           diff = target - num
-           if diff in seen:
-               return [seen[diff], i]
-           seen[num] = i
+    seen = {}
+    for i, num in enumerate(nums):
+        diff = target - num
+        if diff in seen:
+            return [seen[diff], i]
+        seen[num] = i
    </code></pre>`
-               },
-               {
-                   title: "Reverse Linked List",
-                   difficulty: "Medium",
-                   solution: `
+        },
+        {
+          title: "Reverse Linked List",
+          difficulty: "Medium",
+          solution: `
    <pre><code class="language-python">class ListNode:
-       def __init__(self, val=0, next=None):
-           self.val = val
-           self.next = next
-   
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
    def reverse_linked_list(head):
-       prev = None
-       current = head
-       while current:
-           next_node = current.next
-           current.next = prev
-           prev = current
-           current = next_node
-       return prev
+    prev = None
+    current = head
+    while current:
+        next_node = current.next
+        current.next = prev
+        prev = current
+        current = next_node
+    return prev
    </code></pre>`
-               }
-           ];
-   
-           const problemsContainer = document.getElementById('problems-container');
-           const solutionContent = document.getElementById('solution-content');
-           const addProblemForm = document.getElementById('add-problem-form');
-   
-           // Render all questions
-           function renderProblems() {
-               problemsContainer.innerHTML = ""; // Clear the container
-               problems.forEach((problem, index) => {
-                   const card = document.createElement('div');
-                   card.className = 'card';
-                   card.style.marginBottom = "15px"; // Ensure spacing between cards
-                   card.innerHTML = `
-                       <div class="card-header">
-                           <h3 class="card-title">${problem.title}</h3>
-                       </div>
-                       <div class="card-content">
-                           <p>Difficulty: ${problem.difficulty}</p>
-                           <div class="button-container">
-                               <button class="button button-primary" onclick="showSolution(${index})">
-                                   <span class="icon">▶</span> View Solution
-                               </button>
-                           </div>
-                       </div>
-                   `;
-                   problemsContainer.appendChild(card);
-               });
-           }
-   
-           // Show solution in the solution display
-           function showSolution(index) {
-               const selectedProblem = problems[index];
-               solutionContent.innerHTML = selectedProblem.solution;
-               Prism.highlightAll(); // Highlight syntax
-           }
-   
-           // Add a new problem from the form
-           addProblemForm.addEventListener('submit', (e) => {
-               e.preventDefault();
-               const title = document.getElementById('title').value;
-               const difficulty = document.getElementById('difficulty').value;
-               const solution = `<pre><code class="language-python">${document.getElementById('solution').value}</code></pre>`;
-               problems.push({ title, difficulty, solution });
-               renderProblems(); // Re-render the problems list
-               addProblemForm.reset(); // Clear the form
-           });
-   
-           // Initial rendering of problems
-           renderProblems();
-       </script>
-   
-       <!-- Scroll to Top Button -->
-       <script>
-           const scrollButton = document.getElementById("scrollButton");
-           const outerCircle = document.querySelector(".outer-circle");
-           const arrow = document.querySelector(".arrow");
-     
-           // Function to handle scroll behavior
-           window.addEventListener("scroll", () => {
-             const scrollTop = window.scrollY;
-             const scrollHeight =
-               document.documentElement.scrollHeight - window.innerHeight;
-             const scrollProgress = (scrollTop / scrollHeight) * 360;
-     
-             // Show button after scrolling 7-8 lines (~100px)
-             if (scrollTop > 100) {
-               scrollButton.classList.add("visible");
-             } else {
-               scrollButton.classList.remove("visible");
-             }
-     
-             // Update the circular progress
-             outerCircle.style.setProperty(
-               "--scroll-progress",
-               `${scrollProgress}deg`
-             );
-           });
-     
-           // Scroll-to-top functionality
-           scrollButton.addEventListener("click", () => {
-             window.scrollTo({ top: 0, behavior: "smooth" });
-           });
-         </script>
-   </body>
-   </html>
-   
+        }
+      ];
+
+      const problemsContainer = document.getElementById("problems-container");
+      const solutionContent = document.getElementById("solution-content");
+      const addProblemForm = document.getElementById("add-problem-form");
+
+      // Render all questions
+      function renderProblems() {
+        problemsContainer.innerHTML = ""; // Clear the container
+        problems.forEach((problem, index) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.style.marginBottom = "15px"; // Ensure spacing between cards
+          card.innerHTML = `
+            <div class="card-header">
+              <h3 class="card-title">${problem.title}</h3>
+            </div>
+            <div class="card-content">
+              <p>Difficulty: ${problem.difficulty}</p>
+              <div class="button-container">
+                <button class="button button-primary" onclick="showSolution(${index})">
+                  <span class="icon">▶</span> View Solution
+                </button>
+              </div>
+            </div>
+          `;
+          problemsContainer.appendChild(card);
+        });
+      }
+
+      // Show solution in the solution display
+      function showSolution(index) {
+        const selectedProblem = problems[index];
+        solutionContent.innerHTML = selectedProblem.solution;
+        Prism.highlightAll(); // Highlight syntax
+      }
+
+      // Add a new problem from the form
+      addProblemForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const title = document.getElementById("title").value;
+        const difficulty = document.getElementById("difficulty").value;
+        const solution = `<pre><code class="language-python">${document.getElementById("solution").value}</code></pre>`;
+        problems.push({ title, difficulty, solution });
+        renderProblems(); // Re-render the problems list
+        addProblemForm.reset(); // Clear the form
+      });
+
+      // Initial rendering of problems
+      renderProblems();
+    </script>
+
+    <!-- Scroll to Top Button -->
+    <script>
+      const scrollButton = document.getElementById("scrollButton");
+      const outerCircle = document.querySelector(".outer-circle");
+      const arrow = document.querySelector(".arrow");
+
+      // Function to handle scroll behavior
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const scrollHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = (scrollTop / scrollHeight) * 360;
+
+        // Show button after scrolling 7-8 lines (~100px)
+        if (scrollTop > 100) {
+          scrollButton.classList.add("visible");
+        } else {
+          scrollButton.classList.remove("visible");
+        }
+
+        // Update the circular progress
+        outerCircle.style.setProperty(
+          "--scroll-progress",
+          `${scrollProgress}deg`
+        );
+      });
+
+      // Scroll-to-top functionality
+      scrollButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
