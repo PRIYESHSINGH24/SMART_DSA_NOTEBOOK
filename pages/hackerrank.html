@@ -1,238 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:image" content="../img/lightlogo.png" />
-    <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
-    <meta property="og:type" content="website" />
+  <meta property="og:image" content="../img/lightlogo.png" />
+  <meta property="og:url" content="https://priyeshsingh24.github.io/DSA_SOLUTION_PLATFORM/" />
+  <meta property="og:type" content="website" />
 
-    <link rel="icon" href="../img/lightlogo.png" type="image/png" />
-    <link rel="icon" href="../img/lightlogo.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="../img/lightlogo.png" type="image/png" />
+  <link rel="icon" href="../img/lightlogo.png" sizes="16x16" type="image/png" />
 
-    <title>HackerRank - DSA Problem Solutions</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-github.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="hacker.css" />
-    <link rel="stylesheet" href="./navbar.css" />
+  <title>HackerRank - DSA Problem Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-github.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="hacker.css" />
+  <link rel="stylesheet" href="./navbar.css" />
 
-    <!-- Additional CSS for Dropdown -->
-    <style>
-      /* Dropdown Block Styling */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-        margin-left: 20px;
-      }
-      .dropbtn {
-        background: #ff9800;
-        color: white;
-        padding: 10px 15px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s ease;
-      }
-      .dropbtn:hover {
-        background: #e68900;
-      }
-      .dropdown-content {
-        position: absolute;
-        right: 0;
-        top: 110%;
-        background: white;
-        min-width: 150px;
-        border-radius: 5px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        transform: translateY(10px);
-        pointer-events: none;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
-      .dropdown-content a {
-        color: #333;
-        padding: 10px 15px;
-        text-decoration: none;
-        display: block;
-        transition: background 0.3s ease;
-      }
-      .dropdown-content a:hover {
-        background: #ff9800;
-        color: white;
-      }
-      .dropdown:hover .dropdown-content {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Scroll -->
-    <div id="scrollButton" class="hidden">
-      <div class="outer-circle">
-        <div class="inner-circle">
-          <div class="arrow">↑</div>
+  <!-- Dropdown CSS (Header, Unchanged) -->
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px;
+    }
+    .dropbtn {
+      background: #e60000;
+      color: white;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .dropbtn:hover {
+      background: #cc0000;
+    }
+    .dropdown-content {
+      position: absolute;
+      right: 0;
+      top: 110%;
+      background: #1a1a1a;
+      min-width: 150px;
+      border-radius: 5px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.6);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .dropdown-content a {
+      color: #ddd;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s ease;
+    }
+    .dropdown-content a:hover {
+      background: #e60000;
+      color: #fff;
+    }
+    .dropdown:hover .dropdown-content {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  </style>
+
+  <!-- Main Page CSS (Modern Black-Red Theme) -->
+  <style>
+    /* Reset & Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: #ddd;
+      line-height: 1.6;
+      padding: 20px;
+      padding-top: 80px; /* gap for header */
+    }
+    /* Header Styling */
+    header {
+      background: #000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    nav.navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav.navbar .logo img {
+      max-height: 50px;
+    }
+    nav.navbar .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav.navbar .nav-links li a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav.navbar .nav-links li a:hover {
+      color: #e60000;
+    }
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+    }
+    /* Section Title (Modern Red Gradient) */
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 2px;
+      padding: 10px 0;
+      margin-bottom: 30px;
+      background: linear-gradient(90deg, #e60000, #ff3333, #e60000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    /* Problems List Grid */
+    .problems-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    /* Card Styles */
+    .card {
+      background: #262626;
+      border: 1px solid #333;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.8);
+    }
+    .card-header {
+      background: #e60000;
+      color: #fff;
+      padding: 15px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .card-title {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .card-content {
+      padding: 15px;
+      color: #ccc;
+    }
+    .card-content p {
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .button-container {
+      text-align: right;
+    }
+    /* Button */
+    .button {
+      background: #e60000;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background: #cc0000;
+    }
+    /* Solution Display */
+    .solution-display {
+      margin-top: 40px;
+      background: #262626;
+      border-left: 5px solid #e60000;
+      padding: 20px;
+      border-radius: 5px;
+      display: none;
+    }
+    .solution-display h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    /* Add Question Form */
+    .ques-form {
+      margin-top: 20px;
+    }
+    .ques-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ques-form label {
+      font-weight: 600;
+      color: #ccc;
+    }
+    .ques-form input,
+    .ques-form select,
+    .ques-form textarea {
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      width: 100%;
+      background: #1a1a1a;
+      color: #ddd;
+    }
+    .ques-form button {
+      width: fit-content;
+      padding: 10px 15px;
+      background: #e60000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .ques-form button:hover {
+      background: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (As Provided, Unchanged) -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../img/Solution.png" alt="Logo" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../platform.html">Platforms</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../Login1.html">Log In</a></li>
+        <li><a href="./SignUp.html">Sign Up</a></li>
+      </ul>
+      <!-- Dropdown Block -->
+      <div class="dropdown">
+        <button class="dropbtn">More</button>
+        <div class="dropdown-content">
+          <a href="../extra1.html">Extra Page 1</a>
+          <a href="../extra2.html">Extra Page 2</a>
+          <a href="../extra3.html">Extra Page 3</a>
+          <a href="../extra4.html">Extra Page 4</a>
         </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <div class="container">
+    <h2 class="section-title">Problems</h2>
+    <div id="problems-container" class="problems-list">
+      <!-- Problems dynamically rendered here -->
+    </div>
+    <!-- Solution Display Section -->
+    <div class="solution-display" id="solutionDisplay">
+      <h2>Solution</h2>
+      <div id="solution-content">
+        <p>Select a problem to view its solution.</p>
       </div>
     </div>
-    <div id="cursor"></div>
-    <header>
-      <nav class="navbar">
-        <div class="logo">
-          <img src="../img/Solution.png" alt="Logo" />
-        </div>
+  </div>
 
-        <ul class="nav-links">
-          <li><a href="../">Home</a></li>
-          <li><a href="../platform.html">Platforms</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-          <li><a href="../Login1.html">Log In</a></li>
-          <li><a href="./SignUp.html">Sign Up</a></li>
-        </ul>
-
-        <!-- Dropdown Block on Right Side -->
-        <div class="dropdown">
-          <button class="dropbtn">More</button>
-          <div class="dropdown-content">
-            <a href="../extra1.html">Extra Page 1</a>
-            <a href="../extra2.html">Extra Page 2</a>
-            <a href="../extra3.html">Extra Page 3</a>
-            <a href="../extra4.html">Extra Page 4</a>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <div class="container">
-      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 20px;">Problems</h2>
-      <div class="problems-list">
-        <!-- Two Sum Problem -->
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Two Sum</h3>
-          </div>
-          <div class="card-content">
-            <p>Difficulty: Easy</p>
-            <div class="button-container">
-              <button class="button button-primary" onclick="handleViewSolution('Two Sum')">
-                <span class="icon">▶</span> View Solution
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Reverse Linked List Problem -->
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Reverse Linked List</h3>
-          </div>
-          <div class="card-content">
-            <p>Difficulty: Medium</p>
-            <div class="button-container">
-              <button class="button button-primary" onclick="handleViewSolution('Reverse Linked List')">
-                <span class="icon">▶</span> View Solution
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- String Reversal Problem -->
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Strings Reversal</h3>
-          </div>
-          <div class="card-content">
-            <p>Difficulty: Medium</p>
-            <div class="button-container">
-              <button class="button button-primary" onclick="handleViewSolution('Strings Reversal')">
-                <span class="icon">▶</span> View Solution
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Solution Display Section -->
-      <div class="solution-display" style="display: none;">
-        <h2>Solution</h2>
-        <div id="solution-content">
-          <p>Select a problem to view its solution.</p>
-        </div>
-      </div>
+  <!-- Add Question Section -->
+  <div class="container">
+    <h2 class="section-title">Add a New Question</h2>
+    <div class="ques-form">
+      <form id="add-problem-form">
+        <label for="title">Question Title:</label>
+        <input type="text" id="title" name="title" required />
+        <label for="difficulty">Difficulty Level:</label>
+        <select id="difficulty" name="difficulty" required>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+        <label for="solution">Solution (Code):</label>
+        <textarea id="solution" name="solution" rows="5" required></textarea>
+        <button type="submit">Add Question</button>
+      </form>
     </div>
+  </div>
 
-    <!-- Adding Question Section -->
-    <div class="container">
-      <div class="problems-list">
-        <!-- Form to Add New Question -->
-        <div class="ques-form">
-          <h3 style="margin-top: 20px;">Add a New Question</h3>
-          <form id="add-problem-form">
-            <label for="title">Question Title:</label>
-            <input type="text" id="title" name="title" required style="width: 100%; margin-bottom: 10px;" />
-            <label for="difficulty">Difficulty Level:</label>
-            <select id="difficulty" name="difficulty" required style="width: 100%; margin-bottom: 10px;">
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
-            </select>
-            <label for="solution">Solution (Code):</label>
-            <textarea id="solution" name="solution" rows="5" required style="width: 100%; margin-bottom: 10px;"></textarea>
-
-            <button type="submit" style="padding: 10px 15px;">Add Question</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="geekforgeek.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script>
-      const problems = [
-        {
-          title: "Two Sum",
-          difficulty: "Easy",
-          solution: `
-   <pre><code class="language-python">def two_sum(nums, target):
+  <!-- JavaScript Section -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" 
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script>
+    // Data for Problems
+    const problems = [
+      {
+        title: "Two Sum",
+        difficulty: "Easy",
+        solution: `<pre><code class="language-python">def two_sum(nums, target):
     seen = {}
     for i, num in enumerate(nums):
         diff = target - num
         if diff in seen:
             return [seen[diff], i]
         seen[num] = i
-   </code></pre>`
-        },
-        {
-          title: "Reverse Linked List",
-          difficulty: "Medium",
-          solution: `
-   <pre><code class="language-python">class ListNode:
+</code></pre>`
+      },
+      {
+        title: "Reverse Linked List",
+        difficulty: "Medium",
+        solution: `<pre><code class="language-python">class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
-   def reverse_linked_list(head):
+def reverse_linked_list(head):
     prev = None
     current = head
     while current:
@@ -241,91 +347,65 @@
         prev = current
         current = next_node
     return prev
-   </code></pre>`
-        }
-      ];
-
-      const problemsContainer = document.getElementById("problems-container");
-      const solutionContent = document.getElementById("solution-content");
-      const addProblemForm = document.getElementById("add-problem-form");
-
-      // Render all questions
-      function renderProblems() {
-        problemsContainer.innerHTML = ""; // Clear the container
-        problems.forEach((problem, index) => {
-          const card = document.createElement("div");
-          card.className = "card";
-          card.style.marginBottom = "15px"; // Ensure spacing between cards
-          card.innerHTML = `
-            <div class="card-header">
-              <h3 class="card-title">${problem.title}</h3>
-            </div>
-            <div class="card-content">
-              <p>Difficulty: ${problem.difficulty}</p>
-              <div class="button-container">
-                <button class="button button-primary" onclick="showSolution(${index})">
-                  <span class="icon">▶</span> View Solution
-                </button>
-              </div>
-            </div>
-          `;
-          problemsContainer.appendChild(card);
-        });
+</code></pre>`
+      },
+      {
+        title: "Strings Reversal",
+        difficulty: "Medium",
+        solution: `<pre><code class="language-python">def reverse_string(s):
+    return s[::-1]
+</code></pre>`
       }
+    ];
 
-      // Show solution in the solution display
-      function showSolution(index) {
-        const selectedProblem = problems[index];
-        solutionContent.innerHTML = selectedProblem.solution;
-        Prism.highlightAll(); // Highlight syntax
-      }
+    const problemsContainer = document.getElementById("problems-container");
+    const solutionContent = document.getElementById("solution-content");
+    const addProblemForm = document.getElementById("add-problem-form");
 
-      // Add a new problem from the form
-      addProblemForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const title = document.getElementById("title").value;
-        const difficulty = document.getElementById("difficulty").value;
-        const solution = `<pre><code class="language-python">${document.getElementById("solution").value}</code></pre>`;
-        problems.push({ title, difficulty, solution });
-        renderProblems(); // Re-render the problems list
-        addProblemForm.reset(); // Clear the form
+    // Render Problems List
+    function renderProblems() {
+      problemsContainer.innerHTML = "";
+      problems.forEach((problem, index) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-header">
+            <h3 class="card-title">${problem.title}</h3>
+          </div>
+          <div class="card-content">
+            <p>Difficulty: ${problem.difficulty}</p>
+            <div class="button-container">
+              <button class="button" onclick="showSolution(${index})">
+                <span class="icon">▶</span> View Solution
+              </button>
+            </div>
+          </div>
+        `;
+        problemsContainer.appendChild(card);
       });
+    }
 
-      // Initial rendering of problems
+    // Display Selected Problem's Solution
+    function showSolution(index) {
+      const selectedProblem = problems[index];
+      solutionContent.innerHTML = selectedProblem.solution;
+      Prism.highlightAll();
+      document.getElementById("solutionDisplay").style.display = "block";
+    }
+
+    // Add New Problem Event
+    addProblemForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      const difficulty = document.getElementById("difficulty").value;
+      const solution = `<pre><code class="language-python">${document.getElementById("solution").value}</code></pre>`;
+      problems.push({ title, difficulty, solution });
       renderProblems();
-    </script>
+      addProblemForm.reset();
+    });
 
-    <!-- Scroll to Top Button -->
-    <script>
-      const scrollButton = document.getElementById("scrollButton");
-      const outerCircle = document.querySelector(".outer-circle");
-      const arrow = document.querySelector(".arrow");
-
-      // Function to handle scroll behavior
-      window.addEventListener("scroll", () => {
-        const scrollTop = window.scrollY;
-        const scrollHeight =
-          document.documentElement.scrollHeight - window.innerHeight;
-        const scrollProgress = (scrollTop / scrollHeight) * 360;
-
-        // Show button after scrolling 7-8 lines (~100px)
-        if (scrollTop > 100) {
-          scrollButton.classList.add("visible");
-        } else {
-          scrollButton.classList.remove("visible");
-        }
-
-        // Update the circular progress
-        outerCircle.style.setProperty(
-          "--scroll-progress",
-          `${scrollProgress}deg`
-        );
-      });
-
-      // Scroll-to-top functionality
-      scrollButton.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    </script>
-  </body>
+    // Initial Render
+    renderProblems();
+  </script>
+</body>
 </html>
