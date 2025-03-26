@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
+import Platform from "./pages/Platform";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/platform/:platform" element={<Platform />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </AnimatePresence>

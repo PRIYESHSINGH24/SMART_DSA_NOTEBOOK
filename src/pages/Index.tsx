@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import PlatformCard from "../components/PlatformCard";
 import { Button } from "@/components/ui/button";
-import { Search, Plus } from "lucide-react";
+import { Search, Plus, ArrowRight, Code } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import AnimatedTransition from "@/components/AnimatedTransition";
 
@@ -82,6 +83,7 @@ const Index: React.FC = () => {
   const { user, isAuthenticated } = useAuth();
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredPlatforms, setFilteredPlatforms] = useState(platforms);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const filtered = platforms.filter(platform => 
@@ -91,24 +93,28 @@ const Index: React.FC = () => {
   }, [searchTerm]);
 
   const handlePlatformClick = (platformId: string) => {
-    console.log("Platform selected:", platformId);
-    // In a real app, this would navigate to the platform's problems page
+    navigate(`/platform/${platformId}`);
   };
 
   return (
     <AnimatedTransition>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-secondary/20">
         <Navbar />
         
         <main className="flex-1 container mx-auto px-4 py-8 md:py-12">
           {/* Hero section */}
-          <section className="text-center mb-12 md:mb-16">
+          <section className="text-center mb-12 md:mb-16 relative">
+            {/* Decorative elements */}
+            <div className="absolute top-20 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+            
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="relative z-10"
             >
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-balance">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-balance bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
                 Your Smart DSA Notebook
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
@@ -123,12 +129,13 @@ const Index: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
-                <Button className="w-full sm:w-auto" size="lg">
-                  <Plus className="mr-2 h-4 w-4" />
+                <Button className="w-full sm:w-auto group" size="lg">
+                  <Plus className="mr-2 h-4 w-4 transition-transform group-hover:rotate-90" />
                   Add New Solution
                 </Button>
-                <Button variant="outline" className="w-full sm:w-auto" size="lg">
+                <Button variant="outline" className="w-full sm:w-auto group" size="lg">
                   My Solutions
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </motion.div>
             ) : (
@@ -138,8 +145,11 @@ const Index: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
-                <Button asChild size="lg">
-                  <a href="/signup">Get Started</a>
+                <Button asChild size="lg" className="group">
+                  <a href="/signup">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </a>
                 </Button>
                 <Button variant="outline" asChild size="lg">
                   <a href="/login">Log In</a>
@@ -155,7 +165,7 @@ const Index: React.FC = () => {
               <Input
                 type="text"
                 placeholder="Search platforms..."
-                className="pl-10 rounded-full"
+                className="pl-10 rounded-full border-primary/20 focus:border-primary/50 shadow-lg shadow-primary/5"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -189,9 +199,12 @@ const Index: React.FC = () => {
           )}
         </main>
         
-        <footer className="border-t py-6 md:py-0">
+        <footer className="border-t py-6 md:py-8 backdrop-blur-sm">
           <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} DSA Notebook. All rights reserved.</p>
+            <div className="flex items-center gap-2">
+              <Code className="h-4 w-4" />
+              <p>© {new Date().getFullYear()} DSA Notebook. All rights reserved.</p>
+            </div>
             <div className="flex items-center gap-4">
               <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
