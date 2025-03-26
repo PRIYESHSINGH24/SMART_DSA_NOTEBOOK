@@ -26,7 +26,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
       whileHover={{ scale: 1.03, y: -5 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
-        "relative overflow-hidden rounded-xl p-6 backdrop-blur-md border transition-all cursor-pointer",
+        "relative overflow-hidden rounded-xl p-6 backdrop-blur-md border transition-all cursor-pointer group",
         "bg-gradient-to-br from-background/90 via-background/70 to-background/50",
         "border-primary/20 hover:border-primary/50",
         "shadow-lg hover:shadow-xl shadow-black/5 hover:shadow-primary/10",
@@ -52,7 +52,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
       <div className="absolute -top-1 -left-1 h-16 w-16 bg-gradient-to-br from-secondary/20 to-transparent rounded-full blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       {/* Scan line effect */}
-      <div className="absolute inset-0 overflow-hidden opacity-0 hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-primary/30 animate-[scan_2s_linear_infinite]" />
       </div>
     </motion.div>
