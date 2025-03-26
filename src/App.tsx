@@ -11,6 +11,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 import Platform from "./pages/Platform";
+import Social from "./pages/Social";
+import Notes from "./pages/Notes";
 
 const queryClient = new QueryClient();
 
@@ -19,7 +21,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Sonner position="top-right" closeButton />
+        <Sonner position="top-right" closeButton theme="dark" />
         <BrowserRouter>
           <AuthProvider>
             <AnimatePresence mode="wait" initial={false}>
@@ -28,6 +30,8 @@ const App = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/platform/:platform" element={<Platform />} />
+                <Route path="/social" element={<Social />} />
+                <Route path="/notes" element={<Notes />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </AnimatePresence>
