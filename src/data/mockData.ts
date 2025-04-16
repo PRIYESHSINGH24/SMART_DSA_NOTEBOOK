@@ -3,7 +3,7 @@
 export const mockProblems = {
   leetcode: [
     { id: "1", title: "Two Sum", difficulty: "Easy", tags: ["Array", "Hash Table"], progress: 100 },
-    { id: "2", title: "Add Two Numbers", difficulty: "Medium", tags: ["Linked List", "Math"], progress: 75 },
+    { id: "2", title: "Regular Expression Matchings", difficulty: "Medium", tags: ["Linked List", "Math"], progress: 75 },
     { id: "3", title: "Longest Substring Without Repeating Characters", difficulty: "Medium", tags: ["String", "Sliding Window"], progress: 0 },
   ],
   hackerrank: [
@@ -34,28 +34,28 @@ public:
         return {}; // No solution found
     }
 };`,
-  "leetcode-2": `function addTwoNumbers(l1, l2) {
-  let dummyHead = new ListNode(0);
-  let curr = dummyHead;
-  let carry = 0;
-  
-  while (l1 !== null || l2 !== null) {
-    let x = (l1 !== null) ? l1.val : 0;
-    let y = (l2 !== null) ? l2.val : 0;
-    let sum = carry + x + y;
-    carry = Math.floor(sum / 10);
-    curr.next = new ListNode(sum % 10);
-    curr = curr.next;
-    if (l1 !== null) l1 = l1.next;
-    if (l2 !== null) l2 = l2.next;
-  }
-  
-  if (carry > 0) {
-    curr.next = new ListNode(carry);
-  }
-  
-  return dummyHead.next;
-}`,
+  "leetcode-2": `class Solution {
+public:
+    bool isMatch(string s, string p) {
+        int n = s.length(), m = p.length();
+        bool dp[n+1][m+1];
+        memset(dp, false, sizeof(dp));
+        dp[0][0] = true;
+        
+        for(int i=0; i<=n; i++){
+            for(int j=1; j<=m; j++){
+                if(p[j-1] == '*'){
+                    dp[i][j] = dp[i][j-2] || (i > 0 && (s[i-1] == p[j-2] || p[j-2] == '.') && dp[i-1][j]);
+                }
+                else{
+                    dp[i][j] = i > 0 && dp[i-1][j-1] && (s[i-1] == p[j-1] || p[j-1] == '.');
+                }
+            }
+        }
+        
+        return dp[n][m];
+    }
+};`,
   "hackerrank-1": `function solveMeFirst(a, b) {
   return a + b;
 }`
