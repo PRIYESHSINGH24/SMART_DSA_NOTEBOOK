@@ -20,21 +20,20 @@ export const mockProblems = {
 
 // Mock data for solutions
 export const mockSolutions = {
-  "leetcode-1": `function twoSum(nums, target) {
-  const map = new Map();
-  
-  for (let i = 0; i < nums.length; i++) {
-    const complement = target - nums[i];
-    
-    if (map.has(complement)) {
-      return [map.get(complement), i];
+  "leetcode-1": `class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return {i, j};
+                }
+            }
+        }
+        return {}; // No solution found
     }
-    
-    map.set(nums[i], i);
-  }
-  
-  return null;
-}`,
+};`,
   "leetcode-2": `function addTwoNumbers(l1, l2) {
   let dummyHead = new ListNode(0);
   let curr = dummyHead;
