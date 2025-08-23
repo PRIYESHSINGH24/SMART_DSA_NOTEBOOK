@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Problems - DSA Problem Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="codechef.css">
+</head>
+<body>
+    <header>
+        <h1>LeetCode Problems</h1>
+    </header>
+
+    <div class="container">
+        <div class="problems-list">
+            <h2>Problems</h2>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Two Sum</h3>
+                </div>
+                <div class="card-content">
+                    <p>Difficulty: Easy</p>
+                    <div class="button-container">
+                        <button class="button button-primary" onclick="handleViewSolution('Two Sum')">
+                            <span class="icon">▶</span> View Solution
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Reverse Linked List</h3>
+                </div>
+                <div class="card-content">
+                    <p>Difficulty: Medium</p>
+                    <div class="button-container">
+                        <button class="button button-primary" onclick="handleViewSolution('Reverse Linked List')">
+                            <span class="icon">▶</span> View Solution
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Binary Tree Level Order Traversal</h3>
+                </div>
+                <div class="card-content">
+                    <p>Difficulty: Medium</p>
+                    <div class="button-container">
+                        <button class="button button-primary" onclick="handleViewSolution('Binary Tree Level Order Traversal')">
+                            <span class="icon">▶</span> View Solution
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="solution-display">
+            <h2>Solution</h2>
+            <div id="solution-content">
+                <p>Select a problem to view its solution.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="problems-list">
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 20px;">Problems</h2>
+            <!-- Problem Cards -->
+            <div id="problems-container"></div>
+
+            <!-- Form to Add New Question -->
+            <h3 style="margin-top: 20px;">Add a New Question</h3>
+            <form id="add-problem-form">
+                <label for="title">Question Title:</label><br>
+                <input type="text" id="title" name="title" required style="width: 100%; margin-bottom: 10px;"><br>
+
+                <label for="difficulty">Difficulty Level:</label><br>
+                <select id="difficulty" name="difficulty" required style="width: 100%; margin-bottom: 10px;">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select><br>
+
+                <label for="solution">Solution (Code):</label><br>
+                <textarea id="solution" name="solution" rows="5" required style="width: 100%; margin-bottom: 10px;"></textarea><br>
+
+                <button type="submit" style="padding: 10px 15px;">Add Question</button>
+            </form>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="codechef.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script>
+            const problems = [
+                {
+                    title: "Two Sum",
+                    difficulty: "Easy",
+                    solution: `
+    <pre><code class="language-python">def two_sum(nums, target):
+        seen = {}
+        for i, num in enumerate(nums):
+            diff = target - num
+            if diff in seen:
+                return [seen[diff], i]
+            seen[num] = i
+    </code></pre>`
+                },
+                {
+                    title: "Reverse Linked List",
+                    difficulty: "Medium",
+                    solution: `
+    <pre><code class="language-python">class ListNode:
+        def __init__(self, val=0, next=None):
+            self.val = val
+            self.next = next
+    
+    def reverse_linked_list(head):
+        prev = None
+        current = head
+        while current:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        return prev
+    </code></pre>`
+                }
+            ];
+    
+            const problemsContainer = document.getElementById('problems-container');
+            const solutionContent = document.getElementById('solution-content');
+            const addProblemForm = document.getElementById('add-problem-form');
+    
+            // Render all questions
+            function renderProblems() {
+                problemsContainer.innerHTML = ""; // Clear the container
+                problems.forEach((problem, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.style.marginBottom = "15px"; // Ensure spacing between cards
+                    card.innerHTML = `
+                        <div class="card-header">
+                            <h3 class="card-title">${problem.title}</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Difficulty: ${problem.difficulty}</p>
+                            <div class="button-container">
+                                <button class="button button-primary" onclick="showSolution(${index})">
+                                    <span class="icon">▶</span> View Solution
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    problemsContainer.appendChild(card);
+                });
+            }
+    
+            // Show solution in the solution display
+            function showSolution(index) {
+                const selectedProblem = problems[index];
+                solutionContent.innerHTML = selectedProblem.solution;
+                Prism.highlightAll(); // Highlight syntax
+            }
+    
+            // Add a new problem from the form
+            addProblemForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const title = document.getElementById('title').value;
+                const difficulty = document.getElementById('difficulty').value;
+                const solution = `<pre><code class="language-python">${document.getElementById('solution').value}</code></pre>`;
+                problems.push({ title, difficulty, solution });
+                renderProblems(); // Re-render the problems list
+                addProblemForm.reset(); // Clear the form
+            });
+    
+            // Initial rendering of problems
+            renderProblems();
+        </script>
+    
+</body>
+</html>
